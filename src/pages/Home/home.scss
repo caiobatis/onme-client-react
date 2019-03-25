@@ -1,7 +1,3 @@
-
-/*****************************************************
-*** Header ***
-*****************************************************/
 #header {
   padding: 170px 0 150px;
   background-repeat: no-repeat;
@@ -51,4 +47,14 @@
   right: -210px;
   z-index: 2;
   transform: rotate(18deg);
+}
+
+.coinsRealTime {
+  background: #222d5e;
+  
+  .list-coins {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
 }
