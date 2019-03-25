@@ -1,0 +1,54 @@
+
+/*****************************************************
+*** Header ***
+*****************************************************/
+#header {
+  padding: 170px 0 150px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  background-color: #f4f4f5;
+}
+
+#header .header_iphone {
+  position: absolute;
+  bottom: -310px;
+  left: 50%;
+  margin-left: -185px;
+}
+
+#header .video-btn {
+  margin-top: 48px;
+}
+
+#header .video-btn i {
+  margin-right: 15px;
+}
+
+#header:after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 140%;
+  position: absolute;
+  background: #212c5f;
+  top: -120px;
+  right: -220px;
+  z-index: 3;
+  transform: rotate(13deg);
+}
+
+#header:before {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 140%;
+  position: absolute;
+  background: #c82343;
+  top: -120px;
+  right: -210px;
+  z-index: 2;
+  transform: rotate(18deg);
+}

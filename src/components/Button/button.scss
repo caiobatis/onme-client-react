@@ -1,0 +1,42 @@
+.button {
+  height: 45px;
+  font-family: Lato, sans-serif;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 45px;
+}
+
+.primary {
+  background: #c82343;
+  span {
+    color: #fff;
+    font-size: 17px;
+  }
+}
+.secundary {
+  background: #267df4;
+  span {
+    color: #fff;
+    font-size: 17px;
+  }
+}
+
+.large {
+  height: 55px;
+}
+
+.success {
+  background: #26b99f;
+  border-radius: 4px;
+  span {
+    color: #fff;
+    font-size: 20px;
+  }
+}
+
+.full {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

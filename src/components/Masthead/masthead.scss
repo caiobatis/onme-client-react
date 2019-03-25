@@ -1,0 +1,135 @@
+.h2 {
+  font-size: 50px !important;
+  font-weight: 800 !important;
+  color: #6f7179;
+}
+.span {
+  font-size: 12px;
+  line-height: 15px;
+  display: block;
+  color: #626262;
+}
+
+.flex-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+[class*=LabelWrapper] {
+  display: none;
+}
+
+[class*=Content__ContentWrapper] {
+  width: 100%;
+}
+
+[class*=Field__Label] {
+  font-size: 13px;
+  font-weight: 400;
+  color: #8a8a8a;
+}
+
+[class*=Field__FieldWrapper] {
+  & > div {
+    & > div:first-child  {
+      & > div:first-child {
+        > [class*=css] {
+          color: #737373;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+.whitelabel {
+  min-width: 420px;
+  background: #fff;
+  border-radius: 7px;
+  padding: 20px;
+  box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.22);
+  z-index: 4;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  .h4 {
+    font-family: Lato;
+    font-size: 20px;
+    color: #303036;
+  }
+}
+
+.two-items {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  & > div {
+    width: 100%;
+    padding: 0 5px;
+  }
+}
+
+.actions {
+  padding: 15px 5px;
+}
+
+.footer {
+  padding-top: 20px;
+  .security {
+    display: flex;
+    justify-content: space-between;
+  }
+  .tagSecurity {
+    display: flex;
+    align-items: center;
+    .p {
+      font-size: 14px;
+      text-transform: uppercase;
+      line-height: 18px;
+      font-weight: 400;
+      font-family: Lato;
+      color: #222d5e;
+      margin: 0;
+      margin-left: 10px;
+    }
+    .icon {
+      width: 40px;
+      height: 40px;
+      background: #222d5e;
+      border-radius: 40px;
+    }
+    
+  }
+}
+
+.reserva {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+}
+
+.reserva .p {
+  font-size: 16px;
+  margin: 0;
+  font-family: Lato;
+}
+
+.reserva .h4 {
+  font-family: Lato;
+  font-weight: 600;
+  color: #625f5f;
+}
+
+.bg-header {
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  background: url(./bg-header.svg) left bottom no-repeat;
+  top: 0;
+  background-size: 80%;
+  opacity: .15;
+  z-index: 1;
+}
