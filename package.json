@@ -2,7 +2,7 @@
   "name": "onme-ui",
   "version": "0.1.0",
   "homepage": "http://caiobatis.github.io/onme-client-react",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@atlaskit/button": "latest",
     "@atlaskit/css-reset": "latest",
@@ -25,7 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "yarn run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
