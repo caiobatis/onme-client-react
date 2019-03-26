@@ -116,3 +116,32 @@
     }
   }
 }
+
+.sectionShipping {
+  padding: 100px 0 200px;
+  position: relative;
+  overflow: hidden;
+
+  .bg-shipping {
+    background: #fff url(../../components/Commons/shippingImg.png) no-repeat right center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: -250px;
+    z-index: 0;
+    opacity: .8;
+  }
+}
+
+.list-default {
+  padding-left: 20px;
+  
+  li {
+    list-style: circle;
+    font-size: 18px;
+    line-height: 25px;
+    color: #8c8f94;
+    font-family: Lato;
+  }
+}

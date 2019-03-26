@@ -1,0 +1,12 @@
+.icon-hamburguer {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-hamburguer span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #000;
+  margin-bottom: 3px;
+}

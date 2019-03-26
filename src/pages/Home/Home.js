@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import DefaultLayout from '../../components/DefaultLayout/DefaultLayout'
 import Masthead from '../../components/Masthead/Masthead'
-import HowItWorks from '../../components/HowItWorks/HowItWorks'
-import CoinsRealTime from '../../components/CoinsRealTime/CoinsRealTime'
+import SectionHowItWorks from '../../components/SectionsHome/SectionHowItWorks'
+import SectionCoinsRealTime from '../../components/SectionsHome/SectionCoinsRealTime'
+import SectionShipping from '../../components/SectionsHome/SectionShipping'
 
 import './home.scss';
 
@@ -12,8 +13,9 @@ class Home extends Component {
       <div className="home">
         <DefaultLayout>
           <Masthead/>
-          <HowItWorks/>
-          <CoinsRealTime/>
+          <SectionHowItWorks/>
+          <SectionCoinsRealTime/>
+          <SectionShipping/>
         
         </DefaultLayout>
       </div>
