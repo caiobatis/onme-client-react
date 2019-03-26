@@ -10,6 +10,7 @@ app.use(express.static(path.resolve(__dirname, '../build')));
 app.get('*', function(request, response) {
   response.sendFile(path.resolve(__dirname, '../build', 'index.html'));
 });
+
 app.listen(PORT, function () {
   console.error(`Node ${isDev ? 'dev server' : 'cluster worker '+ process.pid}: listening on port ${PORT}`);
 })
