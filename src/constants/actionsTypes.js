@@ -1,0 +1,1 @@
+export const RECEIVE_COINS = 'RECEIVE_COINS'

@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
+import { getCoins } from '../../actions/WhitelabelActions'
 import Button from '../Button/Button';
 import FieldText from '../Fields/FieldText'
 import FieldSelect from '../Fields/FieldSelect'
 import Form from '@atlaskit/form'
 
 const cities = [
-  { label: 'São Paulo', value: 'sao-paulo' },
-  { label: 'Osaco', value: 'osasco' }
+  { value: 'WL-ONME-SP', label: 'São Paulo' },
+  { value: 'WL-ONME-BH', label: 'Belo Horizonte' },
+  { value: 'WL-ONME-BLU', label: 'Blumenau' },
+  { value: 'WL-ONME-CPS', label: 'Campinas' },
+  { value: 'WL-ONME-CTB', label: 'Curitiba' },
+  { value: 'WL-ONME-FORTA', label: 'Fortaleza' },
+  { value: 'WL-ONME-POA', label: 'Porto Alegre' },
+  { value: 'WL-ONME-RJ', label: 'Rio de Janeiro' },
+  { value: 'WL-ONME-SJC', label: 'São José dos Campos' }
 ]
 
 const coins = [
@@ -16,7 +26,7 @@ const coins = [
   { label: 'Libra', value: 'libra' }
 ]
 
-export default class WhitelabelForm extends Component {
+class WhitelabelForm extends Component {
 
   constructor(props) {
     super(props);
@@ -32,8 +42,16 @@ export default class WhitelabelForm extends Component {
     this.setState({quantity: event.target.value});
   }
 
-  render() {
+  componentDidMount() {
+    const {
+      getCoins
+    } = this.props
+    
+    getCoins()
+  }
 
+  render() {
+    console.log(this.props.listCoins)
     return (
       <Form onSubmit={data => console.log('form data', data)} className="form-whitelabel">
         {
@@ -107,3 +125,15 @@ export default class WhitelabelForm extends Component {
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    listCoins: state.WhitelabelReducer.list
+  }
+}
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  getCoins
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(WhitelabelForm) 

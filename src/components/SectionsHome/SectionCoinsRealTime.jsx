@@ -127,7 +127,7 @@ export default class SectionCoinsRealTime extends Component {
             </div>
             <div className="col-md-12">
               <div className="text-center bottom">
-                <p className="p">Quer uma cotação melhor? <Link>Entre em contato</Link></p>
+                <p className="p">Quer uma cotação melhor? <Link to="/">Entre em contato</Link></p>
               </div>
             </div>
           </div>
