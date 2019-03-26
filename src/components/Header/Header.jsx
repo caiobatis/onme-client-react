@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
 import logoImg from './logo-onme-color.png'
-import './header.css'
+import './header.scss'
 
 export default class Header extends Component {
   render() {
