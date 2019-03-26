@@ -19,6 +19,7 @@ class FieldSelect extends Component {
           label={label}
           name={name}
           defaultValue={defaultValue}
+          required={required}
         >
           {({ fieldProps, error }) => (
             <Select

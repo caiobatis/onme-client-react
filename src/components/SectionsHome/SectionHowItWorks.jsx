@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom"
 import CardProduct from '../Card/CardProduct'
 
 export default class SectionHowItWorks extends Component {
@@ -11,7 +12,7 @@ export default class SectionHowItWorks extends Component {
               <div className="defaultTitle">
                 <h2 className="h2">Como funciona?</h2>
                 <p className="p">Somos um correspondente cambial, temos algumas soluções para que você obtenha sua moeda internacional, seja em mãos ou em conta.</p>
-                <span className="span">Dúvidas? <a href="">Entre em contato</a></span>
+                <span className="span">Dúvidas? <Link>Entre em contato</Link></span>
               </div>
             </div>
             <div className="col-md-12">

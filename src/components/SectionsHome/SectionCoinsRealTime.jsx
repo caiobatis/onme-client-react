@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CoinPrice from '../CoinPrice/CoinPrice'
+import { Link } from "react-router-dom"
 
 const products = [  
   {  
@@ -126,7 +127,7 @@ export default class SectionCoinsRealTime extends Component {
             </div>
             <div className="col-md-12">
               <div className="text-center bottom">
-                <p className="p">Quer uma cotação melhor? <a href="">Entre em contato</a></p>
+                <p className="p">Quer uma cotação melhor? <Link>Entre em contato</Link></p>
               </div>
             </div>
           </div>

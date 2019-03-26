@@ -4,6 +4,7 @@ import Masthead from '../../components/Masthead/Masthead'
 import SectionHowItWorks from '../../components/SectionsHome/SectionHowItWorks'
 import SectionCoinsRealTime from '../../components/SectionsHome/SectionCoinsRealTime'
 import SectionShipping from '../../components/SectionsHome/SectionShipping'
+import Footer from '../../components/Footer/Footer'
 
 import './home.scss';
 
@@ -16,7 +17,7 @@ class Home extends Component {
           <SectionHowItWorks/>
           <SectionCoinsRealTime/>
           <SectionShipping/>
-        
+          <Footer/>
         </DefaultLayout>
       </div>
     );

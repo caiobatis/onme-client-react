@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import usd from './ico_usd.png'
 import eur from './ico_eur.png'
 import gbp from './ico_gbp.png'
-import brl from './ico_brl.png'
 import nzd from './ico_nzd.png'
 import cad from './ico_cad.png'
 import aud from './ico_aud.png'
@@ -13,7 +12,6 @@ export default class CoinPrice extends Component {
   render() {
     const {
       coin,
-      title,
       price
     } = this.props
 

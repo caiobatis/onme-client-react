@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Field } from '@atlaskit/form';
-import _FieldText from '@atlaskit/field-text';
+import FieldTextItem from '@atlaskit/field-text';
 
 class FieldText extends Component {
   render() {
@@ -15,7 +15,6 @@ class FieldText extends Component {
 
     return (
       <div>
-
         <Field
           label={label}
           name={name}
@@ -23,7 +22,7 @@ class FieldText extends Component {
           defaultValue={defaultValue}
         >
         {({ fieldProps, error }) => (
-          <_FieldText
+          <FieldTextItem
             autoComplete="off"
             value={value}
             {...fieldProps}

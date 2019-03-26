@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import _Button from '@atlaskit/button'
+import ButtonItem from '@atlaskit/button'
 import classNames from 'classnames'
-import styles from './button.scss'
+import './button.scss'
 
 export default class Button extends Component {
   render() {
@@ -23,7 +23,7 @@ export default class Button extends Component {
 
     return (
       <div>
-        <_Button
+        <ButtonItem
           onClick={onClick}
           type={type}
           className={buttonClass}
@@ -32,7 +32,7 @@ export default class Button extends Component {
         {
           value || 'Click here'
         }
-        </_Button> 
+        </ButtonItem> 
       </div>
     )
   }
