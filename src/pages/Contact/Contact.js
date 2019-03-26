@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import DefaultLayout from '../../components/DefaultLayout/DefaultLayout'
-import './contact.css'
 
 class Contact extends Component {
   render() {

@@ -92,12 +92,13 @@ export default class CoinsRealTime extends Component {
   render() {
     return (
       <section className='coinsRealTime'>
+        <div className="bg-header"></div>
         <div className="container">
           <div className="row">
             <div className="col-md-5">
               <div className="defaultTitle">
                 <h2 className="h2">Moeda em tempo real</h2>
-                <p className="p">Trabalhamos com todas as moedas, veja o valor atual das principais. <br/> <br/>Procura por outra moeda?</p>
+                <p className="p">Trabalhamos com todas as moedas, veja o valor atual das principais. <br/>Procura por outra moeda?</p>
                 <div className="reserva">
                   <p className="p">Reserve pelo televendas</p>
                   <h4 className="h4">( 11 ) 5051-5299</h4>
@@ -124,7 +125,7 @@ export default class CoinsRealTime extends Component {
               </div>
             </div>
             <div className="col-md-12">
-              <div className="text-center">
+              <div className="text-center bottom">
                 <p className="p">Quer uma cotação melhor? <a href="">Entre em contato</a></p>
               </div>
             </div>

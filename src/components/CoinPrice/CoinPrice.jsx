@@ -44,7 +44,7 @@ export default class CoinPrice extends Component {
     }
 
     return (
-      <div className="coinImg">
+      <div className="CoinPrice">
         <div className="top">
           <img src={img} alt={coin}/>
           <div className="title">
