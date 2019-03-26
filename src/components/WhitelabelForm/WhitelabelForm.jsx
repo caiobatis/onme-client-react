@@ -25,7 +25,7 @@ class WhitelabelForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      quantity: 100, 
+      quantity: 1000, 
       real: 0,
       coinSelected: 'USD',
       price: 0
@@ -44,6 +44,7 @@ class WhitelabelForm extends Component {
       }
     })
 
+    console.log(price)
     this.setState({
       coinSelected: event.value,
       price
@@ -51,8 +52,9 @@ class WhitelabelForm extends Component {
   }
 
   handleChangeQuantity(event) {
+    console.log(event)
     this.setState({
-      quantity: event.target.value
+      quantity: event
     })
   }
 
@@ -72,6 +74,12 @@ class WhitelabelForm extends Component {
     getCoins(cities[0].value)
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    
+    // console.log(this.state)
+  }
+  
+
   componentWillReceiveProps (nextProps, nextState) {
     const { listCoins } = nextProps
 
@@ -81,7 +89,7 @@ class WhitelabelForm extends Component {
         price = e.sellPrice
       }
     })
-    
+    console.log(price)
     this.setState({
       price,
       real: this.state.quantity * price
@@ -137,7 +145,9 @@ class WhitelabelForm extends Component {
                     value={this.state.quantity}
                     onChange={this.handleChangeQuantity}
                     name="quantity"
-                  />
+                    mask="money"
+                    code={this.state.coinSelected}
+                    />
                   <FieldText
                     label="Em R$"
                     required={false}
@@ -145,6 +155,7 @@ class WhitelabelForm extends Component {
                     disabled={true}
                     value={realCoin}
                     name="real"
+                    mask="money"
                   />
                 </div>
               </div>
