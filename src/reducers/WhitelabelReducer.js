@@ -1,4 +1,4 @@
-import { RECEIVE_COINS } from '../constants/actionsTypes'
+import { RECEIVE_COINS } from '../lib/actionsTypes'
 
 const INITAL_STATE = {
   list: []

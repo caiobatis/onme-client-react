@@ -1,8 +1,22 @@
 import React, { Component } from 'react';
-import { Field } from '@atlaskit/form';
-import FieldTextItem from '@atlaskit/field-text';
+import TextField from '@material-ui/core/TextField';
 
 class FieldText extends Component {
+  state = {
+    name: 'Cat in the Hat',
+    age: '',
+    multiline: 'Controlled',
+    currency: 'EUR',
+  };
+
+  handleChange = name => event => {
+    console.log(name, event.target.value)
+    this.setState({
+      [name]: event.target.value,
+    });
+  };
+
+
   render() {
 
     const {
@@ -10,25 +24,20 @@ class FieldText extends Component {
       required = false,
       value,
       name,
-      defaultValue
+      defaultValue,
+      disabled,
+      onChange
     } = this.props
 
     return (
       <div>
-        <Field
+        <TextField
           label={label}
-          name={name}
-          isRequired={required}
-          defaultValue={defaultValue}
-        >
-        {({ fieldProps, error }) => (
-          <FieldTextItem
-            autoComplete="off"
-            value={value}
-            {...fieldProps}
-          />
-        )}
-        </Field> 
+          value={value}
+          onChange={onChange}
+          margin="normal"
+          variant="outlined"
+        />        
       </div>
     );
   }

@@ -1,8 +1,14 @@
-import { RECEIVE_COINS } from '../constants/actionsTypes'
+import { RECEIVE_COINS } from '../lib/actionsTypes'
+import {
+  getProducts
+} from '../lib/api'
 
-export const getCoins = () => {
+export const getCoins = city => {
   return dispatch => {
-    dispatch(receiveCoins([]))
+    getProducts(city)
+      .then((res)=> 
+        dispatch(receiveCoins(res.data))
+      )
   }
 }
 

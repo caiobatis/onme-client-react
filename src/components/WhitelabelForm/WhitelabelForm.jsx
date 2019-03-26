@@ -20,26 +20,48 @@ const cities = [
   { value: 'WL-ONME-SJC', label: 'São José dos Campos' }
 ]
 
-const coins = [
-  { label: 'Dolar', value: 'dolar' },
-  { label: 'Euro', value: 'euro' },
-  { label: 'Libra', value: 'libra' }
-]
-
 class WhitelabelForm extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      quantity: '', 
-      real: ''
+      quantity: 100, 
+      real: 0,
+      coinSelected: 'USD',
+      price: 0
     }
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeCoin = this.handleChangeCoin.bind(this);
+    this.handleChangeQuantity = this.handleChangeQuantity.bind(this);
+    this.handleChangeCity = this.handleChangeCity.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({quantity: event.target.value});
+  handleChangeCoin(event) {
+    let price
+    this.props.listCoins.map((e)=> {
+      if(e.productCode == event.value && e.sellPrice) {
+        price = e.sellPrice
+      }
+    })
+
+    this.setState({
+      coinSelected: event.value,
+      price
+    })
+  }
+
+  handleChangeQuantity(event) {
+    this.setState({
+      quantity: event.target.value
+    })
+  }
+
+  handleChangeCity(event) {
+    const {
+      getCoins
+    } = this.props
+    
+    getCoins(event.value)
   }
 
   componentDidMount() {
@@ -47,11 +69,38 @@ class WhitelabelForm extends Component {
       getCoins
     } = this.props
     
-    getCoins()
+    getCoins(cities[0].value)
+  }
+
+  componentWillReceiveProps (nextProps, nextState) {
+    const { listCoins } = nextProps
+
+    let price = 0
+    listCoins.map((e)=> {
+      if(e.productCode == this.state.coinSelected && e.sellPrice) {
+        price = e.sellPrice
+      }
+    })
+    
+    this.setState({
+      price,
+      real: this.state.quantity * price
+    })
+
   }
 
   render() {
-    console.log(this.props.listCoins)
+    const {
+      listCoins
+    } = this.props
+
+    const _listCoins = (listCoins || []).map((e)=> ({
+      label: e.currency,
+      value: e.productCode
+    }))
+
+    const realCoin = this.state.quantity * this.state.price
+
     return (
       <Form onSubmit={data => console.log('form data', data)} className="form-whitelabel">
         {
@@ -70,12 +119,14 @@ class WhitelabelForm extends Component {
                     name="city"
                     options={cities}
                     defaultValue={cities[0]}
+                    onChange={this.handleChangeCity}
                     />
                   <FieldSelect
                     label="Moeda"
                     name="coin"
-                    options={coins}
-                    defaultValue={coins[0]}
+                    options={_listCoins}
+                    defaultValue={_listCoins[0]}
+                    onChange={this.handleChangeCoin}
                   />
                 </div>
                 <div className="two-items">
@@ -84,13 +135,15 @@ class WhitelabelForm extends Component {
                     required={false}
                     defaultValue={this.state.quantity}
                     value={this.state.quantity}
+                    onChange={this.handleChangeQuantity}
                     name="quantity"
                   />
                   <FieldText
                     label="Em R$"
                     required={false}
-                    defaultValue={this.state.real}
-                    value={this.state.real}
+                    defaultValue={realCoin}
+                    disabled={true}
+                    value={realCoin}
                     name="real"
                   />
                 </div>
