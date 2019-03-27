@@ -29,6 +29,7 @@
         font-size: 18px;
         font-family: Lato;
         margin: 0;
+        line-height: 20px;
       }
     }
   }
@@ -42,5 +43,16 @@
       font-family: Lato;
       font-weight: 600;
     }
+  }
+}
+
+@media(max-width: 768px) {
+
+  .list-coins {
+    justify-content: space-around !important;
+      .CoinPrice {
+        width: 40%;
+        margin: 20px 0 !important;
+      }
   }
 }

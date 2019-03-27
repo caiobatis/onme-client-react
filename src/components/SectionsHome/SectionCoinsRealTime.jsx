@@ -107,7 +107,7 @@ export default class SectionCoinsRealTime extends Component {
               </div>
             </div>
             <div className="col-md-7">
-              <div className="row">
+              <div className="">
                 <div className="coins">
                   <div className="list-coins">
                     {

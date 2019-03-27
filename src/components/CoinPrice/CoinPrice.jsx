@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import NumberFormat from 'react-number-format'
 import usd from './ico_usd.png'
 import eur from './ico_eur.png'
 import gbp from './ico_gbp.png'
@@ -51,7 +52,15 @@ export default class CoinPrice extends Component {
           </div>
         </div>
         <div className="bottom">
-          <p className="price">{price}</p>
+          <p className="price">
+            <NumberFormat
+              value={price}
+              displayType={'text'}
+              thousandSeparator={true}
+              prefix={'R$ '}
+              decimalScale={3}
+            />
+          </p>
         </div>
 
       </div>

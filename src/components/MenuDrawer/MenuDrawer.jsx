@@ -20,13 +20,13 @@ export default class MenuDrawer extends Component {
   render() {
     return (
       <div>
-        <a className="navigation" onClick={this.toggleDrawer('open', true)}>
+        <button className="navigation" onClick={this.toggleDrawer('open', true)}>
           <i className="icon-hamburguer">
             <span/>
             <span/>
             <span/>
           </i>
-        </a>
+        </button>
 
         <Drawer open={this.state.open} onClose={this.toggleDrawer('open', false)}>
           <div

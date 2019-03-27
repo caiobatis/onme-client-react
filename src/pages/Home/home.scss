@@ -94,3 +94,15 @@
     font-family: Lato;
   }
 }
+
+
+@media(max-width: 768px) {
+
+  .sectionShipping {
+    padding: 100px 0;
+    .bg-shipping {
+      opacity: .2;
+    }
+  }
+
+}
