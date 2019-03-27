@@ -134,6 +134,7 @@ class WhitelabelForm extends Component {
           <div className="title">
             <h4 className="h4">Dinheiro em espécie</h4>
             <div className="time">
+              <span className="span">Atualizando valores em:</span>
               <h4 className="h4">{this.state.time}</h4>
             </div>
           </div>

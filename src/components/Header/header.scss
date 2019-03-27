@@ -5,8 +5,76 @@
 
 .icon-hamburguer span {
   display: block;
-  width: 20px;
+  width: 25px;
   height: 2px;
-  background: #000;
-  margin-bottom: 3px;
+  background: #737373;
+  margin-bottom: 6px;
+  border-radius: 3px;
+}
+
+.menuDrawer {
+  min-width: 280px;
+  
+  .logo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    img {
+      max-width: 50%;
+    }
+  }
+  
+  & > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    li {
+      a {
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+        background: #fff;
+        border-top: 1px solid #eee;
+        width: 100%;
+        display: flex;
+        padding: 10px 15px;
+        font-family: Lato;
+      }
+    } 
+  }
+
+  .slide_out_menu_footer {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    .socials {
+      display: flex;
+      margin: 0;
+      justify-content: space-around;
+      li {
+        a {
+          color: #c2092d;
+          padding: 15px;
+        }
+      } 
+    }
+  }
+}
+
+
+@media(max-width: 768px) {
+  
+  header#main-nav {
+    padding: 10px;
+    .logo {
+      max-width: 150px;
+      margin: 0 !important;
+      img {
+        width: 100%;
+      }
+    }
+  
+  }  
 }

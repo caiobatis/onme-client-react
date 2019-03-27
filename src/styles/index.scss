@@ -164,16 +164,16 @@ ul > li {
   transition: all 0.37s cubic-bezier(0, 0, 0.58, 1);
 }
 
-#main-nav #navigation {
+#main-nav .navigation {
   color: #26272d;
   text-decoration: none;
   position: absolute;
-  top: 50%;
-  margin-top: -4px;
+  margin-top: 23px;
   z-index: 2;
+  cursor: pointer;
 }
 
-#main-nav #navigation:hover {
+#main-nav .navigation:hover {
   color: #267df4 !important;
 }
 
@@ -1138,19 +1138,7 @@ Responsive Styles
 }
 
 @media only screen and (max-width: 575px) {
-  input[type="text"],
-  input[type="email"] {
-    padding: 16px 26px;
-  }
-  /*** Header ***/
-  #header {
-    padding: 160px 0 460px;
-  }
-  #header .header_iphone {
-    bottom: -220px;
-    margin-left: -140px;
-    width: 280px;
-  }
+
   /*** Ready to Buy  ***/
   #ready-to-buy .form-group .btn,
   #subscribe .form-group .btn {

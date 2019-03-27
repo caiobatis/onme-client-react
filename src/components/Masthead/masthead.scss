@@ -1,5 +1,56 @@
+.mastheader {
+  padding: 170px 0 150px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  background-color: #f4f4f5;
+}
+
+.mastheader .mastheader_iphone {
+  position: absolute;
+  bottom: -310px;
+  left: 50%;
+  margin-left: -185px;
+}
+
+.mastheader .video-btn {
+  margin-top: 48px;
+}
+
+.mastheader .video-btn i {
+  margin-right: 15px;
+}
+
+.mastheader:after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 140%;
+  position: absolute;
+  background: #212c5f;
+  top: -120px;
+  right: -220px;
+  z-index: 3;
+  transform: rotate(13deg);
+}
+
+.mastheader:before {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 140%;
+  position: absolute;
+  background: #c82343;
+  top: -120px;
+  right: -210px;
+  z-index: 2;
+  transform: rotate(18deg);
+}
+
 .h2 {
-  font-size: 50px !important;
+  font-size: 50px;
   font-weight: 800 !important;
   color: #6f7179;
 }
@@ -26,10 +77,14 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 20px;
+    align-items: center;
     .h4 {
       font-family: Lato;
       font-size: 20px;
       color: #303036;
+    }
+    .time {
+      text-align: right;
     }
   }
 }
@@ -105,4 +160,22 @@
   background-size: 80%;
   opacity: .15;
   z-index: 0;
+}
+
+@media(max-width: 768px) {
+  .whitelabel {
+    min-width: 100%;
+    margin-top: 25px;
+  }
+  .mastheader {
+    padding: 130px 0 70px;
+
+    .h2 {
+      font-size: 35px;
+      line-height: 40px
+    }
+    .p {
+      font-size: 19px;
+    }
+  }
 }
