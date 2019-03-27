@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
+import moment from 'moment'
 import { getCoins } from '../../actions/WhitelabelActions'
 import Button from '../Button/Button';
 import FieldText from '../Fields/FieldText'
@@ -20,6 +21,14 @@ const cities = [
   { value: 'WL-ONME-SJC', label: 'São José dos Campos' }
 ]
 
+
+let eventTime = 1557051000
+let currentTime = 1557050400
+// var eventTime= 1366549200; // Timestamp - Sun, 21 Apr 2013 13:00:00 GMT
+// var currentTime = 1366547400; // Timestamp - Sun, 21 Apr 2013 12:30:00 GMT
+
+
+
 class WhitelabelForm extends Component {
 
   constructor(props) {
@@ -29,7 +38,8 @@ class WhitelabelForm extends Component {
       real: 0,
       coinSelected: 'USD',
       price: 0,
-      city: cities[0].value
+      city: cities[0].value,
+      time: '10:00'
     }
 
     this.handleChangeCoin = this.handleChangeCoin.bind(this);
@@ -81,6 +91,9 @@ class WhitelabelForm extends Component {
     } = this.props
     
     getCoins(cities[0].value)
+
+    var diffTime = eventTime - currentTime;
+    this.duration = moment.duration(diffTime * 1000, 'milliseconds');
   }
 
   componentWillReceiveProps (nextProps, nextState) {
@@ -97,6 +110,18 @@ class WhitelabelForm extends Component {
       real: this.state.quantity * price
     })
 
+    var interval = 1000;
+    let self = this
+    setInterval(function(){
+      self.duration = moment.duration(self.duration - interval, 'milliseconds');
+      // console.log(moment(self.duration.seconds(), 'ss'), self.duration.seconds())
+      self.setState({
+        time: self.duration.minutes() + ":" + moment(self.duration.seconds(), 'ss')
+      })
+    }, interval);
+
+
+
   }
 
   render() {
@@ -110,6 +135,7 @@ class WhitelabelForm extends Component {
     }))
 
     const realCoin = this.state.quantity * this.state.price
+    
 
     return (
       <form className="form-whitelabel">
@@ -117,7 +143,7 @@ class WhitelabelForm extends Component {
           <div className="title">
             <h4 className="h4">Dinheiro em espécie</h4>
             <div className="time">
-              <h4 className="h4">4:30</h4>
+              <h4 className="h4">{this.state.time}</h4>
             </div>
           </div>
           <div className="items-form">
