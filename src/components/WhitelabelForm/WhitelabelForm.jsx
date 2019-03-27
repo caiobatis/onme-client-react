@@ -28,7 +28,8 @@ class WhitelabelForm extends Component {
       quantity: 1000, 
       real: 0,
       coinSelected: 'USD',
-      price: 0
+      price: 0,
+      city: cities[0].value
     }
 
     this.handleChangeCoin = this.handleChangeCoin.bind(this);
@@ -63,10 +64,15 @@ class WhitelabelForm extends Component {
     } = this.props
     
     getCoins(event.value)
+
+    this.setState({
+      city: event.value
+    })
   }
 
   handleClick() {
-    console.log(this.state)
+    const url = `https://frentetech.com.br/onme/checkout?agentId=${this.state.city}&productId=${this.state.coinSelected}&productAmount=${this.state.quantity}`
+    window.open(url, '_blank')
   }
 
   componentDidMount() {
@@ -122,7 +128,7 @@ class WhitelabelForm extends Component {
                 options={cities}
                 defaultValue={cities[0]}
                 onChange={this.handleChangeCity}
-                />
+              />
               <FieldSelect
                 label="Moeda"
                 name="coin"
@@ -140,7 +146,7 @@ class WhitelabelForm extends Component {
                 name="quantity"
                 mask="money"
                 code={this.state.coinSelected}
-                />
+              />
               <FieldText
                 label="Em R$"
                 defaultValue={realCoin}

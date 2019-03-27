@@ -9,16 +9,9 @@ import OutlinedInput from '@material-ui/core/OutlinedInput'
 import { isObject } from 'lodash'
 
 const styles = theme => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
   formControl: {
     margin: theme.spacing.unit,
     minWidth: 120,
-  },
-  selectEmpty: {
-    marginTop: theme.spacing.unit * 2,
   },
   label: {
     background: '#fff !important',
@@ -103,7 +96,7 @@ class FieldSelect extends Component {
         variant="outlined"
         className={styles.formControl}
       >
-        <InputLabel shrink htmlFor={this.randomId} className={styles.label}>{label}</InputLabel>
+        <InputLabel htmlFor={this.randomId} className={styles.label}>{label}</InputLabel>
         <Select
           id={this.randomId}
           value={this.state.value}
@@ -114,7 +107,7 @@ class FieldSelect extends Component {
           }}
           input={
             <OutlinedInput
-              labelWidth={'auto'}
+              labelWidth={70}
               name={this.randomId}
               id={this.randomId}
             />
