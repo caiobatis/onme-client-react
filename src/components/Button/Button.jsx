@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ButtonItem from '@atlaskit/button'
+import ButtonItem from '@material-ui/core/Button';
 import classNames from 'classnames'
 import './button.scss'
 
@@ -8,7 +8,6 @@ export default class Button extends Component {
     const {
       value,
       onClick,
-      type,
       size,
       full,
       theme = 'primary',
@@ -25,7 +24,6 @@ export default class Button extends Component {
       <div>
         <ButtonItem
           onClick={onClick}
-          type={type}
           className={buttonClass}
           {...rest}
         >

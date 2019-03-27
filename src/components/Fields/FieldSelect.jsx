@@ -5,6 +5,7 @@ import FormControl from '@material-ui/core/FormControl'
 import InputLabel from '@material-ui/core/InputLabel'
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
+import OutlinedInput from '@material-ui/core/OutlinedInput'
 import { isObject } from 'lodash'
 
 const styles = theme => ({
@@ -19,6 +20,10 @@ const styles = theme => ({
   selectEmpty: {
     marginTop: theme.spacing.unit * 2,
   },
+  label: {
+    background: '#fff !important',
+    padding: '0 5px'
+  }
 })
 
 class FieldSelect extends Component {
@@ -91,12 +96,14 @@ class FieldSelect extends Component {
       )
     })
 
-    const content = (
+    return (
       <FormControl 
         fullWidth={true}
         margin={margin}
+        variant="outlined"
+        className={styles.formControl}
       >
-        <InputLabel shrink htmlFor={this.randomId}>{label}</InputLabel>
+        <InputLabel shrink htmlFor={this.randomId} className={styles.label}>{label}</InputLabel>
         <Select
           id={this.randomId}
           value={this.state.value}
@@ -105,19 +112,18 @@ class FieldSelect extends Component {
             name: this.randomId,
             id: this.randomId
           }}
-          displayEmpty={true}
-          error={errors && !!errors.invalid}
+          input={
+            <OutlinedInput
+              labelWidth={'auto'}
+              name={this.randomId}
+              id={this.randomId}
+            />
+          }
         >
-          <MenuItem value=''>
-            {placeholder || label}
-          </MenuItem>
-
           {_options}
         </Select>
       </FormControl>
     )
-
-    return content
   }
 }
 

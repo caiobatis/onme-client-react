@@ -15,33 +15,6 @@
   justify-content: flex-end;
 }
 
-[class*=LabelWrapper] {
-  display: none;
-}
-
-[class*=Content__ContentWrapper] {
-  width: 100%;
-}
-
-[class*=Field__Label] {
-  font-size: 13px;
-  font-weight: 400;
-  color: #8a8a8a;
-}
-
-[class*=Field__FieldWrapper] {
-  & > div {
-    & > div:first-child  {
-      & > div:first-child {
-        > [class*=css] {
-          color: #737373;
-          font-size: 15px;
-        }
-      }
-    }
-  }
-}
-
 .whitelabel {
   min-width: 420px;
   background: #fff;

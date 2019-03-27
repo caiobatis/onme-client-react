@@ -1,20 +1,20 @@
 .button {
   height: 45px;
-  font-family: Lato, sans-serif;
-  padding-left: 30px;
-  padding-right: 30px;
-  border-radius: 45px;
+  font-family: Lato, sans-serif ;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  text-transform: none !important;
 }
 
 .primary {
-  background: #c82343;
+  background-color: #c82343 !important;
   span {
     color: #fff;
     font-size: 17px;
   }
 }
 .secundary {
-  background: #267df4;
+  background-color: #267df4 !important;
   span {
     color: #fff;
     font-size: 17px;
@@ -26,7 +26,7 @@
 }
 
 .success {
-  background: #26b99f;
+  background: #26b99f !important;
   border-radius: 4px;
   span {
     color: #fff;

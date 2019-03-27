@@ -7,7 +7,6 @@ import thunk from 'redux-thunk'
 import multi from 'redux-multi'
 import promise from 'redux-promise'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { connectRouter } from 'connected-react-router'
 import rootReducer from '../reducers'
 
 const middlewares = applyMiddleware(

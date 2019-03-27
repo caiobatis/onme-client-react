@@ -73,7 +73,7 @@ class FieldText extends Component {
           id={code}
           InputLabelProps={inputLabelProps}
           InputProps={inputProps}
-          placeholder={label}
+          label={label}
           disabled={disabled}
         />        
       </div>

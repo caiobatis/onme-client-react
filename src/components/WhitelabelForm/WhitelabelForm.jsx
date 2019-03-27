@@ -34,6 +34,7 @@ class WhitelabelForm extends Component {
     this.handleChangeCoin = this.handleChangeCoin.bind(this);
     this.handleChangeQuantity = this.handleChangeQuantity.bind(this);
     this.handleChangeCity = this.handleChangeCity.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleChangeCoin(event) {
@@ -44,7 +45,6 @@ class WhitelabelForm extends Component {
       }
     })
 
-    console.log(price)
     this.setState({
       coinSelected: event.value,
       price
@@ -52,7 +52,6 @@ class WhitelabelForm extends Component {
   }
 
   handleChangeQuantity(event) {
-    console.log(event)
     this.setState({
       quantity: event
     })
@@ -66,6 +65,10 @@ class WhitelabelForm extends Component {
     getCoins(event.value)
   }
 
+  handleClick() {
+    console.log(this.state)
+  }
+
   componentDidMount() {
     const {
       getCoins
@@ -73,12 +76,6 @@ class WhitelabelForm extends Component {
     
     getCoins(cities[0].value)
   }
-
-  componentDidUpdate(prevProps, prevState) {
-    
-    // console.log(this.state)
-  }
-  
 
   componentWillReceiveProps (nextProps, nextState) {
     const { listCoins } = nextProps
@@ -89,7 +86,6 @@ class WhitelabelForm extends Component {
         price = e.sellPrice
       }
     })
-    console.log(price)
     this.setState({
       price,
       real: this.state.quantity * price
@@ -110,82 +106,75 @@ class WhitelabelForm extends Component {
     const realCoin = this.state.quantity * this.state.price
 
     return (
-      <Form onSubmit={data => console.log('form data', data)} className="form-whitelabel">
-        {
-          ({ formProps, submitting }) => (
-            <form {...formProps}>
-              <div className="title">
-                <h4 className="h4">Dinheiro em espécie</h4>
-                <div className="time">
-                  <h4 className="h4">4:30</h4>
-                </div>
-              </div>
-              <div className="items-form">
-                <div className="two-items">
-                  <FieldSelect
-                    label="Cidade"
-                    name="city"
-                    options={cities}
-                    defaultValue={cities[0]}
-                    onChange={this.handleChangeCity}
-                    />
-                  <FieldSelect
-                    label="Moeda"
-                    name="coin"
-                    options={_listCoins}
-                    defaultValue={_listCoins[0]}
-                    onChange={this.handleChangeCoin}
-                  />
-                </div>
-                <div className="two-items">
-                  <FieldText
-                    label="Quero essa quantia"
-                    required={false}
-                    defaultValue={this.state.quantity}
-                    value={this.state.quantity}
-                    onChange={this.handleChangeQuantity}
-                    name="quantity"
-                    mask="money"
-                    code={this.state.coinSelected}
-                    />
-                  <FieldText
-                    label="Em R$"
-                    required={false}
-                    defaultValue={realCoin}
-                    disabled={true}
-                    value={realCoin}
-                    name="real"
-                    mask="money"
-                  />
-                </div>
-              </div>
-              <div className="actions">
-                <Button
-                  type="submit"
-                  value="Gostei! Comprar agora"
-                  theme="success"
-                  size="large"
-                  full={true}
-                  isLoading={submitting}
+      <form className="form-whitelabel">
+        <div>
+          <div className="title">
+            <h4 className="h4">Dinheiro em espécie</h4>
+            <div className="time">
+              <h4 className="h4">4:30</h4>
+            </div>
+          </div>
+          <div className="items-form">
+            <div className="two-items">
+              <FieldSelect
+                label="Cidade"
+                name="city"
+                options={cities}
+                defaultValue={cities[0]}
+                onChange={this.handleChangeCity}
                 />
+              <FieldSelect
+                label="Moeda"
+                name="coin"
+                options={_listCoins}
+                defaultValue={_listCoins[0]}
+                onChange={this.handleChangeCoin}
+              />
+            </div>
+            <div className="two-items">
+              <FieldText
+                label="Quero essa quantia"
+                defaultValue={this.state.quantity}
+                value={this.state.quantity}
+                onChange={this.handleChangeQuantity}
+                name="quantity"
+                mask="money"
+                code={this.state.coinSelected}
+                />
+              <FieldText
+                label="Em R$"
+                defaultValue={realCoin}
+                value={realCoin}
+                disabled={true}
+                name="real"
+                mask="money"
+              />
+            </div>
+          </div>
+          <div className="actions">
+            <Button
+              onClick={this.handleClick}
+              value="Gostei! Comprar agora"
+              theme="success"
+              size="large"
+              full={true}
+            />
+          </div>
+          <div className="footer">
+            <div className="security">
+              <span className="span">
+                USD 1,00 = 3.9018 (valores com IOF) <br/>
+                Nossas cotações são atualizadas a cada <br/>
+                4 minutos e 30 segundos
+              </span>
+              <div className="tagSecurity">
+                <div className="icon"></div>
+                <p className="p">site <br/>seguro</p>
               </div>
-              <div className="footer">
-                <div className="security">
-                  <span className="span">
-                    USD 1,00 = 3.9018 (valores com IOF) <br/>
-                    Nossas cotações são atualizadas a cada <br/>
-                    4 minutos e 30 segundos
-                  </span>
-                  <div className="tagSecurity">
-                    <div className="icon"></div>
-                    <p className="p">site <br/>seguro</p>
-                  </div>
-                </div>
-              </div>
-            </form>
-          )
-        }
-      </Form>
+            </div>
+          </div>
+        </div>
+      </form>
     )
   }
 }
