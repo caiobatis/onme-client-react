@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import TextField from '@material-ui/core/TextField'
 import PropTypes from 'prop-types'
 import NumberFormat from 'react-number-format'
-import FormHelperText from '@material-ui/core/FormHelperText'
-import MaskedInput from 'react-text-mask'
 
 
 const MoneyFormat = (props, code) => {
@@ -42,8 +40,6 @@ class FieldText extends Component {
       label,
       required = false,
       value,
-      name,
-      defaultValue,
       disabled,
       mask,
       code,
@@ -55,6 +51,8 @@ class FieldText extends Component {
     switch (mask) {
       case 'money':
         inputProps.inputComponent = MoneyFormat
+        break
+      default:
         break
     }
 
@@ -75,6 +73,7 @@ class FieldText extends Component {
           InputProps={inputProps}
           label={label}
           disabled={disabled}
+          required={required}
         />        
       </div>
     );

@@ -7,7 +7,6 @@ import { getCoins } from '../../actions/WhitelabelActions'
 import Button from '../Button/Button';
 import FieldText from '../Fields/FieldText'
 import FieldSelect from '../Fields/FieldSelect'
-import Form from '@atlaskit/form'
 
 const cities = [
   { value: 'WL-ONME-SP', label: 'São Paulo' },
@@ -43,9 +42,10 @@ class WhitelabelForm extends Component {
   handleChangeCoin(event) {
     let price
     this.props.listCoins.map((e)=> {
-      if(e.productCode == event.value && e.sellPrice) {
+      if(e.productCode === event.value && e.sellPrice) {
         price = e.sellPrice
       }
+      return null
     })
 
     this.setState({
@@ -92,9 +92,10 @@ class WhitelabelForm extends Component {
 
     let price = 0
     listCoins.map((e)=> {
-      if(e.productCode == this.state.coinSelected && e.sellPrice) {
+      if(e.productCode === this.state.coinSelected && e.sellPrice) {
         price = e.sellPrice
       }
+      return null
     })
     this.setState({
       price,

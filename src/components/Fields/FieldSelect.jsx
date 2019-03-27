@@ -70,12 +70,8 @@ class FieldSelect extends Component {
     const {
       options,
       label,
-      placeholder,
       disabled,
-      classes,
       margin,
-      errors,
-      ...rest
     } = this.props
 
     const _options = (options || []).map((e, i) => {
@@ -99,6 +95,7 @@ class FieldSelect extends Component {
         <InputLabel htmlFor={this.randomId} className={styles.label}>{label}</InputLabel>
         <Select
           id={this.randomId}
+          disabled={disabled}
           value={this.state.value}
           onChange={this.handleChange}
           inputProps={{

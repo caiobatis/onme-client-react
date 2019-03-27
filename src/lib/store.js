@@ -16,5 +16,5 @@ const middlewares = applyMiddleware(
 )
 
 export const store = createStore(rootReducer,
-  compose(process.env.ENV == 'development' ? composeWithDevTools(middlewares) : middlewares)
+  compose(process.env.ENV === 'development' ? composeWithDevTools(middlewares) : middlewares)
 )
