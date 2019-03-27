@@ -21,14 +21,6 @@ const cities = [
   { value: 'WL-ONME-SJC', label: 'São José dos Campos' }
 ]
 
-
-let eventTime = 1557051000
-let currentTime = 1557050400
-// var eventTime= 1366549200; // Timestamp - Sun, 21 Apr 2013 13:00:00 GMT
-// var currentTime = 1366547400; // Timestamp - Sun, 21 Apr 2013 12:30:00 GMT
-
-
-
 class WhitelabelForm extends Component {
 
   constructor(props) {
@@ -92,8 +84,7 @@ class WhitelabelForm extends Component {
     
     getCoins(cities[0].value)
 
-    var diffTime = eventTime - currentTime;
-    this.duration = moment.duration(diffTime * 1000, 'milliseconds');
+    this.duration = moment.duration({ minutes: 10 }, 'milliseconds');
   }
 
   componentWillReceiveProps (nextProps, nextState) {
@@ -110,17 +101,16 @@ class WhitelabelForm extends Component {
       real: this.state.quantity * price
     })
 
-    var interval = 1000;
+    let interval = 1000
+    
     let self = this
+
     setInterval(function(){
-      self.duration = moment.duration(self.duration - interval, 'milliseconds');
-      // console.log(moment(self.duration.seconds(), 'ss'), self.duration.seconds())
+      self.duration = moment.duration(self.duration - interval, 'milliseconds')
       self.setState({
-        time: self.duration.minutes() + ":" + moment(self.duration.seconds(), 'ss')
+        time: `${self.duration.minutes()}:${self.duration.seconds('m')}`
       })
-    }, interval);
-
-
+    }, interval)
 
   }
 
