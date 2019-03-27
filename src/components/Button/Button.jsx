@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ButtonItem from '@material-ui/core/Button';
+import ButtonItem from '@material-ui/core/Button'
 import classNames from 'classnames'
 import './button.scss'
 
