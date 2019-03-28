@@ -43,7 +43,10 @@ class FieldText extends Component {
       disabled,
       mask,
       code,
-      onChange
+      onChange,
+      rowsMax,
+      multiline,
+      rows
     } = this.props
 
     let inputProps = {}
@@ -74,6 +77,9 @@ class FieldText extends Component {
           label={label}
           disabled={disabled}
           required={required}
+          rows={rows}
+          multiline={multiline}
+          rowsMax={rowsMax}
         />        
       </div>
     );

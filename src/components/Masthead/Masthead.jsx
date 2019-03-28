@@ -5,22 +5,6 @@ import './masthead.scss'
 
 
 class Masthead extends Component {
-
-  constructor() {
-    super()
-
-    this.handleChange = this.handleChange.bind(this)
-  }
-  state = {
-    city: ''
-  }
-
-  handleChange(value, state) {
-    this.setState({
-      [state]: value
-    })
-  }
-
   render() {
     
     return (

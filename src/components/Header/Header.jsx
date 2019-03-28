@@ -20,7 +20,7 @@ export default class Header extends Component {
               </ul>
             </div>
             <div className="col-md-4 text-center">
-              <Link to="/" className="logo"><img src={logoImg} alt="New Providence"/></Link>
+              <Link to="/" className="logo"><img src={logoImg} alt="OnMe Câmbio e Travel Service"/></Link>
             </div>
             <div className="col-md-4">
               <ul className="right">

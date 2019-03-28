@@ -1,0 +1,23 @@
+.contact {
+  background: #f4f4f5;
+
+  .sectionsContact {
+    padding: 200px 0;
+  }
+
+  .contacts {
+    padding: 35px 0 0;
+    .p {
+      font-size: 16px;
+    }
+  }
+  .contactForm {
+    padding: 50px 0 0;
+    [class*=MuiFormControl-root] {
+      width: 100%;
+    }
+    [class*=MuiInputBase-root] {
+      background: #fff !important;
+    }
+  }
+}
