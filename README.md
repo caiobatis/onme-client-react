@@ -2,8 +2,7 @@
 
 In the project directory, you can run:
 
-`cd onme-client-react
-npm i && npm start`
+`npm i && npm start`
 
 ## build
 
