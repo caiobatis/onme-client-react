@@ -171,6 +171,10 @@ ul > li {
   margin-top: 23px;
   z-index: 2;
   cursor: pointer;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  outline: none;
 }
 
 #main-nav .navigation:hover {

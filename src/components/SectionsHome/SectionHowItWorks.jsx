@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
-import CardProduct from '../Card/CardProduct'
+import ProductCard from '../Cards/ProductCard'
 
 export default class SectionHowItWorks extends Component {
   render() {
@@ -19,16 +19,16 @@ export default class SectionHowItWorks extends Component {
               <div className="row">
                 <div className="cards">
                   <div className="col-md-3">
-                    <CardProduct/>
+                    <ProductCard/>
                   </div>
                   <div className="col-md-3">
-                    <CardProduct/>
+                    <ProductCard/>
                   </div>
                   <div className="col-md-3">
-                    <CardProduct/>
+                    <ProductCard/>
                   </div>
                   <div className="col-md-3">
-                    <CardProduct/>
+                    <ProductCard/>
                   </div>
                 </div>
               </div>
