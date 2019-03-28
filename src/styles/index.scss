@@ -886,6 +886,8 @@ ul > li {
 #footer {
   color: #8c8f94;
   font-size: 16px;
+  background: #fff;
+  
   .footer-container {
     padding-top: 20px;
     padding-bottom: 40px;
@@ -978,6 +980,30 @@ ul > li {
 #footer .made-by a img {
   margin-top: -8px;
   margin-left: 8px;
+}
+
+@media(max-width: 768px) {
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 !important;
+  }
+
+  .footer-links p, .footer-links li, .footer-links a {
+    text-align: center;
+    width: 100%;
+    display: block;
+  }
+
+  ul.socials {
+    justify-content: center !important;
+  }
+
+  #footer .footer-container {
+    padding: 40px 30px 0;
+  }
+
 }
 
 /*****************************************************
