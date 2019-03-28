@@ -2,12 +2,12 @@
 
 In the project directory, you can run:
 
-`` `cd onme-client-react
+```cd onme-client-react
 npm i && npm start```
 
 ## build
 
-`` npm run build```
+```npm run build```
 
 ## Know more
 
