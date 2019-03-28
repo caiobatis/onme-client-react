@@ -3,6 +3,11 @@ import ContactForm from '../ContactForm/ContactForm'
 import SimpleCard from '../Cards/SimpleCard'
 
 export default class SectionsContact extends Component {
+  submit = (values) => {
+    // print the form values to the console
+    console.log(values)
+  }
+
   render() {
     return (
       <div className="sectionsContact">
@@ -20,7 +25,7 @@ export default class SectionsContact extends Component {
               </div>            
             </div>
             <div className="col-md-6">
-              <ContactForm/>
+              <ContactForm onSubmit={this.submit}/>
             </div>
             <div className="col-md-4 offset-md-2">
               <SimpleCard

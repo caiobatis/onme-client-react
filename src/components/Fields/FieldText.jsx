@@ -31,13 +31,11 @@ MoneyFormat.propTypes = {
   onChange: PropTypes.func.isRequired
 }
 
-
 class FieldText extends Component {
 
   render() {
 
     const {
-      label,
       required = false,
       value,
       disabled,
@@ -46,7 +44,11 @@ class FieldText extends Component {
       onChange,
       rowsMax,
       multiline,
-      rows
+      rows,
+      input,
+      label,
+      meta,
+      ...custom
     } = this.props
 
     let inputProps = {}
@@ -63,10 +65,11 @@ class FieldText extends Component {
 
     if (!!label)
       inputLabelProps.shrink = true
-
+      
     return (
       <div>
         <TextField
+          name={input.name}
           value={value}
           onChange={onChange}
           margin="normal"
@@ -80,9 +83,12 @@ class FieldText extends Component {
           rows={rows}
           multiline={multiline}
           rowsMax={rowsMax}
+          error={meta.touched && !!meta.error}
+          {...input}
+          {...custom}          
         />        
       </div>
-    );
+    )
   }
 }
 

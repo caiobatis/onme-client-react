@@ -21,6 +21,7 @@
     "react-text-mask": "^5.4.3",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
+    "redux-form": "^8.1.0",
     "redux-multi": "^0.1.12",
     "redux-promise": "^0.6.0",
     "redux-thunk": "^2.3.0",

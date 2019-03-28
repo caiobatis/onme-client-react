@@ -1,8 +1,21 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import { reduxForm } from 'redux-form'
 import Button from '../Button/Button'
-import FieldText from '../Fields/FieldText'
+import FieldTextRedux from '../Fields/FieldTextRedux'
+
+const validate = values => {
+  const errors = {}
+  const requiredFields = [ 'name', 'email', 'phone' ]
+  requiredFields.forEach(field => {
+    if (!values[ field ]) {
+      errors[ field ] = 'Required'
+    }
+  })
+  if (values.email && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = 'Invalid email address'
+  }
+  return errors
+}
 
 class ContactForm extends Component {
 
@@ -22,42 +35,45 @@ class ContactForm extends Component {
     });
   }
 
+
+  
   render() {
 
+    const { 
+      handleSubmit
+    } = this.props
+
     return (
-      <form className="contactForm">
+      <form className="contactForm" onSubmit={ handleSubmit }>
         <div className="items-form">
           <div className="row">
             <div className="col-md-6">
-              <FieldText
+              <FieldTextRedux
                 label="Nome"
-                defaultValue={this.state.name}
                 value={this.state.name}
                 name="name"
                 onChange={this.handleChange('name')}
               />
             </div>
             <div className="col-md-6">
-              <FieldText
+              <FieldTextRedux
                 label="E-mail"
-                defaultValue={this.state.email}
                 value={this.state.email}
                 name="email"
                 onChange={this.handleChange('email')}
               />
             </div>
             <div className="col-md-6">
-              <FieldText
+              <FieldTextRedux
                 label="Telefone"
-                defaultValue={this.state.phone}
                 value={this.state.phone}
                 name="phone"
                 onChange={this.handleChange('phone')}
               />
             </div>
             <div className="col-md-12">
-              <FieldText
-                id="outlined-multiline-flexible"
+              <FieldTextRedux
+                name="message"
                 label="Dúvida, mensagem, observação, reclamação"
                 multiline
                 rowsMax="5"
@@ -72,6 +88,7 @@ class ContactForm extends Component {
                 theme="secundary"
                 size="large"
                 full={true}
+                type="submit"
               />
             </div>
           </div>
@@ -80,11 +97,9 @@ class ContactForm extends Component {
     ) 
   }
 }
+ContactForm = reduxForm({
+  form: 'contact',
+  validate
+})(ContactForm)
 
-const mapStateToProps = state => {
-  return {}
-}
-
-const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch)
-
-export default connect(mapStateToProps, mapDispatchToProps)(ContactForm)
+export default ContactForm
