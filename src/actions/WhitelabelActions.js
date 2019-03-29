@@ -1,4 +1,4 @@
-import { RECEIVE_COINS, RECEIVE_COIN, RECEIVE_COIN_REAL } from '../lib/actionsTypes'
+import { RECEIVE_COINS, RECEIVE_COIN, RECEIVE_COIN_REAL, FETCH_COINS } from '../lib/actionsTypes'
 import {
   getProducts
 } from '../lib/api'
@@ -15,15 +15,23 @@ const serializeCoins = (list) => {
 
 export const getCoins = city => {
   return dispatch => {
+    dispatch(fetchCoins(true))
     getProducts(city)
-      .then((res)=> 
-        dispatch(receiveCoins(serializeCoins(res.data)))
-      )
+    .then((res)=> {
+      dispatch(fetchCoins(false))
+      dispatch(receiveCoins(serializeCoins(res.data)))
+    })
+    .catch(()=> dispatch(fetchCoins(false)))
   }
 }
 
 const receiveCoins = value => ({
   type: RECEIVE_COINS,
+  payload: value
+})
+
+const fetchCoins = value => ({
+  type: FETCH_COINS,
   payload: value
 })
 

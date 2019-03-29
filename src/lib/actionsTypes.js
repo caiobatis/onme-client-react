@@ -1,3 +1,4 @@
 export const RECEIVE_COINS = 'RECEIVE_COINS'
 export const RECEIVE_COIN = 'RECEIVE_COIN'
 export const RECEIVE_COIN_REAL = 'RECEIVE_COIN_REAL'
+export const FETCH_COINS = 'FETCH_COINS'

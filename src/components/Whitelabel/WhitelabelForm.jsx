@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { reduxForm } from 'redux-form'
+import { receiveCoin, receiveCoinReal } from '../../actions/WhitelabelActions'
 import moment from 'moment'
 import Button from '../Button/Button'
 import FieldTextRedux from '../Fields/FieldTextRedux'
 import FieldSelect from '../Fields/FieldSelect'
 import FieldSelectRedux from '../Fields/FieldSelectRedux'
-import { receiveCoin, receiveCoinReal } from '../../actions/WhitelabelActions'
+import Loader from '../Loader/Loader'
 
 
 class WhitelabelForm extends Component {
@@ -23,11 +24,12 @@ class WhitelabelForm extends Component {
 
   handleChangeCoin(event) {
     const {
-      listCoins
+      listCoins,
+      receiveCoin
     } = this.props
 
     listCoins.map((e)=> {
-      if(e.productCode === event.value) {
+      if(e.value === event.value) {
         receiveCoin(e)
       }
       return null
@@ -101,9 +103,10 @@ class WhitelabelForm extends Component {
     const {
       listCoins,
       cities,
-      coin
+      coin,
+      loading
     } = this.props
-    
+
     return (
       <form className="form-whitelabel">
         <div>
@@ -168,6 +171,7 @@ class WhitelabelForm extends Component {
             </div>
           </div>
         </div>
+        { loading && ( <Loader/> )}
       </form>
     )
   }
@@ -180,7 +184,6 @@ WhitelabelForm = reduxForm({
 
 
 const mapStateToProps = state => {
-
   const whitelabel = state.WhitelabelReducer
 
   return {
@@ -192,7 +195,8 @@ const mapStateToProps = state => {
       real: whitelabel.quantity * whitelabel.item.sellPrice,
       coin: whitelabel.item
     },
-    coin: whitelabel.item
+    coin: whitelabel.item,
+    loading: whitelabel.loading
   }
 }
 

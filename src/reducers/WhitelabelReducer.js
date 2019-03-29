@@ -1,4 +1,4 @@
-import { RECEIVE_COINS, RECEIVE_COIN, RECEIVE_COIN_REAL } from '../lib/actionsTypes'
+import { RECEIVE_COINS, RECEIVE_COIN, RECEIVE_COIN_REAL, FETCH_COINS } from '../lib/actionsTypes'
 
 const INITAL_STATE = {
   list: [],
@@ -21,6 +21,7 @@ const INITAL_STATE = {
     { value: 'WL-ONME-SJC', label: 'São José dos Campos' }
   ],
   city: { value: 'WL-ONME-BH', label: 'Belo Horizonte' },
+  loading: false
 }
 
 export default (state = INITAL_STATE, action) => {
@@ -41,6 +42,12 @@ export default (state = INITAL_STATE, action) => {
       return {
         ...state,
         quantity: action.payload
+      }
+
+    case FETCH_COINS:
+      return {
+        ...state,
+        loading: action.payload
       }
 
     default:
