@@ -57,7 +57,12 @@ class WhitelabelForm extends Component {
   }
 
   handleClick() {
-    const url = `https://frentetech.com.br/onme/checkout?agentId=${this.state.city}&productId=${this.state.coinSelected}&productAmount=${this.state.quantity}`
+    const {
+      initialValues,
+      coin,
+    } = this.props
+
+    const url = `https://frentetech.com.br/onme/checkout?agentId=${initialValues.city.value}&productId=${initialValues.item.value}&productAmount=${initialValues.quantity}`
     window.open(url, '_blank')
   }
 
@@ -68,8 +73,6 @@ class WhitelabelForm extends Component {
     } = this.props
     
     getCoins(cities[0].value)
-
-    // this.duration = moment.duration({ minutes: 10 }, 'milliseconds');
   }
 
   componentWillReceiveProps (nextProps, nextState) {
@@ -85,18 +88,6 @@ class WhitelabelForm extends Component {
       }
       return null
     })
-  
-    // let interval = 1000
-    
-    // let self = this
-
-    // setInterval(function(){
-    //   self.duration = moment.duration(self.duration - interval, 'milliseconds')
-    //   self.setState({
-    //     time: `${self.duration.minutes()}:${self.duration.seconds('m')}`
-    //   })
-    // }, interval)
-
   }
 
   render() {
@@ -113,7 +104,7 @@ class WhitelabelForm extends Component {
           <div className="title">
             <h4 className="h4">Dinheiro em espécie</h4>
             <div className="time">
-              <span className="span">Atualizando valores em:</span>
+              {/* <span className="span">Atualizando valores em:</span> */}
               {/* <h4 className="h4">{'this.state.time'}</h4> */}
             </div>
           </div>
