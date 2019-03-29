@@ -24,6 +24,7 @@ export default class Header extends Component {
             </div>
             <div className="col-md-4">
               <ul className="right">
+                  <li><Link to="/delivery">Delivery</Link></li>
                   <li><Link to="/contato">Entre em contato</Link></li>
               </ul>
             </div>
