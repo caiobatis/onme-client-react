@@ -8,16 +8,6 @@ import MenuItem from '@material-ui/core/MenuItem'
 import OutlinedInput from '@material-ui/core/OutlinedInput'
 import { isObject } from 'lodash'
 
-const styles = theme => ({
-  formControl: {
-    margin: theme.spacing.unit,
-    minWidth: 120,
-  },
-  label: {
-    background: '#fff !important',
-    padding: '0 5px'
-  }
-})
 
 class FieldSelect extends Component {
   constructor (props) {
@@ -28,13 +18,13 @@ class FieldSelect extends Component {
   }
 
   state = {
-    value: !this.props.defaultValue && this.props.defaultValue !== 0 ? '' : this.props.defaultValue.value
+    value: !this.props.initialvalue && this.props.initialvalue !== 0 ? '' : this.props.initialvalue.value
   }
 
   componentWillReceiveProps (nextProps) {
-    const { defaultValue } = nextProps
+    const { initialvalue } = nextProps
 
-    defaultValue && !this.state.value &&  this.state.value !== 0 && this.setState({ value: defaultValue.value })
+    initialvalue && !this.state.value &&  this.state.value !== 0 && this.setState({ value: initialvalue.value })
   }
 
   componentWillMount() {
@@ -72,6 +62,7 @@ class FieldSelect extends Component {
       label,
       disabled,
       margin,
+      ...input
     } = this.props
 
     const _options = (options || []).map((e, i) => {
@@ -90,13 +81,13 @@ class FieldSelect extends Component {
         fullWidth={true}
         margin={margin}
         variant="outlined"
-        className={styles.formControl}
       >
-        <InputLabel htmlFor={this.randomId} className={styles.label}>{label}</InputLabel>
+        <InputLabel htmlFor={this.randomId} >{label}</InputLabel>
         <Select
+          {...input}
           id={this.randomId}
           disabled={disabled}
-          value={this.state.value}
+          value={!this.state.value ? '' : this.state.value}
           onChange={this.handleChange}
           inputProps={{
             name: this.randomId,
@@ -117,4 +108,4 @@ class FieldSelect extends Component {
   }
 }
 
-export default withStyles(styles)(FieldSelect)
+export default FieldSelect

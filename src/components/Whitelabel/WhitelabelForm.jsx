@@ -1,37 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-
+import { reduxForm } from 'redux-form'
 import moment from 'moment'
-import { getCoins } from '../../actions/WhitelabelActions'
-import Button from '../Button/Button';
-import FieldText from '../Fields/FieldText'
+import Button from '../Button/Button'
+import FieldTextRedux from '../Fields/FieldTextRedux'
 import FieldSelect from '../Fields/FieldSelect'
+import FieldSelectRedux from '../Fields/FieldSelectRedux'
+import { receiveCoin, receiveCoinReal } from '../../actions/WhitelabelActions'
 
-const cities = [
-  { value: 'WL-ONME-SP', label: 'São Paulo' },
-  { value: 'WL-ONME-BH', label: 'Belo Horizonte' },
-  { value: 'WL-ONME-BLU', label: 'Blumenau' },
-  { value: 'WL-ONME-CPS', label: 'Campinas' },
-  { value: 'WL-ONME-CTB', label: 'Curitiba' },
-  { value: 'WL-ONME-FORTA', label: 'Fortaleza' },
-  { value: 'WL-ONME-POA', label: 'Porto Alegre' },
-  { value: 'WL-ONME-RJ', label: 'Rio de Janeiro' },
-  { value: 'WL-ONME-SJC', label: 'São José dos Campos' }
-]
 
 class WhitelabelForm extends Component {
 
   constructor(props) {
-    super(props);
-    this.state = {
-      quantity: 1000, 
-      real: 0,
-      coinSelected: 'USD',
-      price: 0,
-      city: cities[0].value,
-      time: '10:00'
-    }
+    super(props)
 
     this.handleChangeCoin = this.handleChangeCoin.bind(this);
     this.handleChangeQuantity = this.handleChangeQuantity.bind(this);
@@ -40,24 +22,24 @@ class WhitelabelForm extends Component {
   }
 
   handleChangeCoin(event) {
-    let price
-    this.props.listCoins.map((e)=> {
-      if(e.productCode === event.value && e.sellPrice) {
-        price = e.sellPrice
+    const {
+      listCoins
+    } = this.props
+
+    listCoins.map((e)=> {
+      if(e.productCode === event.value) {
+        receiveCoin(e)
       }
       return null
     })
-
-    this.setState({
-      coinSelected: event.value,
-      price
-    })
   }
 
-  handleChangeQuantity(event) {
-    this.setState({
-      quantity: event
-    })
+  handleChangeQuantity(value) {
+    const {
+      receiveCoinReal
+    } = this.props
+
+    receiveCoinReal(value)
   }
 
   handleChangeCity(event) {
@@ -79,55 +61,49 @@ class WhitelabelForm extends Component {
 
   componentDidMount() {
     const {
-      getCoins
+      getCoins,
+      cities
     } = this.props
     
     getCoins(cities[0].value)
 
-    this.duration = moment.duration({ minutes: 10 }, 'milliseconds');
+    // this.duration = moment.duration({ minutes: 10 }, 'milliseconds');
   }
 
   componentWillReceiveProps (nextProps, nextState) {
-    const { listCoins } = nextProps
+    const {
+      receiveCoin,
+      listCoins,
+      initialValues
+    } = nextProps
 
-    let price = 0
     listCoins.map((e)=> {
-      if(e.productCode === this.state.coinSelected && e.sellPrice) {
-        price = e.sellPrice
+      if(e.productCode === initialValues.coin.productCode) {
+        receiveCoin(e)
       }
       return null
     })
-    this.setState({
-      price,
-      real: this.state.quantity * price
-    })
-
-    let interval = 1000
+  
+    // let interval = 1000
     
-    let self = this
+    // let self = this
 
-    setInterval(function(){
-      self.duration = moment.duration(self.duration - interval, 'milliseconds')
-      self.setState({
-        time: `${self.duration.minutes()}:${self.duration.seconds('m')}`
-      })
-    }, interval)
+    // setInterval(function(){
+    //   self.duration = moment.duration(self.duration - interval, 'milliseconds')
+    //   self.setState({
+    //     time: `${self.duration.minutes()}:${self.duration.seconds('m')}`
+    //   })
+    // }, interval)
 
   }
 
   render() {
     const {
-      listCoins
+      listCoins,
+      cities,
+      coin
     } = this.props
-
-    const _listCoins = (listCoins || []).map((e)=> ({
-      label: e.currency,
-      value: e.productCode
-    }))
-
-    const realCoin = this.state.quantity * this.state.price
     
-
     return (
       <form className="form-whitelabel">
         <div>
@@ -135,40 +111,34 @@ class WhitelabelForm extends Component {
             <h4 className="h4">Dinheiro em espécie</h4>
             <div className="time">
               <span className="span">Atualizando valores em:</span>
-              <h4 className="h4">{this.state.time}</h4>
+              {/* <h4 className="h4">{'this.state.time'}</h4> */}
             </div>
           </div>
           <div className="items-form">
             <div className="two-items">
-              <FieldSelect
+              <FieldSelectRedux
                 label="Cidade"
                 name="city"
                 options={cities}
-                defaultValue={cities[0]}
                 onChange={this.handleChangeCity}
               />
-              <FieldSelect
+              <FieldSelectRedux
                 label="Moeda"
                 name="coin"
-                options={_listCoins}
-                defaultValue={_listCoins[0]}
+                options={listCoins}
                 onChange={this.handleChangeCoin}
               />
             </div>
             <div className="two-items">
-              <FieldText
+              <FieldTextRedux
                 label="Quero essa quantia"
-                defaultValue={this.state.quantity}
-                value={this.state.quantity}
                 onChange={this.handleChangeQuantity}
                 name="quantity"
                 mask="money"
-                code={this.state.coinSelected}
+                code={coin.productCode}
               />
-              <FieldText
+              <FieldTextRedux
                 label="Em R$"
-                defaultValue={realCoin}
-                value={realCoin}
                 disabled={true}
                 name="real"
                 mask="money"
@@ -203,14 +173,31 @@ class WhitelabelForm extends Component {
   }
 }
 
+WhitelabelForm = reduxForm({
+  form: 'WhitelabelForm',
+  enableReinitialize: true
+})(WhitelabelForm)
+
+
 const mapStateToProps = state => {
+
+  const whitelabel = state.WhitelabelReducer
+
   return {
-    listCoins: state.WhitelabelReducer.list
+    listCoins: whitelabel.list,
+    initialValues: {
+      ...whitelabel,
+      price: whitelabel.item.sellPrice,
+      city: whitelabel.city,
+      real: whitelabel.quantity * whitelabel.item.sellPrice,
+      coin: whitelabel.item
+    },
+    coin: whitelabel.item
   }
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  getCoins
+  receiveCoin, receiveCoinReal
 }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(WhitelabelForm) 

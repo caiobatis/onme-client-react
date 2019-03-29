@@ -34,8 +34,6 @@ class ContactForm extends Component {
       [name]: event.target.value,
     });
   }
-
-
   
   render() {
 

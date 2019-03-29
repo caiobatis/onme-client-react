@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Button from '../Button/Button'
-import WhitelabelForm from '../WhitelabelForm/WhitelabelForm'
+import Whitelabel from '../Whitelabel/Whitelabel'
 import './masthead.scss'
 
 
@@ -34,7 +34,7 @@ class Masthead extends Component {
                 <div className="col-md-6">
                   <div className="flex-right">
                     <div className="whitelabel">
-                      <WhitelabelForm/>
+                      <Whitelabel/>
                     </div>
                   </div>
                 </div>

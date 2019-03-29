@@ -11,12 +11,12 @@ const MoneyFormat = (props, code) => {
     id,
     ...rest 
   } = props
-
+  
   return (
     <NumberFormat
       {...rest}
       getInputRef={inputRef}
-      onValueChange={(_, e) => onChange(_.floatValue)} 
+      onValueChange={(_, e) =>onChange(_.floatValue)} 
       decimalSeparator=','
       thousandSeparator='.'
       decimalScale={3}
@@ -36,9 +36,6 @@ class FieldText extends Component {
   render() {
 
     const {
-      required = false,
-      value,
-      disabled,
       mask,
       code,
       onChange,
@@ -65,12 +62,10 @@ class FieldText extends Component {
 
     if (!!label)
       inputLabelProps.shrink = true
-      
+
     return (
       <div>
         <TextField
-          name={input.name}
-          value={value}
           onChange={onChange}
           margin="normal"
           variant="outlined"
@@ -78,8 +73,6 @@ class FieldText extends Component {
           InputLabelProps={inputLabelProps}
           InputProps={inputProps}
           label={label}
-          disabled={disabled}
-          required={required}
           rows={rows}
           multiline={multiline}
           rowsMax={rowsMax}
