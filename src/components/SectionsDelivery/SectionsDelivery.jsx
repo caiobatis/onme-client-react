@@ -5,7 +5,7 @@ export default class SectionsDelivery extends Component {
   render() {
     return (
       <div className="sectionsDelivery">
-        <div className="container">
+        <div className="container pb50">
           <div className="row">
             <div className="col-md-2">
               <div className="icon-delivery">
@@ -16,8 +16,8 @@ export default class SectionsDelivery extends Component {
               <h2 className="h2">Informações do Delivery</h2>
               <p className="p">
                 A OnmeCâmbio, busca proporcionar, praticid﻿ade, conforto e segurança aos nossos clientes. <br/>
-                Você recebe sua compra sem sair de casa ou trabalho, com toda a comodidade que a OnmeCâmbio tem a oferecer. <br/>
-                O portador possui toda a capacitação técnica e treinamentos que permite realizar a entrega de seu pedido de forma segura e sigilosa.
+                Você recebe sua compra sem sair de casa ou trabalho, com toda a comodidade que a OnmeCâmbio <br/>
+                tem a oferecer. O portador possui toda a capacitação técnica e treinamentos que permite realizar a entrega de seu pedido de forma segura e sigilosa.
               </p>
             </div>
           </div>
@@ -38,7 +38,7 @@ export default class SectionsDelivery extends Component {
             </div>
           </div>
         </div>
-        <div className="container pt40 pb40">
+        <div className="container pt50 pb50">
           <div className="row">
             <div className="col-md-8">
               <h3 className="h5 uppercase text-right">Se ainda não encontrou o que procura <br/>consulte nosso faq de dúvidas mais frequentes</h3>
