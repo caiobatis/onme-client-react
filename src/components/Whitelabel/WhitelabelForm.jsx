@@ -149,7 +149,7 @@ class WhitelabelForm extends Component {
           <div className="footer">
             <div className="security">
               <span className="span">
-                USD 1,00 = 3.9018 (valores com IOF) <br/>
+                R$1,00 = {coin.value} {coin.sellPrice} (valores com IOF) <br/>
                 Nossas cotações são atualizadas a cada 10 minutos
               </span>
               <div className="tagSecurity">

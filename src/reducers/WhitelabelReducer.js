@@ -20,7 +20,7 @@ const INITAL_STATE = {
     { value: 'WL-ONME-RJ', label: 'Rio de Janeiro' },
     { value: 'WL-ONME-SJC', label: 'São José dos Campos' }
   ],
-  city: { value: 'WL-ONME-BH', label: 'Belo Horizonte' },
+  city: { value: 'WL-ONME-SP', label: 'São Paulo' },
   loading: false
 }
 
