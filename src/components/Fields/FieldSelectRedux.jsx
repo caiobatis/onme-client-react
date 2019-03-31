@@ -11,7 +11,7 @@ class _FieldSelect extends Component {
 
   handleChange (value) {
     const {
-      input: { value: omitValue, onChange }
+      input: { onChange }
     } = this.props
 
     onChange(value)

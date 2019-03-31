@@ -6,7 +6,6 @@ import { receiveCoin, receiveCoinReal } from '../../actions/WhitelabelActions'
 import moment from 'moment'
 import Button from '../Button/Button'
 import FieldTextRedux from '../Fields/FieldTextRedux'
-import FieldSelect from '../Fields/FieldSelect'
 import FieldSelectRedux from '../Fields/FieldSelectRedux'
 import Loader from '../Loader/Loader'
 
@@ -59,7 +58,6 @@ class WhitelabelForm extends Component {
   handleClick() {
     const {
       initialValues,
-      coin,
     } = this.props
 
     const url = `https://frentetech.com.br/onme/checkout?agentId=${initialValues.city.value}&productId=${initialValues.item.value}&productAmount=${initialValues.quantity}`

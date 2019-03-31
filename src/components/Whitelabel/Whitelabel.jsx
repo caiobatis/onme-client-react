@@ -21,8 +21,7 @@ class Whitelabel extends Component {
   render() {
     const {
       getCoins,
-      listCoins,
-      quantity
+      listCoins
     } = this.props
 
     return (
