@@ -150,8 +150,7 @@ class WhitelabelForm extends Component {
             <div className="security">
               <span className="span">
                 USD 1,00 = 3.9018 (valores com IOF) <br/>
-                Nossas cotações são atualizadas a cada <br/>
-                4 minutos e 30 segundos
+                Nossas cotações são atualizadas a cada 10 minutos
               </span>
               <div className="tagSecurity">
                 <div className="icon"></div>
