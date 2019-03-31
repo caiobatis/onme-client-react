@@ -1,8 +1,21 @@
 .delivery {
 
   .sectionsDelivery {
-    padding-top: 150px;
+    padding-top: 200px;
     background: #f4f4f5;
+
+    .icon-delivery {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      .icon {
+        width: 155px;
+        height: 130px;
+        display: block;
+        background: url('../../components/Commons/sprite.png') -1px -203px;
+      }
+    }
 
     .politics {
       background: #222d5e;
