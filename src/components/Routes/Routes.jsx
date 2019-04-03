@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom"
 import Home from '../../pages/Home/Home'
 import Delivery from '../../pages/Delivery/Delivery'
 import Contact from '../../pages/Contact/Contact'
+import Shipping from '../../pages/Shipping/Shipping'
 
 class Routes extends Component {
   render() {
@@ -11,6 +12,7 @@ class Routes extends Component {
         <Route exact path="/" component={Home} />
         <Route exact path="/contato" component={Contact} />
         <Route exact path="/delivery" component={Delivery} />
+        <Route exact path="/remessa" component={Shipping} />
       </Router>
     )
   }
