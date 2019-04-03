@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import DefaultLayout from '../../components/DefaultLayout/DefaultLayout'
-import SectionsDelivery from '../../components/SectionsDelivery/SectionsDelivery'
 import Footer from '../../components/Footer/Footer'
 import './shipping.scss'
 
