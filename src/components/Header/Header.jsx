@@ -16,7 +16,7 @@ export default class Header extends Component {
             <div className="col-md-4">
               <ul className="left">
                 <li><Link to="/remessa">Remessa</Link></li>
-                <li><Link to="#">Papel moeda</Link></li>
+                <li><Link to="/papel-moeda">Papel moeda</Link></li>
               </ul>
             </div>
             <div className="col-md-4 text-center">
@@ -24,8 +24,8 @@ export default class Header extends Component {
             </div>
             <div className="col-md-4">
               <ul className="right">
-                  <li><Link to="/delivery">Delivery</Link></li>
-                  <li><Link to="/contato">Entre em contato</Link></li>
+                <li><Link to="/delivery">Delivery</Link></li>
+                <li><Link to="/contato">Entre em contato</Link></li>
               </ul>
             </div>
           </div>

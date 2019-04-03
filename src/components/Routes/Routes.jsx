@@ -4,6 +4,7 @@ import Home from '../../pages/Home/Home'
 import Delivery from '../../pages/Delivery/Delivery'
 import Contact from '../../pages/Contact/Contact'
 import Shipping from '../../pages/Shipping/Shipping'
+import PaperMoney from '../../pages/PaperMoney/PaperMoney'
 
 class Routes extends Component {
   render() {
@@ -13,6 +14,7 @@ class Routes extends Component {
         <Route exact path="/contato" component={Contact} />
         <Route exact path="/delivery" component={Delivery} />
         <Route exact path="/remessa" component={Shipping} />
+        <Route exact path="/papel-moeda" component={PaperMoney} />
       </Router>
     )
   }

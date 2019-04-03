@@ -91,7 +91,7 @@ const mapStateToProps = state => {
   return {
     initialValues: {
       ...shipping,
-      quantity: ''
+      quantity: 1000
     }
   }
 }
