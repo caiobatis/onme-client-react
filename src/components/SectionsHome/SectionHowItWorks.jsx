@@ -12,7 +12,7 @@ export default class SectionHowItWorks extends Component {
               <div className="defaultTitle">
                 <h2 className="h2">Como funciona?</h2>
                 <p className="p">Somos um correspondente cambial, temos algumas soluções para que você obtenha sua moeda internacional, seja em mãos ou em conta.</p>
-                <span className="span">Dúvidas? <Link to="/">Entre em contato</Link></span>
+                <span className="span">Dúvidas? <Link to="/contato">Entre em contato</Link></span>
               </div>
             </div>
             <div className="col-md-12">
