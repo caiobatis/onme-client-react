@@ -113,7 +113,7 @@ export default class SectionsShipping extends Component {
         <div className="form">
           <div className="container">
             <div className="row">
-              <div className="col-md-12">
+              <div className="col-md-12 mb30">
                 <h4 className="h4 text-center uppercase"><b>Formulário de solicitação</b></h4>
               </div>
             </div>

@@ -64,23 +64,21 @@ class FieldText extends Component {
       inputLabelProps.shrink = true
 
     return (
-      <div>
-        <TextField
-          onChange={onChange}
-          margin="normal"
-          variant="outlined"
-          id={code}
-          InputLabelProps={inputLabelProps}
-          InputProps={inputProps}
-          label={label}
-          rows={rows}
-          multiline={multiline}
-          rowsMax={rowsMax}
-          error={meta.touched && !!meta.error}
-          {...input}
-          {...custom}          
-        />        
-      </div>
+      <TextField
+        onChange={onChange}
+        margin="normal"
+        variant="outlined"
+        id={code}
+        InputLabelProps={inputLabelProps}
+        InputProps={inputProps}
+        label={label}
+        rows={rows}
+        multiline={multiline}
+        rowsMax={rowsMax}
+        error={meta.touched && !!meta.error}
+        {...input}
+        {...custom}          
+      />
     )
   }
 }

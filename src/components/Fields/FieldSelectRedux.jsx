@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
-import FieldSelect from './FieldSelect';
-import { Field } from 'redux-form';
+import React, { Component } from 'react'
+import FieldSelect from './FieldSelect'
+import { Field } from 'redux-form'
+import classNames from 'classnames'
+import './fields.scss'
 
 class _FieldSelect extends Component {
   constructor (props) {
@@ -34,11 +36,18 @@ class _FieldSelect extends Component {
 
 export default class FieldSelectRedux extends Component {
   render() {
+
+    const fieldClass = classNames('defaultField', {
+      [this.props.theme]: this.props.theme
+    })
+
     return (
-      <Field
-        {...this.props}
-        component={_FieldSelect}
-      />
+      <div className={fieldClass}>
+        <Field
+          {...this.props}
+          component={_FieldSelect}
+        />
+      </div>
     )
   }
 }
