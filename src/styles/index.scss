@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,800');
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,400,700');
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
 
 * {
@@ -25,9 +25,9 @@ html, body {
   /* For IE 6/7 (trigger hasLayout) */
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p, button {
   font-weight: 400;
-  font-family: 'Raleway', 'Lato', sans-serif;
+  font-family: 'Poppins', 'Lato', sans-serif;
 }
 
 .h1 {

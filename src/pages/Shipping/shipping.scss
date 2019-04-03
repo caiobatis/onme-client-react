@@ -14,7 +14,7 @@
         display: flex;
         margin: 40px 0;
       }
-      
+
       ul.list-squad {
         display: flex;
         margin: 0;
@@ -42,6 +42,15 @@
           }
           .p {
              margin: 0;
+             font-family: Poppins;
+             line-height: 22px;
+          }
+          & > span {
+            font-size: 15px;
+            font-family: Poppins;
+            line-height: 20px;
+            display: block;
+            padding: 0 15px;
           }
           &:hover {
             border-color: #981a1a;

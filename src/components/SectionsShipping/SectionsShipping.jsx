@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from '../Button/Button'
+import ShippingForm from './ShippingForm'
 
 
 export default class SectionsShipping extends Component {
@@ -56,8 +57,48 @@ export default class SectionsShipping extends Component {
                   </li>
                   <li>
                     <i className="icon"></i>
-                    <p className="p"><b>Manutenção de Residentes no exterior</b></p>
-                    <span className="span">Envio ou recebimento de recursos para manutenção de pessoas físicas no exterior. (Grau de parentesco: 1º ou 2º graus)</span>
+                    <p className="p"><b>Disponibilidade no exterior</b></p>
+                    <span className="span">Envio ou recebimento para crédito em conta corrente de mesma titularidade.</span>
+                    <Button
+                      border={true}
+                      theme='secundary'
+                      value='Fale com um especialista'
+                    />
+                  </li>
+                  <li>
+                    <i className="icon"></i>
+                    <p className="p"><b>Aluguel de Imóvel no exterior</b></p>
+                    <span className="span">Envio de dinheiro para pagamento de aluguel de imóveis no exterior</span>
+                    <Button
+                      border={true}
+                      theme='secundary'
+                      value='Fale com um especialista'
+                    />
+                  </li>
+                  <li>
+                    <i className="icon"></i>
+                    <p className="p"><b>Pagamentos de Inscrições de Cursos e Congressos</b></p>
+                    <span className="span">Envio ou recebimento de dinheiro para pagamento de taxas e serviços de educação</span>
+                    <Button
+                      border={true}
+                      theme='secundary'
+                      value='Fale com um especialista'
+                    />
+                  </li>
+                  <li>
+                    <i className="icon"></i>
+                    <p className="p"><b>Investimentos no exterior</b></p>
+                    <span className="span">Envio de dinheiro para investimento no exterior (Mercado Financeiro e de Capitais)</span>
+                    <Button
+                      border={true}
+                      theme='secundary'
+                      value='Fale com um especialista'
+                    />
+                  </li>
+                  <li>
+                    <i className="icon"></i>
+                    <p className="p"><b>Outros tipos de Envio ou Recebimento de valores</b></p>
+                    <span className="span">Com a Remessa Internacional você não precisa se preocupar com o transporte de moedas na sua viagem.</span>
                     <Button
                       border={true}
                       theme='secundary'
@@ -66,6 +107,18 @@ export default class SectionsShipping extends Component {
                   </li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </div>
+        <div className="form">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12">
+                <h4 className="h4 text-center uppercase"><b>Formulário de solicitação</b></h4>
+              </div>
+            </div>
+            <div className="col-md-8 offset-md-2">
+              <ShippingForm/>
             </div>
           </div>
         </div>
