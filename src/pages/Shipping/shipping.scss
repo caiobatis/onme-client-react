@@ -35,10 +35,42 @@
           text-align: center;
           margin: -1px;
           transition: all .2s;
+          &:nth-child(1) {
+            i.icon {
+              background-position: 0px -141px;
+              width: 49px;
+            }
+          }
+          &:nth-child(2) {
+            i.icon {
+              background-position: 0px -332px;
+              width: 120px;
+            }
+          }
+          &:nth-child(3) {
+            i.icon {
+              background-position: -45px -141px;
+            }
+          }
+          &:nth-child(4) {
+            i.icon {
+              background-position: -100px -141px;
+            }
+          }
+          &:nth-child(5) {
+            i.icon {
+              background-position: -161px -141px;
+            }
+          }
+          &:nth-child(6) {
+            i.icon {
+              background-position: -218px -141px;
+            }
+          }
           i.icon {
             width: 60px;
             height: 60px;
-            background: #ccc;
+            background: url('../../components/Commons/sprite.png');
           }
           .p {
              margin: 0;
