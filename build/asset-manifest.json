@@ -1,0 +1,20 @@
+{
+  "main.css": "/static/css/main.b6c447ed.chunk.css",
+  "main.js": "/static/js/main.b74e4809.chunk.js",
+  "main.js.map": "/static/js/main.b74e4809.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+  "static/css/2.29bb44b6.chunk.css": "/static/css/2.29bb44b6.chunk.css",
+  "static/js/2.f86bbf9c.chunk.js": "/static/js/2.f86bbf9c.chunk.js",
+  "static/js/2.f86bbf9c.chunk.js.map": "/static/js/2.f86bbf9c.chunk.js.map",
+  "index.html": "/index.html",
+  "precache-manifest.009a1fddd7aaad61ecf2f91139669e49.js": "/precache-manifest.009a1fddd7aaad61ecf2f91139669e49.js",
+  "service-worker.js": "/service-worker.js",
+  "static/css/2.29bb44b6.chunk.css.map": "/static/css/2.29bb44b6.chunk.css.map",
+  "static/css/main.b6c447ed.chunk.css.map": "/static/css/main.b6c447ed.chunk.css.map",
+  "static/media/masthead.scss": "/static/media/bg-header.84ad8f3b.svg",
+  "static/media/shipping.scss": "/static/media/bg-remessa.9e209005.png",
+  "static/media/logo-onme-color.png": "/static/media/logo-onme-color.98b17322.png",
+  "static/media/home.scss": "/static/media/shippingImg.1c766200.png",
+  "static/media/delivery.scss": "/static/media/sprite.ced2a2af.png"
+}

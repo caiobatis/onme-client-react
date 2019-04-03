@@ -4,6 +4,11 @@ import ShippingForm from './ShippingForm'
 
 
 export default class SectionsShipping extends Component {
+
+  handleSubmit(a) {
+    console.log(a)
+  }
+
   render() {
     return (
       <div className="sectionsShipping">
@@ -118,7 +123,7 @@ export default class SectionsShipping extends Component {
               </div>
             </div>
             <div className="col-md-8 offset-md-2">
-              <ShippingForm/>
+              <ShippingForm onSubmit={this.handleSubmit} />
             </div>
           </div>
         </div>

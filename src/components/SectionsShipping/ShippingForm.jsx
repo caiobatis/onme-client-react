@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { reduxForm } from 'redux-form'
 
+import Button from '../Button/Button'
 import FieldTextRedux from '../Fields/FieldTextRedux'
 import FieldSelectRedux from '../Fields/FieldSelectRedux'
 
@@ -16,24 +17,25 @@ class ShippingForm extends Component {
   render () {
 
     const {
-      initialValues
+      initialValues,
+      handleSubmit
     } = this.props
 
 
     return (
-      <form className="row">
+      <form className="row" onSubmit={handleSubmit}>
         <div className="col-md-6">
           <FieldSelectRedux
             label="Qual moeda deseja enviar?"
-            name="coin"
-            options={initialValues.coin}
+            name="coins"
+            options={initialValues.coins}
             onChange={this.handle}
             theme="secundary"
           />
           <FieldSelectRedux
             label="Qual o motivo do envio?"
-            name="coin"
-            options={initialValues.reason}
+            name="reasons"
+            options={initialValues.reasons}
             onChange={this.handle}
             theme="secundary"
           />
@@ -66,6 +68,14 @@ class ShippingForm extends Component {
             theme="secundary"
           />
         </div>
+        <div className="col-md-12 text-center">
+          <Button
+            type="submit"
+            value="Solicitar moeda"
+            theme="primary"
+            size="large"
+          />
+        </div>
       </form>
     )
   }
@@ -78,7 +88,6 @@ ShippingForm = reduxForm({
 
 const mapStateToProps = state => {
   const shipping = state.ShippingReducer
-
   return {
     initialValues: {
       ...shipping,

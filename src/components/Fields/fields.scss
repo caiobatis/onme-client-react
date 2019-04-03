@@ -1,0 +1,36 @@
+.defaultField {
+  width: 100%;
+  padding: 15px 0;
+  & > div {
+    width: 100%;
+    margin: 0;
+  }
+  &.secundary {
+
+    & > div {
+      & > div {
+        &:hover {
+          fieldset {
+            border-color: #fff !important;
+          }
+        }
+        svg {
+          color: #fff !important;
+        }
+        color: #fff !important;
+      }
+    }
+
+    label {
+      color: #fff;
+    }
+
+    fieldset {
+      border-color: #fff;
+    }
+
+    input {
+      color: #fff;
+    }
+  }
+}
