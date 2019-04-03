@@ -1,0 +1,62 @@
+.shipping {
+  background: #f4f4f5;
+  .sectionsShipping {
+    padding: 50px 0 0;
+    .head {
+      background: url(../../components/SectionsShipping/bg-remessa.png) center right no-repeat;
+      padding: 100px 0;
+    }
+    .content {
+      background: #fff;
+      padding: 50px 0;
+
+      .aboutShipping {
+        display: flex;
+        margin: 40px 0;
+      }
+      
+      ul.list-squad {
+        display: flex;
+        margin: 0;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        li {
+          width: 305px;
+          padding: 15px;
+          border: 1px solid rgb(211, 211, 211);
+          height: 305px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          background: #fff;
+          cursor: pointer;
+          text-align: center;
+          margin: -1px;
+          transition: all .2s;
+          i.icon {
+            width: 60px;
+            height: 60px;
+            background: #ccc;
+          }
+          .p {
+             margin: 0;
+          }
+          &:hover {
+            border-color: #981a1a;
+            z-index: 1;
+            transition: all .2s;
+            button {
+              opacity: 1;
+            }
+          }
+          button {
+            opacity: 0;
+            transition: all .2s;
+          }
+        }
+      }
+    }
+  }
+}

@@ -10,6 +10,7 @@ export default class Button extends Component {
       onClick,
       size,
       full,
+      border,
       theme = 'primary',
       ...rest
     } = this.props
@@ -17,7 +18,8 @@ export default class Button extends Component {
     const buttonClass = classNames('button', {
       [theme]: theme,
       [size]: size,
-      'full': full
+      full: full,
+      border: border
     })
 
     return (
