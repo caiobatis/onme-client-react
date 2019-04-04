@@ -66,10 +66,27 @@
             flex-direction: column;
             align-items: center;
             transition: all .3s;
+            &:nth-child(1) {
+              .icon {
+                background-position: -117px -405px;
+                width: 80px;
+              }
+            }
+            &:nth-child(2) {
+              .icon {
+                background-position: -65px -401px;
+              }
+            }
+            &:nth-child(3) {
+              .icon {
+                background-position: -2px -402px;
+                width: 60px;
+              }
+            }
             .icon {
               height: 50px;
               width: 50px;
-              background: #ccc;
+              background: url('../../components/Commons/sprite.png') no-repeat;
               margin-bottom: 10px;
             }
             .p {
