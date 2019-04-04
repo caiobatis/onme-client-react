@@ -21,6 +21,9 @@
       }
       .whitelabel {
         box-shadow: none;
+        .span {
+          font-size: 12px;
+        }
       }
     }
     .content {
@@ -112,6 +115,43 @@
           }
           .p {
             margin: 0;
+          }
+        }
+      }
+    }
+    .card-travel {
+      padding: 50px 0;
+      background: #343e6d;
+      position: relative;
+      overflow: hidden;
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: url('./earth.jpg') right no-repeat;
+        filter: blur(3px);
+        -webkit-filter: blur(3px);
+        width: 120%;
+        transform: translate(-20px, 0);
+        height: 120%;
+        left: 0;
+        bottom: 0px;
+        opacity: .4;
+      }
+      .h2, .p, .h4 {
+        color: #fff;
+      }
+      .travel-box {
+        padding: 30px;
+        .h3 {
+          margin: 0 0 15px;
+        }
+        .list {
+          margin: 0;
+          padding-left: 15px;
+          li {
+            list-style: circle;
+            margin-bottom: 5px;
           }
         }
       }

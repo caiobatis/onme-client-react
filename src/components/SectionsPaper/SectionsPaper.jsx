@@ -75,6 +75,40 @@ export default class SectionsPaper extends Component {
             </div>
           </div>
         </div>
+        <div className="card-travel">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-6">
+                <h3 className="h2">Cartão de Viagem</h3>
+                <p className="p">Praticidade, segurança e agilidade. O cartão pré-pago Visa Travel Money é recarregável em diversas moedas.</p>
+                <h4 className="h4"><b>Cartão Multimoedas</b></h4>
+                <p className="p">Dólar, Euro e Libra no mesmo cartão</p>
+
+                <div className="buy-now">
+                  <Button
+                    value="Peça agora o seu!"
+                    theme="primary"
+                  />
+                </div>
+
+              </div>
+              <div className="col-md-5 offset-md-1">
+                <Card className="travel-box">
+                  <div className="h3">Vantagens</div>
+                  <ul className="list">
+                    <li>Senha de segurança e sistema de código antifraude;</li>
+                    <li>Tem as mesmas funcionalidades de um cartão de débito convencional;</li>
+                    <li>Evita o risco de transportar quantias mais altas em espécie;</li>
+                    <li>Gestão e controle de gastos para funcionários que viajam com regime de diárias;</li>
+                    <li>Ideal para utilizar como premiação em ações de marketing de marcas e empresas;</li>
+                    <li>Perfeito para gerenciar gastos de estrangeiros em visita ao Brasil;</li>
+                    <li>Eficaz para pagamento de mesada em outra moeda para dependentes.</li>
+                  </ul>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>  
     
     )
