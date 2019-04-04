@@ -6,6 +6,17 @@
   position: relative;
   overflow: hidden;
   background-color: #f4f4f5;
+
+  .h2 {
+    margin-top: 50px;
+    font-size: 50px;
+  }
+  .span {
+    font-size: 12px;
+    line-height: 15px;
+    display: block;
+    color: #3f3b3b;
+  }
 }
 
 .mastheader .mastheader_iphone {
@@ -49,17 +60,6 @@
   transform: rotate(18deg);
 }
 
-.h2 {
-  font-size: 50px;
-  font-weight: 800 !important;
-  color: #6f7179;
-}
-.span {
-  font-size: 12px;
-  line-height: 15px;
-  display: block;
-  color: #626262;
-}
 
 .flex-right {
   display: flex;

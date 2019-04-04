@@ -2,7 +2,7 @@
   background: #f4f4f5;
   .sectionsPaper {
     .head {
-      padding: 200px 0 50px;
+      padding: 150px 0 50px;
       position: relative;
       overflow: hidden;
       &:before {
@@ -15,6 +15,9 @@
         left: 0;
         bottom: 0px;
         opacity: .8;
+      }
+      .h2 {
+        margin-top: 50px;
       }
       .whitelabel {
         box-shadow: none;
