@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Button from '../Button/Button'
 import Whitelabel from '../Whitelabel/Whitelabel'
 import './masthead.scss'
+import {Link} from 'react-router-dom'
 
 
 class Masthead extends Component {
@@ -17,18 +18,24 @@ class Masthead extends Component {
                 <div className="col-md-6">
                   <div className="call">
                     <h2 className="h2">
-                      Compre e receba <br/>no conforto de casa
+                      Compre e receba no<br/>conforto de sua casa!
                     </h2>
                     <p className="p">
-                      Aqui na Onme você compra online e recebe sem sair de casa. Com nosso serviço de Delivery, o cliente tem comodidade e segurança na compra das moedas.
+                      Aqui na Onme você Compra online e recebe sem sair de casa com nosso serviço de Delivery, o cliente tem comodidade, segurança e rapidez.
+                      <br/>
+                      Sua viagem começa aqu!
                     </p>
-                    <Button
-                      value='O que é papel moeda?'
-                    />                   
-                    {/* <div className="reserva">
+                    <Link
+                      to="/papel-moeda"
+                    >
+                      <Button
+                        value='Saiba mais'
+                      />                   
+                    </Link>
+                    <div className="reserva">
                       <p className="p">Reserve pelo televendas</p>
                       <h4 className="h4">( 11 ) 5051-5299</h4>
-                    </div> */}
+                    </div>
                   </div>
                 </div>
                 <div className="col-md-6">

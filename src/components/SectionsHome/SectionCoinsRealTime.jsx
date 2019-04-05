@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CoinPrice from '../CoinPrice/CoinPrice'
 import { Link } from "react-router-dom"
+import wppImg from '../Commons/wpp.svg'
 
 const products = [  
   {  
@@ -98,11 +99,18 @@ export default class SectionCoinsRealTime extends Component {
           <div className="row">
             <div className="col-md-5">
               <div className="defaultTitle">
-                <h2 className="h2">Moeda em tempo real</h2>
+                <h2 className="h2">Cotações Turismo</h2>
                 <p className="p">Trabalhamos com todas as moedas, veja o valor atual das principais. <br/>Procura por outra moeda?</p>
                 <div className="reserva">
-                  <p className="p">Reserve pelo televendas</p>
-                  <h4 className="h4">( 11 ) 5051-5299</h4>
+                  <p className="p">Procura por outra moeda?</p>
+                  <p className="p">Fale com nosso televendas</p>
+                  <div className="phones">
+                    <h4 className="h4">( 11 ) 5051-5299</h4>
+                    <Link className="wpp">
+                      <img src={wppImg} alt=""/>
+                    </Link>
+                  </div>
+
                 </div>
               </div>
             </div>

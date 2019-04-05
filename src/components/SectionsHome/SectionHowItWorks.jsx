@@ -10,8 +10,8 @@ export default class SectionHowItWorks extends Component {
           <div className="row">
             <div className="col-md-6">
               <div className="defaultTitle">
-                <h2 className="h2">Como funciona?</h2>
-                <p className="p">Somos um correspondente cambial, temos algumas soluções para que você obtenha sua moeda internacional, seja em mãos ou em conta.</p>
+                <h2 className="h2">Produtos e Serviços</h2>
+                <p className="p">Aqui você encontra a solução financeira  para suas viagens internacionais seja ela a lazer, estudos ou negócios.</p>
                 <span className="span">Dúvidas? <Link to="/contato">Entre em contato</Link></span>
               </div>
             </div>
@@ -19,16 +19,38 @@ export default class SectionHowItWorks extends Component {
               <div className="row">
                 <div className="cards">
                   <div className="col-md-3">
-                    <ProductCard/>
+                    <ProductCard
+                      title="Papel Moeda"
+                      description="Comprar &lt;b&gt;Dólar, Euro, Libra ou outras moedas estrangeiras&lt;/b&gt; ficou ainda mais fácil, conte com as melhores taxas do mercado e uma equipe especializada para atender a necessidade de cada cliente"
+                      path="/papel-moeda"
+                      titleButton="Saiba mais"
+                      brand="Frente Corretora"
+                    />
                   </div>
                   <div className="col-md-3">
-                    <ProductCard/>
+                    <ProductCard
+                      title="Remessa internacional"
+                      description="&lt;b&gt;Envie, receba ou pague&lt;/b&gt; de onde quiser para qualquer lugar do mundo de forma rápida e segura, aqui você encontra especialistas com anos de mercado para lhe indicar a melhor opção"
+                      path="/remessa"
+                      titleButton="Saiba mais"
+                      brand="Frente Corretora"
+                    />
                   </div>
                   <div className="col-md-3">
-                    <ProductCard/>
+                    <ProductCard
+                      title="Cartão pré-pago"
+                      description="Praticidade, segurança e agilidade. O cartão pré-pago é recarregável em diversas moedas. A maneira mais moderna de gerenciar seu dinheiro em viagens ao exterior. "
+                      path="/papel-moeda#cartao"
+                      brand="Onme Câmbio"
+                      titleButton="Saiba mais"/>
                   </div>
                   <div className="col-md-3">
-                    <ProductCard/>
+                    <ProductCard
+                      title="Seguro Viagem"
+                      description="Viaje tranquilo e protegido, com o nosso Seguro viagem você poderá viajar pelo mundo sem se preocupar com imprevistos e, assim, aproveitar ao máximo cada momento. Com diversas opções de coberturas e assistências diferenciadas para atender a necessidade de cada cliente. "
+                      path="/"
+                      brand="Sul America"
+                      titleButton="Comprar agora!"/>
                   </div>
                 </div>
               </div>
