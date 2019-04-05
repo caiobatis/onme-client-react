@@ -10,9 +10,8 @@ export default class SectionShipping extends Component {
           <div className="row">
             <div className="col-md-6">
               <div className="defaultTitle">
-                <h2 className="h2">Remessa</h2>
-                <p className="p">
-                  Envie ou receba dinheiro do exterior sem precisar ter conta em banco, com rapidez, praticidade e segurança. <br/>
+                <h2 className="h2">Remessa internacional</h2>
+                <p className="p">Pagamentos, Recebimentos e Transferências Internacionais com segurança, praticidade e a experiência de quem é especialista em câmbio.<br/>
                 </p>
                 <ul className="list-default">
                   <li>

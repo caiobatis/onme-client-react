@@ -10,7 +10,7 @@ export default class Footer extends Component {
           <div className="row">
             <div className="col-md-4">
               <img className="logo" src={logoImg} alt=""/>
-              <p>A OnMe Câmbio e Travel Service surgiu da divisão da Focco e da Focco X, uma empresa com mais de 8 anos no mercado de câmbio, com profissionais voltados na excelência do atendimento, praticando as melhores taxas do mercado!</p>
+              <p>A OnMe Câmbio e Travel Service veio trazer soluções financeiras para sua viagem de forma prática e segura sendo um correspondente cambial registrado junto ao Banco Central e parceira de grandes corretoras renomadas no mercado, com profissionais voltados na excelência do atendimento, praticando as melhores taxas do mercado!</p>
             </div>
             <div className="col-md-3 offset-md-1 col-sm-4 col-xs-6 footer-links">
               <ul>

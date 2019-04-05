@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import Button from '../Button/Button'
 import Whitelabel from '../Whitelabel/Whitelabel'
-import './masthead.scss'
+import Wpp from '../Wpp/Wpp'
 import {Link} from 'react-router-dom'
 
+import './masthead.scss'
 
 class Masthead extends Component {
   render() {
@@ -34,7 +35,10 @@ class Masthead extends Component {
                     </Link>
                     <div className="reserva">
                       <p className="p">Reserve pelo televendas</p>
-                      <h4 className="h4">( 11 ) 5051-5299</h4>
+                      <div className="phones">
+                        <h4 className="h4">( 11 ) 5051-5299</h4>
+                        <Wpp/>
+                      </div>
                     </div>
                   </div>
                 </div>

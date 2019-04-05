@@ -60,8 +60,8 @@
     padding: 0 20px;
     height: 0px;
     overflow: hidden;
-    // visibility: hidden;
-    // opacity: 0;
+    visibility: hidden;
+    opacity: 0;
     .p {
       width: 100%;
       margin: 0;
@@ -73,22 +73,24 @@
   }
 
   .actions {
-    padding: 0 15px;
-    position: absolute;
-    bottom: -70px;
+    padding: 15px 15px;
     width: 100%;
     opacity: 0;
+    visibility: hidden;
+    display: none
   }
   &:hover {
     background: #fff; 
     .description {
       height: initial;
-      // visibility: visible;
-      // opacity: 1;
+      visibility: visible;
+      opacity: 1;
       padding-bottom: 20px;
     }
     .actions {
+      visibility: visible;
       opacity: 1;
+      display: block;
     }
   }
 

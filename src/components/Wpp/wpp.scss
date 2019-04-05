@@ -1,0 +1,18 @@
+.wpp {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 35px;
+  margin: 0 0 0 20px;
+}
+
+.phones {
+  display: flex;
+  align-items: center;
+  .h4 {
+    margin: 0;
+  }
+}
