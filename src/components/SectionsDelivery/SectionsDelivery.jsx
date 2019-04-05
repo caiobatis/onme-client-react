@@ -21,7 +21,6 @@ export default class SectionsDelivery extends Component {
               </p>
             </div>
           </div>
-        
         </div>
         <div className="politics">
           <div className="container">
