@@ -172,7 +172,9 @@ WhitelabelForm = reduxForm({
 
 const mapStateToProps = state => {
   const whitelabel = state.WhitelabelReducer
-
+  if(!whitelabel.quantity) {
+    whitelabel.quantity = 1000
+  }
   return {
     listCoins: whitelabel.list,
     initialValues: {
