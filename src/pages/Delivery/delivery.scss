@@ -54,5 +54,11 @@
         }    
       }
     }
+    .reserva {
+      padding: 0;
+      .phones {
+        align-items: flex-end;
+      }
+    }
   }
 }

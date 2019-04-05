@@ -107,7 +107,6 @@ export default class SectionCoinsRealTime extends Component {
                     <h4 className="h4">( 11 ) 5051-5299</h4>
                     <Wpp/>
                   </div>
-
                 </div>
               </div>
             </div>
