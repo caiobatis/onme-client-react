@@ -30,6 +30,7 @@ export default class SectionsPolicy extends Component {
                 <li>Pagamento de um valor que difere ao valor da proposta</li>
               </ul>
               <p className="p">Qualquer um dos motivos acima é passivo de estorno e cancelamento da operação.</p>
+              <p className="p">Em caso de desistência ou devolução de valor já pago, o mesmo só será devolvido na conta do emissor.</p>
             </div>
           </div>
         </div>
