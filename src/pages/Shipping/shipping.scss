@@ -31,14 +31,14 @@
         display: flex;
         margin: 0;
         flex-wrap: wrap;
-        align-items: center;
+        // align-items: center;
         justify-content: center;
         li {
           width: 305px;
           padding: 15px;
           border: 1px solid rgb(211, 211, 211);
-          height: 305px;
-          display: flex;
+          min-height: 300px;
+          // display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: space-between;
@@ -83,23 +83,34 @@
             width: 60px;
             height: 60px;
             background: url('../../components/Commons/sprite.png');
+            display: block;
+            margin: 0 auto;
           }
           .p {
-             margin: 0;
+             margin: 10px 0;
              font-family: Poppins;
              line-height: 22px;
           }
-          & > span {
+          & > .span {
             font-size: 15px;
             font-family: Poppins;
             line-height: 20px;
             display: block;
             padding: 0 15px;
+            span {
+              font-size: 11px;
+              display: none;
+            }
           }
           &:hover {
             border-color: #981a1a;
             z-index: 1;
             transition: all .2s;
+            .span {
+              span {
+                display: block;
+              }
+            }
             button {
               opacity: 1;
             }
