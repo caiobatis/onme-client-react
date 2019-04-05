@@ -166,6 +166,7 @@ Alíquota de 0,38% para todas operações</span>
             <div className="row">
               <div className="col-md-12 mb30">
                 <h4 className="h4 text-center uppercase"><b>Formulário de solicitação</b></h4>
+                <p className="p text-center">Pré solicitação de orçamento</p>
               </div>
             </div>
             <div className="col-md-8 offset-md-2">
