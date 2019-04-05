@@ -41,19 +41,10 @@ export default class MenuDrawer extends Component {
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/papel-moeda">Papel moeda</Link></li>
                 <li><Link to="/remessa">Remessa</Link></li>
+                <li><Link to="/delivery">Delivery</Link></li>
+                <li><Link to="/politica-de-estorno">Política de estorno</Link></li>
                 <li><Link to="/contato">Contato</Link></li>
               </ul>
-      
-              <div className="slide_out_menu_footer">
-                <ul className="socials">
-                  <li><Link to="#"><i className="fab fa-twitter"></i></Link></li>
-                  <li><Link to="#"><i className="fab fa-facebook"></i></Link></li>
-                  <li><Link to="#"><i className="fab fa-google-plus"></i></Link></li>
-                  <li><Link to="#"><i className="fab fa-tumblr"></i></Link></li>
-                  <li><Link to="#"><i className="fab fa-pinterest-p"></i></Link></li>
-                  <li><Link to="#"><i className="fab fa-linkedin"></i></Link></li>
-                </ul>
-              </div>
             </div>
           </div>
         </Drawer>

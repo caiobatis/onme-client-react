@@ -8,6 +8,7 @@ import Delivery from '../../pages/Delivery/Delivery'
 import Contact from '../../pages/Contact/Contact'
 import Shipping from '../../pages/Shipping/Shipping'
 import PaperMoney from '../../pages/PaperMoney/PaperMoney'
+import RefundPolicy from '../../pages/RefundPolicy/RefundPolicy'
 
 class Routes extends Component {
   render() {
@@ -26,6 +27,7 @@ class Routes extends Component {
               <Route exact path="/delivery" component={Delivery} />
               <Route exact path="/remessa" component={Shipping} />
               <Route exact path="/papel-moeda" component={PaperMoney} />
+              <Route exact path="/politica-de-estorno" component={RefundPolicy} />
             </AnimatedSwitch>
 
           </Switch>
