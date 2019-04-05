@@ -140,7 +140,7 @@ class WhitelabelForm extends Component {
             <Button
               onClick={this.handleClick}
               value="Gostei! Comprar agora"
-              theme="success"
+              theme={this.props.button || 'success'}
               size="large"
               full={true}
             />

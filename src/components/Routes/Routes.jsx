@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
-import { AnimatedSwitch } from 'react-router-transition'
 import ScrollToTop from './ScrollToTop'
 
 import Home from '../../pages/Home/Home'
@@ -16,20 +15,12 @@ class Routes extends Component {
       <BrowserRouter>
         <ScrollToTop>
           <Switch>
-            <AnimatedSwitch
-              atEnter={{ opacity: 0 }}
-              atLeave={{ opacity: 0 }}
-              atActive={{ opacity: 1 }}
-              className="switch-wrapper"
-            >
-              <Route exact path="/" component={Home} />
-              <Route exact path="/contato" component={Contact} />
-              <Route exact path="/delivery" component={Delivery} />
-              <Route exact path="/remessa" component={Shipping} />
-              <Route exact path="/papel-moeda" component={PaperMoney} />
-              <Route exact path="/politica-de-estorno" component={RefundPolicy} />
-            </AnimatedSwitch>
-
+            <Route exact path="/" component={Home} />
+            <Route exact path="/contato" component={Contact} />
+            <Route exact path="/delivery" component={Delivery} />
+            <Route exact path="/remessa" component={Shipping} />
+            <Route exact path="/papel-moeda" component={PaperMoney} />
+            <Route exact path="/politica-de-estorno" component={RefundPolicy} />
           </Switch>
         </ScrollToTop>
       </BrowserRouter>

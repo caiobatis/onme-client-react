@@ -1237,3 +1237,20 @@ ul > li {
 .uppercase {
   text-transform: uppercase;
 }
+
+.defaultTitle {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    
+    li {
+      background: #7a7c83;
+      padding: 1px 10px;
+      font-size: 14px;
+      color: #fff;
+      margin: 0 5px 5px 0;
+      border-radius: 10px;
+    }
+  }
+}

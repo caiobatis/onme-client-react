@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Button from '../Button/Button'
 import Whitelabel from '../Whitelabel/Whitelabel'
 import Card from '@material-ui/core/Card/Card'
+import Wpp from '../Wpp/Wpp'
 import { Link } from "react-router-dom"
 
 export default class SectionsPaper extends Component {
@@ -15,18 +16,44 @@ export default class SectionsPaper extends Component {
                 <div className="defaultTitle">
                   <h2 className="h2">Mais facilidade <br/>pro seu dia-dia</h2>
                   <p className="p">
-                  Clicou, comprou, chegou. Tudo muito fácil, prático e seguro. <br/>
-                  Pra isso basta clicar no botão comprar agora ou cadastre-se e espere o melhor momento para comprar!
+                    Clicou, comprou, chegou. Tudo muito fácil, prático e seguro. <br/>
+                    Para isso basta clicar no botão Comprar Agora ou acompanhe com nossa equipe o melhor momento para finalizar sua compra! 
                   </p>
+                 <p className="p">Trabalhamos com mais de 20  moedas, compramos e vendemos com taxas especiais.</p>
+                 <ul>
+                  <li>Dólar Americano (USD)</li>
+                  <li>Euro (EUR)</li>
+                  <li>Dólar Canadense (CAD)</li>
+                  <li>Dólar Australiano (AUD)</li>
+                  <li>Dólar Neozelandês (NZD)</li>
+                  <li>Libra Esterlina (GBP)</li>
+                  <li>Peso Argentino (ARS)</li>
+                  <li>Rande Sul-Africano (ZAR)</li>
+                  <li>Iuan (CNY)</li>
+                  <li>Iene (JPY)</li>
+                  <li>Peso Colombiano (COP)</li>
+                  <li>Peso Mexicano (MXN)</li>
+                  <li>Peso Chileno (CLP)</li>
+                  <li>Peso Uruguaio (UYU)</li>
+                  <li>Franco Suíço (CHF)</li>
+                 </ul>
                   <div className="reserva">
-                    <p className="p">Se preferir entre em contato pelo televendas</p>
-                    <h4 className="h4">( 11 ) 5051-5299</h4>
+                    <div className="phones">
+                      <div>
+                        <p className="p">Se preferir fale <br/>com nosso televendas</p>
+                        <h4 className="h4">( 11 ) 5051-5299</h4>
+                      </div>
+                      <Wpp/>
+                    </div>
                   </div>
+
                 </div>
               </div>
               <div className="col-md-5 offset-md-1">
                 <Card className="whitelabel">
-                  <Whitelabel/>
+                  <Whitelabel
+                    button="primary"
+                  />
                 </Card>
               </div>
             </div>
@@ -48,12 +75,12 @@ export default class SectionsPaper extends Component {
                   <li>
                     <i className="icon"></i>
                     <p className="p uppercase"><b>mais segurança</b></p>
-                    <span className="span">Você não circula com papel moeda na rua. A transferência é via  TED e a entrega é feita por portadores treinados e discretos.</span>
+                    <span className="span">Você não circula com papel moeda na rua. O pagamento é via Banco através de TED e você conta com a credibilidade de comprar numa instituição devidamente registrada junto ao Banco Central.</span>
                   </li>
                   <li>
                     <i className="icon"></i>
                     <p className="p uppercase"><b>MAIS COMODIDADE</b></p>
-                    <span className="span">Você não precisa sair do lugar pra pedir sua moeda. No conforto da sua casa ou do trabalho sua moeda chega sem complicação.</span>
+                    <span className="span">Você não precisa sair do lugar pra pedir sua moeda, nossa entrega é feita por portadores treinados e discretos no conforto da sua casa ou do trabalho sua moeda chega sem complicação.</span>
                   </li>
                 </ul>
               </div>
@@ -79,18 +106,16 @@ export default class SectionsPaper extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-6">
-                <h3 className="h2">Cartão de Viagem</h3>
-                <p className="p">Praticidade, segurança e agilidade. O cartão pré-pago Visa Travel Money é recarregável em diversas moedas.</p>
+                <h3 className="h2">Cartão pré-pago</h3>
+                <p className="p">Praticidade, segurança e agilidade. O cartão pré-pago Visa Travel Money é recarregável em diversas moedas. Pode ser utilizado tanto para saques (rede Plus) quanto para compras em débito (rede Visa) em mais de 200 países em todo o mundo. A maneira mais moderna de gerenciar seu dinheiro em viagens ao exterior.</p>
                 <h4 className="h4"><b>Cartão Multimoedas</b></h4>
                 <p className="p">Dólar, Euro e Libra no mesmo cartão</p>
-
                 <div className="buy-now">
                   <Button
                     value="Peça agora o seu!"
                     theme="primary"
                   />
                 </div>
-
               </div>
               <div className="col-md-5 offset-md-1">
                 <Card className="travel-box">

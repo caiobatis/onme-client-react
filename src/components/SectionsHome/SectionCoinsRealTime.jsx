@@ -102,9 +102,11 @@ export default class SectionCoinsRealTime extends Component {
                 <h2 className="h2">Cotações Turismo</h2>
                 <p className="p">Trabalhamos com todas as moedas, veja o valor atual das principais. <br/>Procura por outra moeda?</p>
                 <div className="reserva">
-                  <p className="p">Fale com nosso televendas</p>
                   <div className="phones">
-                    <h4 className="h4">( 11 ) 5051-5299</h4>
+                    <div>
+                      <p className="p">Fale com nosso televendas</p>
+                      <h4 className="h4">( 11 ) 5051-5299</h4>
+                    </div>
                     <Wpp/>
                   </div>
                 </div>

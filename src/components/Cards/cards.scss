@@ -57,11 +57,7 @@
   .description {
     display: flex;
     justify-content: center;
-    padding: 0 20px;
-    height: 0px;
-    overflow: hidden;
-    visibility: hidden;
-    opacity: 0;
+    padding: 0 20px 25px;
     .p {
       width: 100%;
       margin: 0;
@@ -82,10 +78,7 @@
   &:hover {
     background: #fff; 
     .description {
-      height: initial;
-      visibility: visible;
-      opacity: 1;
-      padding-bottom: 20px;
+      padding-bottom: 15px;
     }
     .actions {
       visibility: visible;

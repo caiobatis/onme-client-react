@@ -11,8 +11,12 @@
 
 .phones {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+
   .h4 {
     margin: 0;
+  }
+  .p {
+    line-height: 20px;
   }
 }

@@ -36,9 +36,11 @@ export default class SectionsShipping extends Component {
                     value='Fale com um especialista'
                   />
                   <div className="reserva">
-                    <p className="p">Se preferir entre em contato pelo televendas</p>
                     <div className="phones">
-                      <h4 className="h4">( 11 ) 5051-5299</h4>
+                      <div>
+                        <p className="p">Fale com nosso televendas</p>
+                        <h4 className="h4">( 11 ) 5051-5299</h4>
+                      </div>
                       <Wpp/>
                     </div>
                   </div>
