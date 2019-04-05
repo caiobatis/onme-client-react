@@ -70,9 +70,10 @@
   padding: 100px 0 200px;
   position: relative;
   overflow: hidden;
+  background: #fff;
 
   .bg-shipping {
-    background: #fff url(../../components/Commons/shippingImg.png) no-repeat right center;
+    background: #fff url('../../components/Commons/shippingImg.png') no-repeat right center;
     position: absolute;
     width: 100%;
     height: 100%;
