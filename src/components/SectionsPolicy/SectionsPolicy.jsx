@@ -1,9 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Button from '../Button/Button'
-import Whitelabel from '../Whitelabel/Whitelabel'
-import Card from '@material-ui/core/Card/Card'
-import { Link } from "react-router-dom"
-
 
 export default class SectionsPolicy extends Component {
   render() {

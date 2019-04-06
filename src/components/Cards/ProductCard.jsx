@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Button from '../Button/Button'
 import ReactHtmlParser from 'react-html-parser'
 

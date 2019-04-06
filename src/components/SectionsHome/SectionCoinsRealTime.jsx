@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import CoinPrice from '../CoinPrice/CoinPrice'
-import { Link } from "react-router-dom"
 import Wpp from '../Wpp/Wpp'
 
 const products = [  
