@@ -1,11 +1,25 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import ContactForm from '../ContactForm/ContactForm'
 import SimpleCard from '../Cards/SimpleCard'
+import { senMailContact } from '../../actions/ContactActions'
 
-export default class SectionsContact extends Component {
+class SectionsContact extends Component {
+
+  constructor(props) {
+    super(props)
+    
+    this.submit = this.submit.bind(this);
+  }
+
   submit = (values) => {
+    const {
+      senMailContact
+    } = this.props
     // print the form values to the console
     console.log(values)
+    senMailContact(values)
   }
 
   render() {
@@ -65,3 +79,10 @@ export default class SectionsContact extends Component {
     )
   }
 }
+
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  senMailContact
+}, dispatch)
+
+export default connect(null, mapDispatchToProps)(SectionsContact) 
