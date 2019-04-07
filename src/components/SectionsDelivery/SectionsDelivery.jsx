@@ -17,7 +17,7 @@ export default class SectionsDelivery extends Component {
             <div className="col-md-10">
               <h2 className="h2">Delivery</h2>
               <p className="p">
-                A OnmeCâmbio, busca proporcionar praticid﻿ade e principalmente segurança aos seus clientes. <br/>
+                A OnmeCâmbio, busca proporcionar praticidáde e principalmente segurança aos seus clientes. <br/>
                 Você recebe sua compra sem sair de casa ou trabalho, com toda a comodidade e sempre de forma transparente no dia e local previamente combinados. <br/>
                 Os nossos portadores possuem toda a capacitação técnica e treinamentos que permitem realizar a entrega de seu pedido de forma segura e sigilosa.
               </p>

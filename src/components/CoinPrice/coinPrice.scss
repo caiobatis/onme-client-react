@@ -48,9 +48,9 @@
 @media(max-width: 768px) {
 
   .list-coins {
-    justify-content: space-around !important;
+    justify-content: space-between !important;
       .CoinPrice {
-        width: 40%;
+        width: 45%;
         margin: 20px 0 !important;
       }
   }
