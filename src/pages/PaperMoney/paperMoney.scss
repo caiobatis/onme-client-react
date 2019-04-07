@@ -176,3 +176,23 @@
     }
   }
 }
+
+@media(max-width: 768px) {
+  .paperMoney {
+    .sectionsPaper {
+      .content {
+        &:after {
+          left: -20%;
+          bottom: -180px;
+        }
+      }
+      .delivery-button-lg {
+        flex-direction: column;
+        align-items: center;
+      }
+      .buy-now {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

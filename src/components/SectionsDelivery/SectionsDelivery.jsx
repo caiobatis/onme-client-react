@@ -8,7 +8,7 @@ export default class SectionsDelivery extends Component {
     return (
       <div className="sectionsDelivery">
         <div className="container pb50">
-          <div className="row">
+          <div className="">
             <div className="col-md-2">
               <div className="icon-delivery">
                 <i className="icon"></i>

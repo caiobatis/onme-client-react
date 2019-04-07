@@ -137,6 +137,21 @@
           display: none;
         }
       }
+      .content {
+        ul.list-squad {
+          li {
+            width: 80%;
+            button {
+              opacity: 1;
+            }
+            .span {
+              span {
+                display: block;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
