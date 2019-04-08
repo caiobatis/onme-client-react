@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const baseURL = 'https://api.frentecorretora.com.br/v1/exchanges/'
-const baseURLMail = 'http://www.api.freesendmails.com/v1/mails'
+const baseURLMail = 'http://api.onmecambio.com.br/v1'
 
 const api = axios.create({
   baseURL
@@ -19,7 +19,7 @@ export const getProducts = city => {
 
 export const postContact = data => {
   return new Promise((resolve, reject) => 
-    apiMail.post(`/caiobatis7@gmail.com`, data)
+    axios.post(`${baseURLMail}/sendingEmail`, data)
       .then((res) => resolve(res))
       .catch((res) => reject(res)))
 }

@@ -8,7 +8,7 @@ export default class SectionsDelivery extends Component {
     return (
       <div className="sectionsDelivery">
         <div className="container pb50">
-          <div className="">
+          <div className="row">
             <div className="col-md-2">
               <div className="icon-delivery">
                 <i className="icon"></i>
@@ -27,15 +27,17 @@ export default class SectionsDelivery extends Component {
         <div className="politics">
           <div className="container">
             <div className="row">
-              <h3 className="h3">Informações importantes:</h3>
-              <ul className="list-politics">
-                <li> <b>Frete Grátis</b> - O valor do frete é gratuito para valores acima de US$ 1.000 ou valor equivalente em outras moedas para a capital paulista. Para outras regiões, o valor mínimo pode variar de acordo com a região.</li>
-                <li><b>Custo por Região</b> - Valores abaixo do valor mínimo por região, o custo do delivery pode variar de acordo com a região de entrega. (Entre R$ 30,00 à R$ 55,00).</li>
-                <li><b>Documento para receber</b> - Para recebimento de sua compra, deve ser apresentado um documento atualizado com foto no ato da entrega.</li>
-                <li><b>Recebimento por terceiros</b> - Apenas o comprador titular do contrato de câmbio poderá receber os valores. Caso o titular não possa receber a moeda, deverá ser indicado um terceiro que receberá a compra, mediante autorização nomeada pelo titular do contrato de câmbio. Solicite a carta de autorização de entrega a terceiros, através do nossos atendentes.</li>
-                <li><b>Agendamento de horário</b> - Por questões de segurança, não informamos o itinerário do entregador, sendo assim, não é possível informar o horário exato da entrega, são normas da seguradora de nossa corretora parceira.</li>
-                <li><b>Horário de entrega</b> - A entrega é realizada dentro do horário comercial de segunda à sexta das 10:00 às 18:00hs.</li>
-              </ul>
+              <div className="col-md-12">
+                <h3 className="h3">Informações importantes:</h3>
+                <ul className="list-politics">
+                  <li> <b>Frete Grátis</b> - O valor do frete é gratuito para valores acima de US$ 1.000 ou valor equivalente em outras moedas para a capital paulista. Para outras regiões, o valor mínimo pode variar de acordo com a região.</li>
+                  <li><b>Custo por Região</b> - Valores abaixo do valor mínimo por região, o custo do delivery pode variar de acordo com a região de entrega. (Entre R$ 30,00 à R$ 55,00).</li>
+                  <li><b>Documento para receber</b> - Para recebimento de sua compra, deve ser apresentado um documento atualizado com foto no ato da entrega.</li>
+                  <li><b>Recebimento por terceiros</b> - Apenas o comprador titular do contrato de câmbio poderá receber os valores. Caso o titular não possa receber a moeda, deverá ser indicado um terceiro que receberá a compra, mediante autorização nomeada pelo titular do contrato de câmbio. Solicite a carta de autorização de entrega a terceiros, através do nossos atendentes.</li>
+                  <li><b>Agendamento de horário</b> - Por questões de segurança, não informamos o itinerário do entregador, sendo assim, não é possível informar o horário exato da entrega, são normas da seguradora de nossa corretora parceira.</li>
+                  <li><b>Horário de entrega</b> - A entrega é realizada dentro do horário comercial de segunda à sexta das 10:00 às 18:00hs.</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
