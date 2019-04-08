@@ -18,11 +18,15 @@ export const senMailContact = data => {
     dispatch(fetchContact(true))
     postContact(data)
     .then((res)=> {
-      console.log(res)
-      // dispatch(fetchContact(false))
-      // dispatch(receiveCoins(serializeCoins(res.data)))
+      dispatch(fetchContact(false))
+      res.data.status === 'validation_failed' ? 
+        dispatch(receiveContact(data.message, 'error')) :
+          dispatch(receiveContact('Dados recebidos, entraremos em contato', 'success'))
     })
-    .catch(()=> dispatch(fetchContact(false)))
+    .catch(()=> {
+      dispatch(receiveContact('Por favor, revise os campos', 'error'))
+      dispatch(fetchContact(false))
+    })
   }
 }
 

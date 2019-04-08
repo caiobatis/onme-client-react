@@ -5,7 +5,7 @@ import FieldTextRedux from '../Fields/FieldTextRedux'
 
 const validate = values => {
   const errors = {}
-  const requiredFields = [ 'name', 'email', 'phone' ]
+  const requiredFields = [ 'username' ]
   requiredFields.forEach(field => {
     if (!values[ field ]) {
       errors[ field ] = 'Required'
@@ -22,7 +22,7 @@ class ContactForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
+      username: '',
       email: '',
       message: '',
       phone: ''
@@ -48,9 +48,9 @@ class ContactForm extends Component {
             <div className="col-md-6">
               <FieldTextRedux
                 label="Nome"
-                value={this.state.name}
-                name="name"
-                onChange={this.handleChange('name')}
+                value={this.state.username}
+                name="username"
+                onChange={this.handleChange('username')}
               />
             </div>
             <div className="col-md-6">

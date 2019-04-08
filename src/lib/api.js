@@ -1,13 +1,10 @@
 import axios from 'axios'
 
 const baseURL = 'https://api.frentecorretora.com.br/v1/exchanges/'
-const baseURLMail = 'http://api.onmecambio.com.br/v1'
+const baseURLMail = 'https://onmecambio.com.br/wp/wp-json/contact-form-7/v1/contact-forms/5/feedback'
 
 const api = axios.create({
   baseURL
-})
-const apiMail = axios.create({
-  baseURLMail
 })
 
 export const getProducts = city => {
@@ -17,9 +14,29 @@ export const getProducts = city => {
       .catch((res) => reject(res)))
 }
 
+const options = {
+  method: 'POST',
+  headers: {
+    'content-type': 'application/x-www-form-urlencoded'
+  },
+  url: `${baseURLMail}`,
+}
+const items = ['username', 'email', 'phone', 'message']
+
 export const postContact = data => {
-  return new Promise((resolve, reject) => 
-    axios.post(`${baseURLMail}/sendingEmail`, data)
+  return new Promise((resolve, reject) => {
+
+    let form = new FormData()
+    items.map((item)=> {
+      if(data[item]) {
+        form.append(item, data[item])
+      }
+      return null
+    })
+    options.data = form
+
+    axios(options)
       .then((res) => resolve(res))
-      .catch((res) => reject(res)))
+      .catch((res) => reject(res))
+  })
 }
