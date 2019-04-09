@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CoinPrice from '../CoinPrice/CoinPrice'
 import Telesales from '../Telesales/Telesales'
+import scrollToElement from 'scroll-to-element'
 
 const products = [  
   {  
@@ -90,7 +91,16 @@ const products = [
 ]
 
 export default class SectionCoinsRealTime extends Component {
+
+  handleClick() {
+    scrollToElement('#masthead', {
+      offset: 0,
+      duration: 1000
+    })
+  }
+
   render() {
+
     return (
       <section className='coinsRealTime'>
         <div className="bg-header"></div>
@@ -102,7 +112,7 @@ export default class SectionCoinsRealTime extends Component {
                 <p className="p">
                   Trabalhamos com todas as moedas, veja o valor atual das principais. <br/>Procura por outra moeda?
                   <br/>
-                  <a href="">Para cotações em outros estados simule aqui.</a>
+                  <div onClick={this.handleClick}>Para cotações em outros estados simule aqui.</div>
                 </p>
                 <div className="reserva">
                   <Telesales/>
