@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
 import logoImg from '../Header/logo-onme-color.png'
+import Socials from '../Socials/Socials';
 
 export default class Footer extends Component {
   render() {
@@ -36,14 +37,7 @@ export default class Footer extends Component {
               </ul>
             </div>
             <div className="col-md-3 offset-md-9 col-xs-12">
-              <ul className="socials">
-                <li><Link to="/"><i className="fab fa-twitter"></i></Link></li>
-                <li><Link to="/"><i className="fab fa-facebook"></i></Link></li>
-                <li><Link to="/"><i className="fab fa-google-plus"></i></Link></li>
-                <li><Link to="/"><i className="fab fa-tumblr"></i></Link></li>
-                <li><Link to="/"><i className="fab fa-pinterest-p"></i></Link></li>
-                <li><Link to="/"><i className="fab fa-linkedin"></i></Link></li>
-              </ul>
+              <Socials/>
             </div>
           </div>
         </div>

@@ -856,7 +856,7 @@ ul > li {
 #footer {
   color: #8c8f94;
   font-size: 16px;
-  background: #fff;
+  background: #f6f6f8;
   
   .footer-container {
     padding-top: 20px;
@@ -910,19 +910,16 @@ ul > li {
   color: #26272d;
 }
 
-#footer  {
-
-  .socials {
+.socials {
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  li {
+    font-size: 20px;
     margin: 0;
-    display: flex;
-    justify-content: flex-end;
-    li {
-      font-size: 20px;
-      margin: 0;
-      margin-right: 20px;
-      a {
-        color: rgba(19, 19, 21, 0.3);
-      }
+    margin-right: 20px;
+    a {
+      color: rgba(19, 19, 21, 0.3);
     }
   }
 }

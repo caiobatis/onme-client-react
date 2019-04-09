@@ -24,6 +24,7 @@ export default class SectionShipping extends Component {
                     Mais de 2.500 pontos de retirada ou saques
                   </li>
                 </ul>
+                <br/>
                 <Button
                   theme='secundary'
                   value='Saiba mais'
