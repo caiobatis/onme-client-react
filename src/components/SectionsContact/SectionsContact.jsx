@@ -20,15 +20,14 @@ class SectionsContact extends Component {
       senMailContact
     } = this.props
     // print the form values to the console
-    console.log(values)
     senMailContact(values)
   }
-
+  
   render() {
     const {
       contact
     } = this.props
-
+    
     return (
       <div className="sectionsContact">
         <div className="container">
@@ -45,10 +44,11 @@ class SectionsContact extends Component {
               </div>            
             </div>
             <div className="col-md-6">
-
               { contact.loading && ( <Loader/> )}
               <ContactForm onSubmit={this.submit}/>
-              <p className={`label ${contact.error ? 'error': 'success'}`}>{contact.message}</p>
+              <div className={`label ${contact.error ? 'error': 'success'}`}>
+                {contact.message && <p className="p">{contact.message}</p>}
+              </div>
             </div>
             <div className="col-md-4 offset-md-2">
               <SimpleCard

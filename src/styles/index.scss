@@ -1254,3 +1254,29 @@ ul > li {
     }
   }
 }
+
+.label {
+  background: transparent !important;
+  border-radius: 6px;
+  margin: 15px 0 0;
+  text-align: center;
+  &.error {
+    .p {
+      color: #aa3153;
+      border-color: #aa3153;
+    }
+  }
+  &.success {
+    .p {
+      border-color: #47bc66;
+      color: #47bc66;
+    }
+  }
+  .p {
+    border: 2px solid #ccc;
+    font-size: 16px;
+    color: #000;
+    margin: 0;
+    padding: 15px;
+  }
+}

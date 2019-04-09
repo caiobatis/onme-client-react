@@ -20,7 +20,7 @@ export const senMailContact = data => {
     .then((res)=> {
       dispatch(fetchContact(false))
       res.data.status === 'validation_failed' ? 
-        dispatch(receiveContact(res.data.message, false)) :
+        dispatch(receiveContact(res.data.message, true)) :
           dispatch(receiveContact('Dados recebidos, entraremos em contato', false))
     })
     .catch(res => {
