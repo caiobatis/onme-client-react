@@ -5,6 +5,7 @@ import { reduxForm } from 'redux-form'
 import { receiveCoin, receiveCoinReal } from '../../actions/WhitelabelActions'
 import Button from '../Button/Button'
 import FieldTextRedux from '../Fields/FieldTextRedux'
+import NumberFormat from 'react-number-format'
 import FieldSelectRedux from '../Fields/FieldSelectRedux'
 import Loader from '../Loader/Loader'
 
@@ -95,6 +96,15 @@ class WhitelabelForm extends Component {
       loading
     } = this.props
 
+
+    const coinFormat = <NumberFormat
+                        value={(coin.sellPrice * (coin.iof/100)) + coin.sellPrice}
+                        displayType={'text'}
+                        thousandSeparator={true}
+                        prefix={'R$ '}
+                        decimalScale={3}
+                      />
+
     return (
       <form className="form-whitelabel">
         <div>
@@ -148,8 +158,8 @@ class WhitelabelForm extends Component {
           <div className="footer">
             <div className="security">
               <span className="span">
-                R$1,00 = {coin.value} {coin.sellPrice} (valores com IOF) <br/>
-                Nossas cotações são atualizadas a cada 10 minutos
+                R$1,00 = {coin.value} {coinFormat} (valores com IOF) <br/>
+                Nossas cotações são atualizadas <br/> a cada 4 minutos e 30 segundos
               </span>
               <div className="tagSecurity">
                 <div className="icon"></div>
