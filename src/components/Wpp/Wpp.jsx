@@ -1,15 +1,13 @@
 import React from 'react';
 import wppImg from '../Commons/wpp.svg'
-import { Link } from "react-router-dom"
-
 
 import './wpp.scss'
 
 const Wpp = props => {
   return (
-    <Link className="wpp" to="">
+    <a rel="noopener noreferrer" className="wpp" target="_blank" href="https://wa.me/5511992223949">
       <img src={wppImg} alt=""/>
-    </Link>
+    </a>
   )
 }
 export default Wpp

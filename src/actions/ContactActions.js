@@ -3,16 +3,6 @@ import {
   postContact
 } from '../lib/api'
 
-const serializeCoins = (list) => {
-  return list.map((e,i)=>{
-    return {
-      ...e,
-      value: e.productCode,
-      label: e.currency 
-    }
-  })
-}
-
 export const senMailContact = data => {
   return dispatch => {
     dispatch(fetchContact(true))
