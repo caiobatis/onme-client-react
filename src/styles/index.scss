@@ -157,6 +157,9 @@ ul > li {
   background-color: #f4f4f5;
   webkit-transition: all 0.37s cubic-bezier(0, 0, 0.58, 1);
   transition: all 0.37s cubic-bezier(0, 0, 0.58, 1);
+  @media(max-width:768px) {
+    top: 0;
+  }
 }
 
 #main-nav .navigation {
