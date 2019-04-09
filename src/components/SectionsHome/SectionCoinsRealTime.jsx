@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import CoinPrice from '../CoinPrice/CoinPrice'
-import Wpp from '../Wpp/Wpp'
+import Telesales from '../Telesales/Telesales'
 
 const products = [  
   {  
@@ -99,15 +99,13 @@ export default class SectionCoinsRealTime extends Component {
             <div className="col-md-5">
               <div className="defaultTitle">
                 <h2 className="h2">Cotações Turismo</h2>
-                <p className="p">Trabalhamos com todas as moedas, veja o valor atual das principais. <br/>Procura por outra moeda?</p>
+                <p className="p">
+                  Trabalhamos com todas as moedas, veja o valor atual das principais. <br/>Procura por outra moeda?
+                  <br/>
+                  <a href="">Para cotações em outros estados simule aqui.</a>
+                </p>
                 <div className="reserva">
-                  <div className="phones">
-                    <div>
-                      <p className="p">Fale com nosso televendas</p>
-                      <h4 className="h4">( 11 ) 5078-7000</h4>
-                    </div>
-                    <Wpp/>
-                  </div>
+                  <Telesales/>
                 </div>
               </div>
             </div>
