@@ -19,13 +19,13 @@ export default class Footer extends Component {
               </ul>
               <ul>
                 <li><p className="title">COMPRE POR TELEFONE</p></li>
-                <li><Link to="/">(11) 5051-5299</Link></li>
+                <li><Link to="/">(11) 5078-7000</Link></li>
               </ul>
             </div>
             <div className="col-md-2 col-sm-4 col-xs-6 footer-links">
               <ul>
                 <li><p className="title">ACOMPANHE AS <br/>COTAÇÕES</p></li>
-                <li><Link to="/">(11) 99222-3949</Link></li>
+                <li><a rel="noopener noreferrer" target="_blank" href="https://wa.me/5511992223949">(11) 99976-0000</a></li>
               </ul>
             </div>
             <div className="col-md-2 col-sm-4 col-xs-6 footer-links">

@@ -61,7 +61,7 @@ class SectionsContact extends Component {
                     <p className="p">
                       <b>Televendas</b>
                       <br/>
-                      (11) 5051-5299
+                      (11) 5078-7000
                     </p>
                   </div>
                   <div className="col-md-6">

@@ -41,7 +41,7 @@ export default class SectionsPaper extends Component {
                     <div className="phones">
                       <div>
                         <p className="p">Se preferir fale <br/>com nosso televendas</p>
-                        <h4 className="h4">( 11 ) 5051-5299</h4>
+                        <h4 className="h4">( 11 ) 5078-7000</h4>
                       </div>
                       <Wpp/>
                     </div>

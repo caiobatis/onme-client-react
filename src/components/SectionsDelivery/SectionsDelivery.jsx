@@ -57,7 +57,7 @@ export default class SectionsDelivery extends Component {
                 <div className="phones">
                   <div>
                     <p className="p">Fale com nosso televendas</p>
-                    <h4 className="h4">( 11 ) 5051-5299</h4>
+                    <h4 className="h4">( 11 ) 5078-7000</h4>
                   </div>
                   <Wpp/>
                 </div>
