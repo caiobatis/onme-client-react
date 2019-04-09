@@ -21,6 +21,7 @@ const options = {
   },
   url: `${baseURLMail}`,
 }
+
 const items = ['username', 'email', 'phone', 'message']
 
 export const postContact = data => {
