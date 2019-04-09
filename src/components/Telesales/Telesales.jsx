@@ -10,7 +10,7 @@ const Telesales = props => {
         <p className="p">Fale com nosso televendas</p>
         <h4 className="h4">( 11 ) 5078-7000</h4>
       </div>
-      <Wpp/>
+      <Wpp className={props.className}/>
     </div>
   )
 }

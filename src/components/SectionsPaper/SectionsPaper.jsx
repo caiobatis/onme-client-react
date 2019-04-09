@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Button from '../Button/Button'
 import Whitelabel from '../Whitelabel/Whitelabel'
 import Card from '@material-ui/core/Card/Card'
-import Wpp from '../Wpp/Wpp'
+import Telesales from '../Telesales/Telesales'
 import { Link } from "react-router-dom"
 
 export default class SectionsPaper extends Component {
@@ -38,13 +38,7 @@ export default class SectionsPaper extends Component {
                   <li>Franco Suíço (CHF)</li>
                  </ul>
                   <div className="reserva">
-                    <div className="phones">
-                      <div>
-                        <p className="p">Se preferir fale <br/>com nosso televendas</p>
-                        <h4 className="h4">( 11 ) 5078-7000</h4>
-                      </div>
-                      <Wpp/>
-                    </div>
+                    <Telesales className={'black'}/>
                   </div>
 
                 </div>

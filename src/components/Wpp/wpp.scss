@@ -4,6 +4,14 @@
   text-decoration: none;
   color: #fff;
   align-items: flex-end;
+
+  &.black {
+    color: #000;
+    .icon, span, p {
+      color: #000;
+    }
+  }
+
   .icon {
     font-size: 33px;
     color: #fff;

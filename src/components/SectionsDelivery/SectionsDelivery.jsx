@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Button from '../Button/Button'
-import Wpp from '../Wpp/Wpp'
+import Telesales from '../Telesales/Telesales'
 
 
 export default class SectionsDelivery extends Component {
@@ -43,7 +43,7 @@ export default class SectionsDelivery extends Component {
         </div>
         <div className="container pt50 pb50">
           <div className="row">
-            <div className="col-md-4 offset-md-2">
+            <div className="col-md-4 offset-md-2 pt30">
               <Button
                 onClick={()=>console.log('lol')}
                 value="Dúvidas frequentes"
@@ -54,13 +54,7 @@ export default class SectionsDelivery extends Component {
             </div>
             <div className="col-md-4">
               <div className="reserva">
-                <div className="phones">
-                  <div>
-                    <p className="p">Fale com nosso televendas</p>
-                    <h4 className="h4">( 11 ) 5078-7000</h4>
-                  </div>
-                  <Wpp/>
-                </div>
+                <Telesales className={'black'}/>
               </div>            
             </div>
           </div>

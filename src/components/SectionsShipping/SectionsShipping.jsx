@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Button from '../Button/Button'
 import ShippingForm from './ShippingForm'
-import Wpp from '../Wpp/Wpp'
+import Telesales from '../Telesales/Telesales'
 import {Link} from 'react-router-dom';
 
 
@@ -36,13 +36,7 @@ export default class SectionsShipping extends Component {
                     value='Fale com um especialista'
                   />
                   <div className="reserva">
-                    <div className="phones">
-                      <div>
-                        <p className="p">Fale com nosso televendas</p>
-                        <h4 className="h4">( 11 ) 5078-7000</h4>
-                      </div>
-                      <Wpp/>
-                    </div>
+                    <Telesales className={'black'}/>
                   </div>
                 </div>
               </div>

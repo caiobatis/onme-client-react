@@ -5,6 +5,7 @@ import Wpp from '../Wpp/Wpp'
 import {Link} from 'react-router-dom'
 
 import './masthead.scss'
+import Telesales from '../Telesales/Telesales';
 
 class Masthead extends Component {
   render() {
@@ -34,13 +35,7 @@ class Masthead extends Component {
                       />                   
                     </Link>
                     <div className="reserva">
-                      <div className="phones">
-                        <div>
-                          <p className="p">Reserve pelo televendas</p>
-                          <h4 className="h4">( 11 ) 5078-7000</h4>
-                        </div>
-                        <Wpp/>
-                      </div>
+                      <Telesales className={'black'}/>
                     </div>
                   </div>
                 </div>
