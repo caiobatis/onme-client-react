@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux'
 import ContactForm from '../ContactForm/ContactForm'
 import SimpleCard from '../Cards/SimpleCard'
 import { senMailContact } from '../../actions/ContactActions'
+import Loader from '../Loader/Loader'
+
 
 class SectionsContact extends Component {
 
@@ -23,6 +25,10 @@ class SectionsContact extends Component {
   }
 
   render() {
+    const {
+      contact
+    } = this.props
+
     return (
       <div className="sectionsContact">
         <div className="container">
@@ -39,7 +45,10 @@ class SectionsContact extends Component {
               </div>            
             </div>
             <div className="col-md-6">
+
+              { contact.loading && ( <Loader/> )}
               <ContactForm onSubmit={this.submit}/>
+              <p className={`label ${contact.error ? 'error': 'success'}`}>{contact.message}</p>
             </div>
             <div className="col-md-4 offset-md-2">
               <SimpleCard
@@ -80,9 +89,12 @@ class SectionsContact extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  contact: state.ContactReducer
+})
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   senMailContact
 }, dispatch)
 
-export default connect(null, mapDispatchToProps)(SectionsContact) 
+export default connect(mapStateToProps, mapDispatchToProps)(SectionsContact) 

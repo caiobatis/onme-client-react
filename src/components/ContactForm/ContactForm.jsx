@@ -5,7 +5,7 @@ import FieldTextRedux from '../Fields/FieldTextRedux'
 
 const validate = values => {
   const errors = {}
-  const requiredFields = [ 'username' ]
+  const requiredFields = [ 'username', 'phone' ]
   requiredFields.forEach(field => {
     if (!values[ field ]) {
       errors[ field ] = 'Required'

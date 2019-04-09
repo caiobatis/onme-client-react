@@ -20,19 +20,20 @@ export const senMailContact = data => {
     .then((res)=> {
       dispatch(fetchContact(false))
       res.data.status === 'validation_failed' ? 
-        dispatch(receiveContact(data.message, 'error')) :
-          dispatch(receiveContact('Dados recebidos, entraremos em contato', 'success'))
+        dispatch(receiveContact(res.data.message, false)) :
+          dispatch(receiveContact('Dados recebidos, entraremos em contato', false))
     })
-    .catch(()=> {
-      dispatch(receiveContact('Por favor, revise os campos', 'error'))
+    .catch(res => {
+      dispatch(receiveContact(data.message, true))
       dispatch(fetchContact(false))
     })
   }
 }
 
-const receiveContact = value => ({
+const receiveContact = (msg, err) => ({
   type: RECEIVE_CONTACT,
-  payload: value
+  msg,
+  err
 })
 
 const fetchContact = value => ({
