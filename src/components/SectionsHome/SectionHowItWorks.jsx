@@ -30,6 +30,7 @@ export default class SectionHowItWorks extends Component {
                   <div className="col-md-3">
                     <ProductCard
                       title="Remessa internacional"
+                      img={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6WWtrfqUFups2e-z74zhdClFWQaBZzWlv8Ys6KlXyL34JaDPsHQ'}
                       description="&lt;b&gt;Envie, receba ou pague&lt;/b&gt; de onde quiser para qualquer lugar do mundo de forma rápida e segura, aqui você encontra especialistas com anos de mercado para lhe indicar a melhor opção"
                       path="/remessa"
                       titleButton="Saiba mais"
@@ -39,6 +40,7 @@ export default class SectionHowItWorks extends Component {
                   <div className="col-md-3">
                     <ProductCard
                       title="Cartão pré-pago"
+                      img={'https://www.travelmoneyoz.com/sites/v1.travelmoneyoz.com/files/TMOZ-640x320-1.jpg'}
                       description="Praticidade, segurança e agilidade. O cartão pré-pago é recarregável em diversas moedas. A maneira mais moderna de gerenciar seu dinheiro em viagens ao exterior. "
                       path="/papel-moeda#cartao"
                       brand="Onme Câmbio"
@@ -47,6 +49,7 @@ export default class SectionHowItWorks extends Component {
                   <div className="col-md-3">
                     <ProductCard
                       title="Seguro Viagem"
+                      img={'https://www.relocatemagazine.com/media/images/international-assignment-demand-for-travel-security-advice-grows-800-per-cent-_13692_t12.jpg'}
                       description="Viaje tranquilo e protegido, com o nosso Seguro viagem você poderá viajar pelo mundo sem se preocupar com imprevistos e, assim, aproveitar ao máximo cada momento. Com diversas opções de coberturas e assistências diferenciadas para atender a necessidade de cada cliente. "
                       path="/"
                       brand="Sul America"
