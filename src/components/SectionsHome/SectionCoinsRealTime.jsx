@@ -112,7 +112,7 @@ export default class SectionCoinsRealTime extends Component {
                 <p className="p">
                   Trabalhamos com todas as moedas, veja o valor atual das principais. <br/>Procura por outra moeda?
                   <br/>
-                  <div onClick={this.handleClick}>Para cotações em outros estados simule aqui.</div>
+                  <a onClick={this.handleClick}><span>Para cotações em outros estados simule aqui.</span></a>
                 </p>
                 <div className="reserva">
                   <Telesales/>

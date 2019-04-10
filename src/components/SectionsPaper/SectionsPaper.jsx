@@ -4,8 +4,19 @@ import Whitelabel from '../Whitelabel/Whitelabel'
 import Card from '@material-ui/core/Card/Card'
 import Telesales from '../Telesales/Telesales'
 import { Link } from "react-router-dom"
+import scrollToElement from 'scroll-to-element'
 
 export default class SectionsPaper extends Component {
+
+  componentDidMount() {
+    console.log(window.location.hash)
+    window.location.hash && scrollToElement(`${window.location.hash}`, {
+      offset: -170,
+      duration: 1000
+    })
+  }
+  
+
   render() {
     return (
       <div className="sectionsPaper">
@@ -96,7 +107,7 @@ export default class SectionsPaper extends Component {
             </div>
           </div>
         </div>
-        <div className="card-travel">
+        <div className="card-travel" id="cartao">
           <div className="container">
             <div className="row">
               <div className="col-md-6">

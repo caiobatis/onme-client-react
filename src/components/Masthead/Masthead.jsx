@@ -8,7 +8,6 @@ import './masthead.scss'
 
 class Masthead extends Component {
   render() {
-    
     return (
       <section className="mastheader" id="masthead">
         <div className="bg-header"></div>
