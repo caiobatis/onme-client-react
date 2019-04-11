@@ -12,7 +12,7 @@ export default class SectionHowItWorks extends Component {
               <div className="defaultTitle">
                 <h2 className="h2">Produtos e Serviços</h2>
                 <p className="p">Aqui você encontra a solução financeira  para suas viagens internacionais seja ela a lazer, estudos ou negócios.</p>
-                <span className="span">Dúvidas? <Link to="/contato">Entre em contato</Link></span>
+                <span className="span">Ficou com dúvidas? <Link to="/contato">Entre em contato</Link></span>
               </div>
             </div>
             <div className="col-md-12">

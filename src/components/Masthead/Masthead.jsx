@@ -21,9 +21,7 @@ class Masthead extends Component {
                         Compre e receba no<br/>conforto de sua casa!
                       </h2>
                       <p className="p">
-                        Aqui na Onme você Compra online e recebe sem sair de casa com nosso serviço de Delivery, o cliente tem comodidade, segurança e rapidez.
-                        <br/>
-                        Sua viagem começa aqu!
+                        Aqui na Onme você compra online e recebe sem sair de casa com nosso serviço de Delivery. Sua viagem começa aqui!
                       </p>
                       <Link
                         to="/papel-moeda"

@@ -13,7 +13,8 @@ export default class CoinPrice extends Component {
   render() {
     const {
       coin,
-      price
+      price,
+      iof
     } = this.props
 
     let img = usd 
@@ -41,7 +42,8 @@ export default class CoinPrice extends Component {
       default:
         break;
     }
-
+    console.log((price * (iof/100)) + price, price, iof)
+    
     return (
       <div className="CoinPrice">
         <div className="top">
@@ -54,7 +56,7 @@ export default class CoinPrice extends Component {
         <div className="bottom">
           <p className="price">
             <NumberFormat
-              value={price}
+              value={(price * (iof/100)) + price}
               displayType={'text'}
               thousandSeparator={true}
               prefix={'R$ '}
