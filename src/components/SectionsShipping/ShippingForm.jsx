@@ -71,7 +71,7 @@ class ShippingForm extends Component {
         <div className="col-md-12 text-center">
           <Button
             type="submit"
-            value="Solicitar moeda"
+            value="Enviar solicitação"
             theme="primary"
             size="large"
           />

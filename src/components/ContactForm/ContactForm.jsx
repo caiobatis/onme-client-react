@@ -5,14 +5,14 @@ import FieldTextRedux from '../Fields/FieldTextRedux'
 
 const validate = values => {
   const errors = {}
-  const requiredFields = [ 'username', 'phone' ]
+  const requiredFields = [ 'username', 'phone', 'email' ]
   requiredFields.forEach(field => {
     if (!values[ field ]) {
-      errors[ field ] = 'Required'
+      errors[ field ] = 'Por favor insira essa informação'
     }
   })
   if (values.email && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email address'
+    errors.email = 'E-mail invalido'
   }
   return errors
 }

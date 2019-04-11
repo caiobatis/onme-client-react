@@ -43,7 +43,7 @@ export default class SectionHowItWorks extends Component {
                       img={'https://www.travelmoneyoz.com/sites/v1.travelmoneyoz.com/files/TMOZ-640x320-1.jpg'}
                       description="Praticidade, segurança e agilidade. O cartão pré-pago é recarregável em diversas moedas. A maneira mais moderna de gerenciar seu dinheiro em viagens ao exterior. "
                       path="/papel-moeda#cartao"
-                      brand="Onme Câmbio"
+                      brand="Visa"
                       titleButton="Saiba mais"/>
                   </div>
                   <div className="col-md-3">
