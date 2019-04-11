@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,400,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,500,700');
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
 
 * {
@@ -855,7 +855,7 @@ ul > li {
 
 #footer {
   color: #8c8f94;
-  font-size: 16px;
+  font-size: 18px;
   background: #f6f6f8;
   
   .footer-container {
@@ -872,6 +872,11 @@ ul > li {
       }
     }
   }
+  .about-we {
+    p {
+      margin: -10px 0 0;
+    }
+  }
 }
 
 #footer .copyright-container {
@@ -884,8 +889,15 @@ ul > li {
 }
 
 #footer p {
-  font-size: 14px;
-  line-height: 24px;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 300;
+  margin: 10px 0;
+  span {
+    font-size: 13px;
+    margin-top: -10px;
+    display: block;
+  }
 }
 
 #footer .app_download img {
@@ -893,17 +905,16 @@ ul > li {
 }
 
 #footer ul li .title {
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #26272d;
-  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .5px;
+  color: #0f276a;
+  font-size: 20px;
 }
 
 #footer ul li a {
   color: #8c8f94;
   text-decoration: none;
-  line-height: 36px;
+  line-height: 30px;
 }
 
 #footer ul li a:hover {
