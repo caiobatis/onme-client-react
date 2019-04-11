@@ -117,10 +117,12 @@ export default class SectionsPaper extends Component {
                 <h4 className="h4"><b>Cartão Multimoedas</b></h4>
                 <p className="p">Dólar, Euro e Libra no mesmo cartão</p>
                 <div className="buy-now">
-                  <Button
-                    value="Peça agora o seu!"
-                    theme="primary"
-                  />
+                  <a rel="noopener noreferrer" target="_blank" href="https://wa.me/5511992223949">
+                    <Button
+                      value="Peça agora o seu!"
+                      theme="primary"
+                    />
+                  </a>
                 </div>
               </div>
               <div className="col-md-5 offset-md-1">
