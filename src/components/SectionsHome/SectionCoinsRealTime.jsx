@@ -19,7 +19,9 @@ class SectionCoinsRealTime extends Component {
       listCoins
     } = this.props
 
-    console.log(listCoins)
+
+    const codes = ['USD', 'GBP', 'EUR', 'NZD', 'AUD', 'CAD']
+
     return (
       <section className='coinsRealTime'>
         <div className="bg-header"></div>
@@ -42,17 +44,18 @@ class SectionCoinsRealTime extends Component {
               <div className="">
                 <div className="coins">
                   <div className="list-coins">
-                    {
-                      listCoins.map((e, i)=>(
-                        <CoinPrice
-                          key={i}
-                          title={e.currency}
-                          coin={e.productCode}
-                          price={e.sellPrice}
-                          iof={e.iof}
-                        />
-                      ))
-                    }
+                    { listCoins.map((item, i)=> {
+                      return codes.map(code => {
+                        return code === item.productCode &&
+                          <CoinPrice
+                            key={i}
+                            title={item.currency}
+                            coin={item.productCode}
+                            price={item.sellPrice}
+                            iof={item.iof}
+                          />
+                      })
+                    })}
                   </div>
                 </div>
 
