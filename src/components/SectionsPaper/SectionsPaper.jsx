@@ -9,7 +9,6 @@ import scrollToElement from 'scroll-to-element'
 export default class SectionsPaper extends Component {
 
   componentDidMount() {
-    console.log(window.location.hash)
     window.location.hash && scrollToElement(`${window.location.hash}`, {
       offset: -170,
       duration: 1000
@@ -94,13 +93,15 @@ export default class SectionsPaper extends Component {
         </div>
         <div className="delivery">
           <div className="container">
-            <div className="col-md-8 offset-md-2">
+            <div className="col-md-6 offset-md-3">
               <Link to="/delivery">
                 <div className="delivery-button-lg">
                   <div className="icon"></div>
                   <div className="info">
-                    <p className="p">clique aqui para esclarecer todas suas</p>
-                    <h3 className="h3">Dúvidas sobre nosso delivery</h3>
+                    <h4 className="h4">
+                      Delivery <br/>
+                      informações importantes
+                    </h4>
                   </div>
                 </div>
               </Link>

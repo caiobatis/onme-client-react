@@ -42,7 +42,6 @@ export default class CoinPrice extends Component {
       default:
         break;
     }
-    console.log((price * (iof/100)) + price, price, iof)
     
     return (
       <div className="CoinPrice">
