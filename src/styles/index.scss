@@ -960,6 +960,57 @@ ul > li {
   margin-left: 8px;
 }
 
+
+.copy {
+  background: #fff;
+  padding: 20px 0;
+  .p {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    span {
+      font-size: 14px;
+      color: rgb(148, 150, 156);
+      font-family: Poppins;
+    }
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    li {
+      align-items: center;
+      display: flex;
+    }
+    .icon {
+      width: 160px;
+      height: 70px;
+      background: url('../components/Commons/sprite.png') no-repeat;
+      display: block;
+      transform: scale(.8);
+      opacity: .8;
+      &.icon-frente {
+        background-position: 0px -549px;
+        width: 170px;
+      }
+      &.icon-banco {
+        background-position: 0px -615px;
+        width: 205px;
+        height: 55px;
+      }
+      &.icon-fair {
+        background-position: 0px -670px;
+        width: 170px;
+        height: 55px;
+      }
+    }
+  }
+}
+
+
+
 @media(max-width: 768px) {
   .footer-links {
     display: flex;
