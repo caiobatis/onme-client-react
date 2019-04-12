@@ -1,14 +1,29 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import Button from '../Button/Button'
 import ShippingForm from './ShippingForm'
 import Telesales from '../Telesales/Telesales'
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import { sendShipping } from '../../actions/ShippingActions'
 
 
-export default class SectionsShipping extends Component {
+class SectionsShipping extends Component {
+  constructor(props) {
+    super(props)
+    
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-  handleSubmit(a) {
-    console.log(a)
+  handleSubmit(values) {
+
+    const {
+      sendShipping
+    } = this.props
+
+    sendShipping(values)
+
+    console.log(values)
   }
 
   render() {
@@ -174,3 +189,8 @@ Alíquota de 0,38% para todas operações</span>
     )
   }
 }
+const mapDispatchToProps = dispatch => bindActionCreators({
+  sendShipping
+}, dispatch)
+
+export default connect(null, mapDispatchToProps)(SectionsShipping) 

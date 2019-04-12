@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 import { reduxForm } from 'redux-form'
 
 import Button from '../Button/Button'
@@ -8,11 +7,6 @@ import FieldTextRedux from '../Fields/FieldTextRedux'
 import FieldSelectRedux from '../Fields/FieldSelectRedux'
 
 class ShippingForm extends Component {
-  
-  
-  handle (e, state) {
-    console.log(e, state)
-  }
   
   render () {
 
@@ -27,21 +21,19 @@ class ShippingForm extends Component {
         <div className="col-md-6">
           <FieldSelectRedux
             label="Qual moeda deseja enviar?"
-            name="coins"
+            name="moeda"
             options={initialValues.coins}
-            onChange={this.handle}
             theme="secundary"
           />
           <FieldSelectRedux
             label="Qual o motivo do envio?"
-            name="reasons"
+            name="motivo"
             options={initialValues.reasons}
-            onChange={this.handle}
             theme="secundary"
           />
           <FieldTextRedux
             label="Quero essa quantia"
-            name="quantity"
+            name="quantia"
             mask="money"
             code={'R$'}
             theme="secundary"
@@ -50,20 +42,18 @@ class ShippingForm extends Component {
         <div className="col-md-6">
           <FieldTextRedux
             label="Nome completo"
-            onChange={this.handle}
-            name="name"
+            name="nome"
             theme="secundary"
           />
           <FieldTextRedux
             label="Telefone"
             onChange={this.handle}
-            name="phone"
+            name="telefone"
             mask="phone"
             theme="secundary"
           />
           <FieldTextRedux
             label="E-mail"
-            onChange={this.handle}
             name="email"
             theme="secundary"
           />
@@ -95,8 +85,4 @@ const mapStateToProps = state => {
     }
   }
 }
-
-const mapDispatchToProps = dispatch => bindActionCreators({
-}, dispatch)
-
-export default connect(mapStateToProps, mapDispatchToProps)(ShippingForm) 
+export default connect(mapStateToProps)(ShippingForm) 
