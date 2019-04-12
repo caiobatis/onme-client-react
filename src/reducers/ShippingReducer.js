@@ -35,7 +35,13 @@ const INITAL_STATE = {
     }
   ],
   error: false,
-  message: ''
+  message: '',
+  nome: '',
+  email: '',
+  telefone: '',
+  moeda: '',
+  motivo: '',
+  quantia: 1000
 }
 
 export default (state = INITAL_STATE, action) => {

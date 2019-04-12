@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { reduxForm } from 'redux-form'
 
+import Loader from '../Loader/Loader'
 import Button from '../Button/Button'
 import FieldTextRedux from '../Fields/FieldTextRedux'
 import FieldSelectRedux from '../Fields/FieldSelectRedux'
@@ -9,15 +10,24 @@ import FieldSelectRedux from '../Fields/FieldSelectRedux'
 class ShippingForm extends Component {
   
   render () {
-
     const {
       initialValues,
-      handleSubmit
+      handleSubmit,
+      loading,
+      message,
+      error
     } = this.props
-
 
     return (
       <form className="row" onSubmit={handleSubmit}>
+
+        <div className="col-md-12">
+          { loading && ( <Loader/> )}
+          <div className={`label ${error ? 'error': 'success'}`}>
+            {message && <p className="p">{message}</p>}
+          </div>
+        </div>
+
         <div className="col-md-6">
           <FieldSelectRedux
             label="Qual moeda deseja enviar?"
@@ -47,7 +57,6 @@ class ShippingForm extends Component {
           />
           <FieldTextRedux
             label="Telefone"
-            onChange={this.handle}
             name="telefone"
             mask="phone"
             theme="secundary"
@@ -80,9 +89,12 @@ const mapStateToProps = state => {
   const shipping = state.ShippingReducer
   return {
     initialValues: {
-      ...shipping,
-      quantity: 1000
-    }
+      ...shipping
+    },
+    loading: shipping.loading,
+    error: shipping.error,
+    message: shipping.message,
+
   }
 }
 export default connect(mapStateToProps)(ShippingForm) 

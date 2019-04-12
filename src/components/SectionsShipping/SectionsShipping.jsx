@@ -22,8 +22,6 @@ class SectionsShipping extends Component {
     } = this.props
 
     sendShipping(values)
-
-    console.log(values)
   }
 
   render() {
