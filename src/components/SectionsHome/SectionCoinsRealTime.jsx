@@ -30,9 +30,8 @@ class SectionCoinsRealTime extends Component {
               <div className="defaultTitle">
                 <h2 className="h2">Cotações Turismo</h2>
                 <p className="p">
-                  Trabalhamos com todas as moedas, veja o valor atual das principais. <br/>Procura por outra moeda?
+                  A Onme Cambio possui mais de 20 tipos de moedas e soluções de câmbio para facilitar a sua vida.
                   <br/>
-                  <b onClick={this.handleClick}><span>Para cotações em outros estados simule aqui.</span></b>
                 </p>
                 <div className="reserva">
                   <Telesales/>
