@@ -77,6 +77,9 @@
   }
   &:hover {
     background: #fff; 
+    .image {
+      height: 120px;
+    }
     .description {
       padding-bottom: 15px;
     }
