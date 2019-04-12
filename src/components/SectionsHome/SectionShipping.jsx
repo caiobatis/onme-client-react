@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Button from '../Button/Button'
+import { Link } from 'react-router-dom'
 
 export default class SectionShipping extends Component {
   render() {
@@ -14,10 +15,12 @@ export default class SectionShipping extends Component {
                 <p className="p">Pagamentos, Recebimentos e Transferências Internacionais com segurança, praticidade e a experiência de quem é especialista em câmbio.<br/>
                 </p>
                 <br/>
-                <Button
-                  theme='secundary'
-                  value='Saiba mais'
-                />              
+                <Link to="/remessa">
+                  <Button
+                    theme='secundary'
+                    value='Saiba mais'
+                  />
+                </Link>
               </div>
             </div>
           </div>
