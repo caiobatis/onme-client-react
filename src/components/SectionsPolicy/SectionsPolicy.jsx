@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Button from '../Button/Button'
 
+import { Link } from 'react-router-dom'
+
 export default class SectionsPolicy extends Component {
   render() {
     return (
@@ -38,12 +40,14 @@ export default class SectionsPolicy extends Component {
               <p className="p">Se ainda está com dúvidas entre <br/>em contato com nosso atendimento</p>
             </div>
             <div className="col-md-4">
-              <Button
-                value="Entrar em contato"
-                theme="primary"
-                size="large"
-                full={true}
-              />
+              <Link to="/contato">
+                <Button
+                  value="Entrar em contato"
+                  theme="primary"
+                  size="large"
+                  full={true}
+                />
+              </Link>
             </div>
           </div>
         </div>

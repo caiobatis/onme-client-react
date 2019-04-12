@@ -36,18 +36,20 @@ class SectionsShipping extends Component {
                   <p className="p">
                     Envie ou receba recursos do exterior e pague suas contas em qualquer lugar do mundo de forma segura com profissionais preparados para atendê-lo! 
                   </p>
-                  <Link to="#">
+                  <a rel="noopener noreferrer" target="_blank" href="https://wa.me/5511992223949">
                     <Button
                       theme='primary'
                       value='Faça uma cotação'
                     />
-                  </Link>
+                  </a>
                   <br/>
-                  <Button
-                    border={true}
-                    theme='primary'
-                    value='Fale com um especialista'
-                  />
+                  <a rel="noopener noreferrer" target="_blank" href="https://wa.me/5511992223949">
+                    <Button
+                      border={true}
+                      theme='primary'
+                      value='Fale com um especialista'
+                    />
+                  </a>
                   <div className="reserva">
                     <Telesales className={'black'}/>
                   </div>
@@ -70,11 +72,14 @@ class SectionsShipping extends Component {
                     <span className="span">Envio ou recebimento de recursos para manutenção de pessoas físicas no exterior. (Grau de parentesco: 1º grau). <br/>
                       <span>IRRF:	Isento para todas as operações <br/>IOF:	Alíquota de 0,38% para todas operações</span>
                     </span>
-                    <Button
-                      border={true}
-                      theme='secundary'
-                      value='Fale com um especialista'
-                    />
+                    <a rel="noopener noreferrer" target="_blank" href="https://wa.me/5511992223949">
+                      <Button
+                        border={true}
+                        theme='secundary'
+                        value='Fale com um especialista'
+                      />
+                    </a>
+
                   </li>
                   <li>
                     <i className="icon"></i>
@@ -85,11 +90,13 @@ class SectionsShipping extends Component {
 IOF:	Alíquota de 1,10% para saída de capital (venda) Alíquota de 0,38% para retorno de capital (compra)</span>
                     
                     </span>
-                    <Button
-                      border={true}
-                      theme='secundary'
-                      value='Fale com um especialista'
-                    />
+                    <a rel="noopener noreferrer" target="_blank" href="https://wa.me/5511992223949">
+                      <Button
+                        border={true}
+                        theme='secundary'
+                        value='Fale com um especialista'
+                      />
+                    </a>
                   </li>
                   <li>
                     <i className="icon"></i>
@@ -104,11 +111,13 @@ Obs: Podem haver alíquotas diferenciadas para países com acordo para evitar bi
 IOF: Alíquota de 0,38% para todas operações</span>
 
                     </span>
-                    <Button
-                      border={true}
-                      theme='secundary'
-                      value='Fale com um especialista'
-                    />
+                    <a rel="noopener noreferrer" target="_blank" href="https://wa.me/5511992223949">
+                      <Button
+                        border={true}
+                        theme='secundary'
+                        value='Fale com um especialista'
+                      />
+                    </a>
                   </li>
                   <li>
                     <i className="icon"></i>
@@ -118,11 +127,13 @@ IOF: Alíquota de 0,38% para todas operações</span>
 <span>IRRF: Isento para todas as operações <br/>
 IOF: Alíquota de 0,38% todas as operações (isento para as operações de compra se referente a exportação de serviços)</span>
                     </span>
-                    <Button
-                      border={true}
-                      theme='secundary'
-                      value='Fale com um especialista'
-                    />
+                    <a rel="noopener noreferrer" target="_blank" href="https://wa.me/5511992223949">
+                      <Button
+                        border={true}
+                        theme='secundary'
+                        value='Fale com um especialista'
+                      />
+                    </a>
                   </li>
                   <li>
                     <i className="icon"></i>
@@ -134,11 +145,13 @@ IOF: Alíquota de 0,38% todas as operações (isento para as operações de comp
 Alíquota de 0,38% para todas operações</span>
                     
                     </span>
-                    <Button
-                      border={true}
-                      theme='secundary'
-                      value='Fale com um especialista'
-                    />
+                    <a rel="noopener noreferrer" target="_blank" href="https://wa.me/5511992223949">
+                      <Button
+                        border={true}
+                        theme='secundary'
+                        value='Fale com um especialista'
+                      />
+                    </a>
                   </li>
                   <li>
                     <i className="icon"></i>
@@ -152,21 +165,25 @@ Alíquota de 0,38% para todas operações</span>
                       IOF: Alíquota de 0,38% para a operação de venda (isento para as operações de compra)
                     </span>                    
                     </span>
-                    <Button
-                      border={true}
-                      theme='secundary'
-                      value='Fale com um especialista'
-                    />
+                    <a rel="noopener noreferrer" target="_blank" href="https://wa.me/5511992223949">
+                      <Button
+                        border={true}
+                        theme='secundary'
+                        value='Fale com um especialista'
+                      />
+                    </a>
                   </li>
                 </ul>
               </div>
             </div>
               <div className="text-center">
                 <h3 className="p uppercase"><b>Outro motivo?</b></h3>
-                <Button
-                  theme='secundary'
-                  value='Fale com um especialista'
-                />
+                <a rel="noopener noreferrer" target="_blank" href="https://wa.me/5511992223949">
+                  <Button
+                    theme='secundary'
+                    value='Fale com um especialista'
+                  />
+                </a>
               </div>
           </div>
         </div>

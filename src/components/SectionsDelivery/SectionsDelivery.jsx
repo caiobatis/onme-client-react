@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from '../Button/Button'
 import Telesales from '../Telesales/Telesales'
+import { Link } from 'react-router-dom'
 
 
 export default class SectionsDelivery extends Component {
@@ -44,13 +45,14 @@ export default class SectionsDelivery extends Component {
         <div className="container pt50 pb50">
           <div className="row">
             <div className="col-md-4 offset-md-2 pt30">
-              <Button
-                onClick={()=>console.log('lol')}
-                value="Dúvidas frequentes"
-                theme="primary"
-                size="large"
-                full={true}
-              />
+              <Link to="/contato">
+                <Button
+                  value="Entrar em contato"
+                  theme="primary"
+                  size="large"
+                  full={true}
+                />
+              </Link>              
             </div>
             <div className="col-md-4">
               <div className="reserva">
