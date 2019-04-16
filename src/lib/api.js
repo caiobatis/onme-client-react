@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const baseURL = 'https://api.frentecorretora.com.br/v1/exchanges/'
-const baseURLMail = 'https://onmecambio.com.br/wp/wp-json/contact-form-7/v1/contact-forms'
+const baseURLMail = 'https://wp.onmecambio.com.br/wp-json/contact-form-7/v1/contact-forms'
 
 const api = axios.create({
   baseURL
