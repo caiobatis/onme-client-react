@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import CoinPrice from '../CoinPrice/CoinPrice'
 import Telesales from '../Telesales/Telesales'
 import scrollToElement from 'scroll-to-element'
+import CoinForm from '../CoinPrice/CoinForm'
 
 class SectionCoinsRealTime extends Component {
 
@@ -39,25 +39,9 @@ class SectionCoinsRealTime extends Component {
               </div>
             </div>
             <div className="col-md-7">
-              <div className="">
-                <div className="coins">
-                  <div className="list-coins">
-                    { listCoins.map((item, i)=> {
-                      return codes.map(code => {
-                        return code === item.productCode &&
-                          <CoinPrice
-                            key={i}
-                            title={item.currency}
-                            coin={item.productCode}
-                            price={item.sellPrice}
-                            iof={item.iof}
-                          />
-                      })
-                    })}
-                  </div>
-                </div>
-
-              </div>
+              <CoinForm
+                codes={codes}
+              />
             </div>
             <div className="col-md-12">
               <div className="text-right bottom">

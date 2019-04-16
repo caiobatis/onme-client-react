@@ -38,7 +38,7 @@ class Masthead extends Component {
                   <div className="col-md-6">
                     <div className="flex-right">
                       <div className="whitelabel">
-                          <Whitelabel/>
+                        <Whitelabel/>
                       </div>
                     </div>
                   </div>

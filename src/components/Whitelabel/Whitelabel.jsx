@@ -16,7 +16,6 @@ const cities = [
   { value: 'WL-ONME-SJC', label: 'São José dos Campos' }
 ]
 
-
 class Whitelabel extends Component {
   render() {
     const {

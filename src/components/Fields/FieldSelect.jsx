@@ -61,6 +61,7 @@ class FieldSelect extends Component {
       label,
       disabled,
       margin,
+      labelWidth = 70,
       ...input
     } = this.props
 
@@ -94,7 +95,7 @@ class FieldSelect extends Component {
           }}
           input={
             <OutlinedInput
-              labelWidth={70}
+              labelWidth={labelWidth}
               name={this.randomId}
               id={this.randomId}
             />
