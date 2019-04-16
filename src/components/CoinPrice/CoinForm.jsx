@@ -1,20 +1,33 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { reduxForm } from 'redux-form'
-
+import { bindActionCreators } from 'redux'
+import { getCoins } from '../../actions/WhitelabelActions'
 import Loader from '../Loader/Loader'
-import Button from '../Button/Button'
-import FieldTextRedux from '../Fields/FieldTextRedux'
 import FieldSelectRedux from '../Fields/FieldSelectRedux'
 import CoinPrice from './CoinPrice'
 
 class CoinForm extends Component {
+  constructor (props) {
+    super(props)
+
+    this.handleChangeCity = this.handleChangeCity.bind(this)
+  }
+  
+  handleChangeCity(data) {
+    const {
+      getCoins
+    } = this.props
+
+    getCoins(data.value)
+  }
   
   render () {
     const {
       codes,
       listCoins,
-      cities
+      cities,
+      loading
     } = this.props
 
     return (
@@ -26,7 +39,7 @@ class CoinForm extends Component {
               name="city"
               options={cities}
               theme="secundary"
-              onChange={(e)=>console.log(e)}
+              onChange={(data)=>this.handleChangeCity(data)}
               labelWidth={160}
             />
           </div>
@@ -47,6 +60,8 @@ class CoinForm extends Component {
             })}
           </div>
         </div>
+
+        { loading && ( <Loader/> )}
       </form>
     )
   }
@@ -75,8 +90,14 @@ const mapStateToProps = state => {
     initialValues: {
       ...whitelabel,
       city: { value: 'WL-ONME-SP', label: 'São Paulo' },
-    }
+    },
+    loading: whitelabel.loading
   }
 }
 
-export default connect(mapStateToProps)(CoinForm) 
+const mapDispatchToProps = dispatch => bindActionCreators({
+  getCoins
+}, dispatch)
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(CoinForm) 
