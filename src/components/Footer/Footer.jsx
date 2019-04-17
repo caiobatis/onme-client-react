@@ -30,7 +30,7 @@ export default class Footer extends Component {
                   <li><p className="title">Fale conosco</p></li>
                   <li><p>(11) 5078-7000</p></li>
                   <li><p><span>em dias úteis, das 9h às 18h</span></p></li>
-                  <li><a rel="noopener noreferrer" target="_blank" href="https://wa.me/5511992223949"><p>(11) 99976-0000 <i className="fab fa-whatsapp"></i> </p></a></li>
+                  <li><a rel="noopener noreferrer" target="_blank" href="https://wa.me/5511992223949"><p>(11) 99222-3949 <i className="fab fa-whatsapp"></i> </p></a></li>
                   <li><a rel="noopener noreferrer" target="_blank" href="mailto:contato@onmecambio.com.br"><p>contato@onmecambio.com.br</p></a></li>
                 </ul>
               </div>
