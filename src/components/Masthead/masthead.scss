@@ -41,7 +41,7 @@
   height: 140%;
   position: absolute;
   background: #212c5f;
-  top: -120px;
+  top: -12%;
   right: -220px;
   z-index: 3;
   transform: rotate(13deg);
@@ -50,11 +50,11 @@
 .mastheader:before {
   content: '';
   display: block;
-  width: 60%;
+  width: 63%;
   height: 140%;
   position: absolute;
   background: #c82343;
-  top: -120px;
+  top: 10%;
   right: -210px;
   z-index: 2;
   transform: rotate(18deg);
@@ -88,6 +88,10 @@
       text-align: right;
     }
   }
+}
+.call {
+  position: relative;
+  z-index: 3;
 }
 
 

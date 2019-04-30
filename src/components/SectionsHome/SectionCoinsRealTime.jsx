@@ -38,11 +38,6 @@ class SectionCoinsRealTime extends Component {
                 codes={codes}
               />
             </div>
-            <div className="col-md-12">
-              <div className="text-right bottom">
-                <p className="p">Valores com IOF, cotação para São Paulo, atualizados a cada 4 minutos e 30 segundos. </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
