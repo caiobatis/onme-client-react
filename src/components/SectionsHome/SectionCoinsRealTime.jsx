@@ -14,11 +14,6 @@ class SectionCoinsRealTime extends Component {
   }
 
   render() {
-    const {
-      listCoins
-    } = this.props
-
-
     const codes = ['USD', 'GBP', 'EUR', 'NZD', 'AUD', 'CAD']
 
     return (

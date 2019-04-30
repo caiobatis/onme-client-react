@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux'
 import Button from '../Button/Button'
 import ShippingForm from './ShippingForm'
 import Telesales from '../Telesales/Telesales'
-import { Link } from 'react-router-dom'
 import { sendShipping } from '../../actions/ShippingActions'
 
 
