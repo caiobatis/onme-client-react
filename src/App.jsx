@@ -8,8 +8,6 @@ class App extends Component {
   render() {
 
     ReactGA.initialize('UA-125270117-1')
-    ReactGA.pageview('/home')
-    
 
     return (
       <div>

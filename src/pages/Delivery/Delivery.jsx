@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import ReactGA from 'react-ga'
 import DefaultLayout from '../../components/DefaultLayout/DefaultLayout'
 import SectionsDelivery from '../../components/SectionsDelivery/SectionsDelivery'
