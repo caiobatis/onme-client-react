@@ -43,14 +43,16 @@ export default class Footer extends Component {
         <div className="copy">
           <div className="container">
             <div className="row">
-              <div className="col-md-6">
+              <div className="col-md-8">
                 <ul>
                   <li><i className="icon icon-frente"></i></li>
                   <li><i className="icon icon-fair"></i></li>
                   <li><i className="icon icon-banco"></i></li>
+                  <li><i className="icon icon-banco2"></i></li>
+                  <li><i className="icon icon-banco3"></i></li>
                 </ul>
               </div>
-              <div className="col-md-6">
+              <div className="col-md-4">
                 <p className="p"><span>Copyright © 2019 - Todos os Direitos Reservados.</span></p>
               </div>
             </div>
