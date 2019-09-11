@@ -187,3 +187,50 @@
     }
   }
 }
+
+.coins {
+  background: #202c5f;
+  height: 40px;
+  /* width: 420px; */
+  overflow: hidden;
+  position: relative;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  display: block;
+  align-items: center;
+  width: 200%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  animation: marquee 15s linear infinite;
+}
+
+
+.item {
+float: left;
+width: 180px;
+color: #fff;
+padding: 5px;
+height: 100%;
+display: flex;
+align-items: center;
+}
+
+@keyframes marquee {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}

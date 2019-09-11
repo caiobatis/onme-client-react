@@ -1,16 +1,23 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import Button from '../Button/Button'
 import Whitelabel from '../Whitelabel/Whitelabel'
 import {Link} from 'react-router-dom'
 import Telesales from '../Telesales/Telesales'
 
 import './masthead.scss'
+import NumberFormat from 'react-number-format';
 
 class Masthead extends Component {
   render() {
+
+    const {
+      coins
+    } = this.props
     return (
-      <section className="mastheader" id="masthead">
-        <div className="bg-header"></div>
+      <div>
+        <section className="mastheader" id="masthead">
+          <div className="bg-header"></div>
           <div className="container">
             <div className="row">
               <div className="col-md-12">
@@ -47,9 +54,36 @@ class Masthead extends Component {
 
             </div>
           </div>
-      </section>
+        </section>
+        <div className="coins">
+          <div className="list">
+          {
+            coins.map((coin, i)=> {
+              return (
+                <div className="item" key={i}>
+                  {coin.productCode}
+                  <NumberFormat
+                    value={(coin.sellPrice * (coin.iof/100)) + coin.sellPrice}
+                    displayType={'text'}
+                    thousandSeparator={true}
+                    prefix={'1 = R$'}
+                    decimalScale={3}
+                  />
+                </div>
+              )
+            })
+          }
+          </div>
+        </div>
+      </div>
     )
   }
 }
 
-export default Masthead
+const mapStateToProps = state => {
+  return {
+    coins: state.WhitelabelReducer.list
+  }
+}
+
+export default connect(mapStateToProps)(Masthead) 
