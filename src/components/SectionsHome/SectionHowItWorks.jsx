@@ -45,7 +45,7 @@ export default class SectionHowItWorks extends Component {
                   <div className="col-md-3">
                     <ProductCard
                       title="Cartão pré-pago"
-                      img={'https://www.travelmoneyoz.com/sites/v1.travelmoneyoz.com/files/TMOZ-640x320-1.jpg'}
+                      img={'https://transferwise-blog.s3.amazonaws.com/cartao-pre-pago-internacional-gratis_1278443005.jpg'}
                       description="Praticidade, segurança e agilidade. O cartão pré-pago é recarregável em diversas moedas. A maneira mais moderna de gerenciar seu dinheiro em viagens ao exterior. "
                       path="/papel-moeda#cartao"
                       brand="Visa"
