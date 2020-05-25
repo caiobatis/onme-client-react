@@ -15,11 +15,11 @@ class Home extends Component {
     return (
       <div className="home">
         <DefaultLayout>
-          <Masthead/>
-          <SectionHowItWorks/>
-          <SectionCoinsRealTime/>
-          <SectionShipping/>
-          <Footer/>
+          <Masthead />
+          <SectionHowItWorks />
+          <SectionCoinsRealTime />
+          <SectionShipping />
+          <Footer />
         </DefaultLayout>
       </div>
     );
