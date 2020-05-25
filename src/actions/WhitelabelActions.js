@@ -28,6 +28,7 @@ export const getCoins = city => {
 export const updateShipping = (type, options) => {
   return dispatch => {
     dispatch(fetchCoins(true))
+
     getShipping(type, options)
       .then((res) => {
         dispatch(fetchCoins(false))

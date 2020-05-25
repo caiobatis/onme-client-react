@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { getCoins } from '../../actions/WhitelabelActions'
+import { getCoins, updateShipping } from '../../actions/WhitelabelActions'
 import WhitelabelForm from './WhitelabelForm'
 import WhitelabelFormRemessa from './WhitelabelFormRemessa';
 
@@ -30,16 +30,49 @@ const typeRemessa = [
 
 const person = [
   {
-    value: 'eu',
+    value: 'IR001',
     label: 'Eu mesmo'
   },
   {
-    value: 'outra-pessoa',
+    value: 'IR002',
     label: 'Outra pessoa'
   }
 ]
 
 class Whitelabel extends Component {
+  constructor(props) {
+    super(props)
+
+    this.updateForm = this.updateForm.bind(this);
+  }
+
+  state = {
+    type: 'enviar',
+    person: 'IR001',
+    coin: 'USD',
+    real: 500,
+    quantity: 100
+  }
+
+  updateForm(current = false) {
+    const { updateShipping } = this.props
+
+    let { quantity, type, real, coin, person } = current
+
+    const types = type === 'enviar' ? 'outbound' : 'inbound'
+
+    const value = type === 'enviar' ? real : quantity
+
+    const query = `purposeCode=${person.value ? person.value : person}&currency=${coin}&correspondentId=94&value=${value * 100}`
+
+    if (quantity >= 100)
+      updateShipping && updateShipping(types, query)
+  }
+
+  componentDidMount() {
+    this.updateForm(this.state)
+  }
+
   render() {
     const {
       getCoins,
@@ -51,6 +84,7 @@ class Whitelabel extends Component {
       <WhitelabelFormRemessa
         // cities={cities}
         typeRemessa={typeRemessa}
+        updateForm={this.updateForm}
         person={person}
         // getCoins={getCoins}
         // listCoins={listCoins}
@@ -68,7 +102,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  getCoins
+  getCoins, updateShipping
 }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Whitelabel) 

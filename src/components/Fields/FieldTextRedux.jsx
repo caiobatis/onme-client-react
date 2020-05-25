@@ -5,13 +5,14 @@ import classNames from 'classnames'
 import './fields.scss'
 
 class _FieldText extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.handleChange = this.handleChange.bind(this)
+    this.handleBlur = this.handleBlur.bind(this)
   }
 
-  handleChange (value) {
+  handleChange(value) {
     const {
       input: { onChange }
     } = this.props
@@ -19,14 +20,24 @@ class _FieldText extends Component {
     onChange(value)
   }
 
-  render () {
+  handleBlur(value) {
+    const {
+      handleBlur,
+      input
+    } = this.props
+
+    handleBlur(input.value)
+  }
+
+  render() {
     const {
       ...rest
     } = this.props
-    
+
     return (
       <FieldText
         onChange={this.handleChange}
+        onBlur={this.handleBlur}
         value={this.props.input.value}
         {...rest}
       />
@@ -34,9 +45,9 @@ class _FieldText extends Component {
   }
 }
 
-export default class FieldTextRedux extends Component {  
+export default class FieldTextRedux extends Component {
   render() {
-    
+
     const fieldClass = classNames('defaultField', {
       [this.props.theme]: this.props.theme
     })

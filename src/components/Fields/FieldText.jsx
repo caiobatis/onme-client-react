@@ -5,18 +5,18 @@ import NumberFormat from 'react-number-format'
 
 
 const MoneyFormat = (props, code) => {
-  const { 
-    inputRef, 
+  const {
+    inputRef,
     onChange,
     id,
-    ...rest 
+    ...rest
   } = props
-  
+
   return (
     <NumberFormat
       {...rest}
       getInputRef={inputRef}
-      onValueChange={(_, e) =>onChange(_.floatValue)} 
+      onValueChange={(_, e) => onChange(_.floatValue)}
       decimalSeparator=','
       thousandSeparator='.'
       decimalScale={3}
@@ -32,13 +32,12 @@ MoneyFormat.propTypes = {
 }
 
 class FieldText extends Component {
-
   render() {
-
     const {
       mask,
       code,
       onChange,
+      handleBlur,
       rowsMax,
       multiline,
       rows,
@@ -66,6 +65,7 @@ class FieldText extends Component {
     return (
       <TextField
         onChange={onChange}
+        onBlur={() => handleBlur(input.value)}
         margin="normal"
         variant="outlined"
         id={code}
@@ -77,7 +77,7 @@ class FieldText extends Component {
         rowsMax={rowsMax}
         error={meta.touched && !!meta.error}
         {...input}
-        {...custom}          
+        {...custom}
       />
     )
   }

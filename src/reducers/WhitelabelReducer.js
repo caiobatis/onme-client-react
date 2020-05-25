@@ -23,32 +23,41 @@ const INITAL_STATE = {
   city: { value: 'WL-ONME-SP', label: 'São Paulo' },
   loading: false,
   shipping: {
-    type: {
-      value: 'enviar',
-      label: 'Enviar'
-    },
-    person: {
-      value: 'eu',
-      label: 'Eu mesmo'
-    },
+    type: { value: 'enviar', label: 'Enviar' },
+    person: { value: 'IR001', label: 'Eu mesmo' },
     remessaCoins: [
       { value: 'USD', label: 'Dólar Americano' },
       { value: 'EUR', label: 'Euro' },
       { value: 'GBP', label: 'Libra Esterlina' }
     ],
-    real: 100,
+    real: 50,
     coin: { value: 'USD', label: 'Dólar Americano' },
-    quantity: 100
+    quantity: 10,
+    cotacao: 0,
+    tarifa: 0,
+    iof: 0,
+    iofPercentage: 0,
+    vet: 0
   }
 }
 
 export default (state = INITAL_STATE, action) => {
   switch (action.type) {
     case RECEIVE_SHIPPING_COINS:
-      console.log(action.payload);
+      // console.log(action.payload);
       return {
         ...state,
-        shipping: state.shipping
+        shipping: {
+          ...state.shipping,
+          quantity: action.payload.currency.offer.value / action.payload.currency.offer.divisor,
+          real: action.payload.total.withTax.value / action.payload.total.withTax.divisor,
+          cotacao: action.payload.currency.levelingRate.value / action.payload.currency.levelingRate.divisor,
+          tarifa: action.payload.tax.bankFee.value / action.payload.tax.bankFee.divisor,
+          iof: action.payload.tax.iof.total.value / action.payload.tax.iof.total.divisor,
+          iofPercentage: action.payload.tax.iof.percentage,
+          vet: action.payload.currency.price.withTax.value / action.payload.currency.price.withTax.divisor,
+
+        }
       }
 
     case RECEIVE_COINS:
