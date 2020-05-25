@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getCoins } from '../../actions/WhitelabelActions'
 import WhitelabelForm from './WhitelabelForm'
+import WhitelabelFormRemessa from './WhitelabelFormRemessa';
 
 const cities = [
   { value: 'WL-ONME-SP', label: 'São Paulo' },
@@ -16,6 +17,28 @@ const cities = [
   { value: 'WL-ONME-SJC', label: 'São José dos Campos' }
 ]
 
+const typeRemessa = [
+  {
+    value: 'enviar',
+    label: 'Enviar'
+  },
+  {
+    value: 'receber',
+    label: 'Receber'
+  }
+]
+
+const person = [
+  {
+    value: 'eu',
+    label: 'Eu mesmo'
+  },
+  {
+    value: 'outra-pessoa',
+    label: 'Outra pessoa'
+  }
+]
+
 class Whitelabel extends Component {
   render() {
     const {
@@ -25,10 +48,12 @@ class Whitelabel extends Component {
     } = this.props
 
     return (
-      <WhitelabelForm
-        cities={cities}
-        getCoins={getCoins}
-        listCoins={listCoins}
+      <WhitelabelFormRemessa
+        // cities={cities}
+        typeRemessa={typeRemessa}
+        person={person}
+        // getCoins={getCoins}
+        // listCoins={listCoins}
         button={button}
       />
     )

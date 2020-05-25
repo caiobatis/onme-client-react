@@ -27,8 +27,8 @@ class WhitelabelForm extends Component {
       receiveCoin
     } = this.props
 
-    listCoins.map((e)=> {
-      if(e.value === event.value) {
+    listCoins.map((e) => {
+      if (e.value === event.value) {
         receiveCoin(e)
       }
       return null
@@ -47,7 +47,7 @@ class WhitelabelForm extends Component {
     const {
       getCoins
     } = this.props
-    
+
     getCoins(event.value)
 
     this.setState({
@@ -69,19 +69,19 @@ class WhitelabelForm extends Component {
       getCoins,
       cities
     } = this.props
-    
+
     getCoins(cities[0].value)
   }
 
-  componentWillReceiveProps (nextProps, nextState) {
+  componentWillReceiveProps(nextProps, nextState) {
     const {
       receiveCoin,
       listCoins,
       initialValues
     } = nextProps
 
-    listCoins.map((e)=> {
-      if(e.productCode === initialValues.coin.productCode) {
+    listCoins.map((e) => {
+      if (e.productCode === initialValues.coin.productCode) {
         receiveCoin(e)
       }
       return null
@@ -98,12 +98,12 @@ class WhitelabelForm extends Component {
 
 
     const coinFormat = <NumberFormat
-                        value={(coin.sellPrice * (coin.iof/100)) + coin.sellPrice}
-                        displayType={'text'}
-                        thousandSeparator={true}
-                        prefix={'R$ '}
-                        decimalScale={3}
-                      />
+      value={(coin.sellPrice * (coin.iof / 100)) + coin.sellPrice}
+      displayType={'text'}
+      thousandSeparator={true}
+      prefix={'R$ '}
+      decimalScale={3}
+    />
 
     return (
       <form className="form-whitelabel">
@@ -158,17 +158,17 @@ class WhitelabelForm extends Component {
           <div className="footer">
             <div className="security">
               <span className="span">
-                R$1,00 = {coin.value} {coinFormat} (valores com IOF) <br/>
-                Nossas cotações são atualizadas <br/> a cada 4 minutos e 30 segundos
+                R$1,00 = {coin.value} {coinFormat} (valores com IOF) <br />
+                Nossas cotações são atualizadas <br /> a cada 4 minutos e 30 segundos
               </span>
               <div className="tagSecurity">
                 <div className="icon"></div>
-                <p className="p">site <br/>seguro</p>
+                <p className="p">site <br />seguro</p>
               </div>
             </div>
           </div>
         </div>
-        { loading && ( <Loader/> )}
+        {loading && (<Loader />)}
       </form>
     )
   }
@@ -182,7 +182,7 @@ WhitelabelForm = reduxForm({
 
 const mapStateToProps = state => {
   const whitelabel = state.WhitelabelReducer
-  if(!whitelabel.quantity) {
+  if (!whitelabel.quantity) {
     whitelabel.quantity = 1000
   }
   return {

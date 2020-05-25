@@ -95,6 +95,39 @@
   }
 }
 
+.form-whitelabel {
+
+  .two-items.br {
+    justify-content: flex-start !important;
+  }
+  
+  // .two-items.br .defaultField {
+  //   width: auto;
+  // }
+  .flex {
+    display: flex;
+    flex-direction: column-reverse;
+    transition: .2s all ease;
+  }
+  
+  .flex.receive {
+    flex-direction: column;
+  }
+  
+  .brCoin {
+    width: 60px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .icon {
+      width: 35px;
+    }
+  
+  }
+}
+
+
 
 @media(max-width: 768px) {
 

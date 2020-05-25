@@ -1,4 +1,4 @@
-import { RECEIVE_COINS, RECEIVE_COIN, RECEIVE_COIN_REAL, FETCH_COINS } from '../lib/actionsTypes'
+import { RECEIVE_SHIPPING_COINS, RECEIVE_COINS, RECEIVE_COIN, RECEIVE_COIN_REAL, FETCH_COINS } from '../lib/actionsTypes'
 
 const INITAL_STATE = {
   list: [],
@@ -21,17 +21,42 @@ const INITAL_STATE = {
     { value: 'WL-ONME-SJC', label: 'São José dos Campos' }
   ],
   city: { value: 'WL-ONME-SP', label: 'São Paulo' },
-  loading: false
+  loading: false,
+  shipping: {
+    type: {
+      value: 'enviar',
+      label: 'Enviar'
+    },
+    person: {
+      value: 'eu',
+      label: 'Eu mesmo'
+    },
+    remessaCoins: [
+      { value: 'USD', label: 'Dólar Americano' },
+      { value: 'EUR', label: 'Euro' },
+      { value: 'GBP', label: 'Libra Esterlina' }
+    ],
+    real: 100,
+    coin: { value: 'USD', label: 'Dólar Americano' },
+    quantity: 100
+  }
 }
 
 export default (state = INITAL_STATE, action) => {
   switch (action.type) {
+    case RECEIVE_SHIPPING_COINS:
+      console.log(action.payload);
+      return {
+        ...state,
+        shipping: state.shipping
+      }
+
     case RECEIVE_COINS:
       return {
         ...state,
         list: action.payload
       }
-      
+
     case RECEIVE_COIN:
       return {
         ...state,

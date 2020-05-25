@@ -1,14 +1,14 @@
-import { RECEIVE_COINS, RECEIVE_COIN, RECEIVE_COIN_REAL, FETCH_COINS } from '../lib/actionsTypes'
+import { RECEIVE_SHIPPING_COINS, RECEIVE_COINS, RECEIVE_COIN, RECEIVE_COIN_REAL, FETCH_COINS } from '../lib/actionsTypes'
 import {
-  getProducts
+  getProducts, getShipping
 } from '../lib/api'
 
 const serializeCoins = (list) => {
-  return list.map((e,i)=>{
+  return list.map((e, i) => {
     return {
       ...e,
       value: e.productCode,
-      label: e.currency 
+      label: e.currency
     }
   })
 }
@@ -17,16 +17,34 @@ export const getCoins = city => {
   return dispatch => {
     dispatch(fetchCoins(true))
     getProducts(city)
-    .then((res)=> {
-      dispatch(fetchCoins(false))
-      dispatch(receiveCoins(serializeCoins(res.data)))
-    })
-    .catch(()=> dispatch(fetchCoins(false)))
+      .then((res) => {
+        dispatch(fetchCoins(false))
+        dispatch(receiveCoins(serializeCoins(res.data)))
+      })
+      .catch(() => dispatch(fetchCoins(false)))
+  }
+}
+
+export const updateShipping = (type, options) => {
+  return dispatch => {
+    dispatch(fetchCoins(true))
+    getShipping(type, options)
+      .then((res) => {
+        dispatch(fetchCoins(false))
+        // console.log(res);
+        dispatch(receiveShipping(res.data))
+      })
+      .catch(() => dispatch(fetchCoins(false)))
   }
 }
 
 const receiveCoins = value => ({
   type: RECEIVE_COINS,
+  payload: value
+})
+
+const receiveShipping = value => ({
+  type: RECEIVE_SHIPPING_COINS,
   payload: value
 })
 
