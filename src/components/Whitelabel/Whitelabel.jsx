@@ -50,8 +50,8 @@ class Whitelabel extends Component {
     type: 'enviar',
     person: 'IR001',
     coin: 'USD',
-    real: 500,
-    quantity: 100
+    real: 1000,
+    quantity: 1000
   }
 
   updateForm(current = false) {

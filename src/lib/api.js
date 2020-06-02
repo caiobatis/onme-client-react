@@ -18,7 +18,7 @@ export const getProducts = city => {
 
 export const getShipping = (type, options) => {
   return new Promise((resolve, reject) =>
-    api.get(`remittance/${type}/reverse?${options}`)
+    api.get(`remittance/outbound${type === 'outbound' ? '/reverse' : ''}?${options}`)
       // api.get(`remittance/inbound/reverse?purposeCode=IR002&currency=USD&correspondentId=94&value=79444`)
       .then((res) => resolve(res))
       .catch((res) => reject(res)))

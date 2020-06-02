@@ -18,8 +18,8 @@ class WhitelabelFormRemessa extends Component {
       type: 'enviar',
       person: 'IR001',
       coin: 'USD',
-      real: 500,
-      quantity: 100
+      real: 1000,
+      quantity: 1000
     }
 
     this.handleChangeCoin = this.handleChangeCoin.bind(this);
@@ -46,9 +46,6 @@ class WhitelabelFormRemessa extends Component {
   }
 
   handleChangeQuantity(value) {
-
-
-    console.log(value);
     const { type, real, coin, person, quantity } = this.state
 
     if (quantity !== value) {
@@ -61,7 +58,6 @@ class WhitelabelFormRemessa extends Component {
 
       this.props.updateForm(values)
     }
-    // }
   }
 
   handleChangeType(event) {
@@ -76,7 +72,7 @@ class WhitelabelFormRemessa extends Component {
         type: event.value, quantity, real, coin, person
       }
 
-      // this.updateForm(values)
+      // this.props.updateForm(values)
     }
   }
 
@@ -92,7 +88,7 @@ class WhitelabelFormRemessa extends Component {
         type, real, coin, quantity, person: event.value
       }
 
-      // this.updateForm(values)
+      this.props.updateForm(values)
     }
   }
 
@@ -191,6 +187,7 @@ class WhitelabelFormRemessa extends Component {
                   name="real"
                   mask="money"
                   disabled={type !== 'enviar'}
+                  handleBlur={this.handleChangeQuantity}
                 />
               </div>
             </div>

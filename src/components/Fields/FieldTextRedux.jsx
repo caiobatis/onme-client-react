@@ -26,7 +26,7 @@ class _FieldText extends Component {
       input
     } = this.props
 
-    handleBlur(input.value)
+    handleBlur && handleBlur(input.value)
   }
 
   render() {

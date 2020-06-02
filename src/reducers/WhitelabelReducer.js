@@ -30,9 +30,9 @@ const INITAL_STATE = {
       { value: 'EUR', label: 'Euro' },
       { value: 'GBP', label: 'Libra Esterlina' }
     ],
-    real: 50,
+    real: 1000,
     coin: { value: 'USD', label: 'Dólar Americano' },
-    quantity: 10,
+    quantity: 1000,
     cotacao: 0,
     tarifa: 0,
     iof: 0,
