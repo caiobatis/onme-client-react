@@ -51,7 +51,8 @@ class Whitelabel extends Component {
     person: 'IR001',
     coin: 'USD',
     real: 1000,
-    quantity: 1000
+    quantity: 1000,
+    tab: 1
   }
 
   updateForm(current = false) {
@@ -78,17 +79,38 @@ class Whitelabel extends Component {
       listCoins,
       button
     } = this.props
+    const { tab } = this.state
 
     return (
-      <WhitelabelFormRemessa
-        // cities={cities}
-        typeRemessa={typeRemessa}
-        updateForm={this.updateForm}
-        person={person}
-        // getCoins={getCoins}
-        // listCoins={listCoins}
-        button={button}
-      />
+      <div className="tabs">
+        <div className="nav">
+          <div className="title" style={{ borderColor: tab ? '#000' : '#ccc' }} onClick={() => this.setState({ tab: 1 })}>Papel Moeda</div>
+          <div className="title" style={{ borderColor: tab ? '#ccc' : '#000' }} onClick={() => this.setState({ tab: 0 })}>Remessa</div>
+        </div>
+        {tab ? (
+          <div className="tab" style={{ display: tab ? 'block' : 'none' }}>
+            <div className="content">
+              <WhitelabelForm
+                cities={cities}
+                getCoins={getCoins}
+                listCoins={listCoins}
+                button={button}
+              />
+            </div>
+          </div>
+        ) : (
+            <div className="tab" style={{ display: !tab ? 'block' : 'none' }}>
+              <div className="content">
+                <WhitelabelFormRemessa
+                  typeRemessa={typeRemessa}
+                  updateForm={this.updateForm}
+                  person={person}
+                  button={button}
+                />
+              </div>
+            </div>
+          )}
+      </div>
     )
   }
 }

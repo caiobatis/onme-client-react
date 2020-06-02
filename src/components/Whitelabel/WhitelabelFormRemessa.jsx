@@ -55,7 +55,7 @@ class WhitelabelFormRemessa extends Component {
       this.setState({
         quantity: value
       })
-      console.log(initialValues.maxValue);
+
       if (value < initialValues.minValue)
         return alert('valor mínimo não atingido')
 
@@ -158,9 +158,9 @@ class WhitelabelFormRemessa extends Component {
     return (
       <form className="form-whitelabel">
         <div>
-          <div className="title">
+          {/* <div className="title">
             <h4 className="h4">Remessa</h4>
-          </div>
+          </div> */}
           <div className="items-form">
             <div className="two-items">
               <FieldSelectRedux

@@ -126,7 +126,26 @@
   
   }
 }
+.tabs {
+  .nav {
+    position: relative;
+  }
 
+  .nav .title {
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+    cursor: pointer;
+    font-family: Lato;
+    font-size: 17px;
+    color: #303036;
+  }
+
+  .nav .title:hover {
+    border-color: #000;
+  }
+}
 
 
 @media(max-width: 768px) {
