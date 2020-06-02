@@ -25,11 +25,11 @@ export const getCoins = city => {
   }
 }
 
-export const updateShipping = (type, options) => {
+export const updateShipping = (reverse, options) => {
   return dispatch => {
     dispatch(fetchCoins(true))
 
-    getShipping(type, options)
+    getShipping(reverse, options)
       .then((res) => {
         dispatch(fetchCoins(false))
         // console.log(res);

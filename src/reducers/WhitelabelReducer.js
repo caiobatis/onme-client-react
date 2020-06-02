@@ -37,7 +37,8 @@ const INITAL_STATE = {
     tarifa: 0,
     iof: 0,
     iofPercentage: 0,
-    vet: 0
+    vet: 0,
+    code: 'USD'
   }
 }
 
@@ -56,7 +57,9 @@ export default (state = INITAL_STATE, action) => {
           iof: action.payload.tax.iof.total.value / action.payload.tax.iof.total.divisor,
           iofPercentage: action.payload.tax.iof.percentage,
           vet: action.payload.currency.price.withTax.value / action.payload.currency.price.withTax.divisor,
-
+          code: action.payload.currency.code,
+          minValue: action.payload.currency.minValue,
+          maxValue: action.payload.currency.maxValue,
         }
       }
 

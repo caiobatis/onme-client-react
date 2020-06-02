@@ -24,6 +24,7 @@ class WhitelabelFormRemessa extends Component {
 
     this.handleChangeCoin = this.handleChangeCoin.bind(this);
     this.handleChangeQuantity = this.handleChangeQuantity.bind(this);
+    this.handleChangeQuantityBR = this.handleChangeQuantityBR.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleChangeType = this.handleChangeType.bind(this);
     this.handleChangePerson = this.handleChangePerson.bind(this);
@@ -41,20 +42,54 @@ class WhitelabelFormRemessa extends Component {
         coin: event.value, type, real, quantity, person
       }
 
-      // this.updateForm(values)
+      this.props.updateForm(values)
     }
   }
 
   handleChangeQuantity(value) {
+    const { initialValues } = this.props
+
     const { type, real, coin, person, quantity } = this.state
 
     if (quantity !== value) {
-      const values = {
-        quantity: value, type, real, coin, person
-      }
       this.setState({
         quantity: value
       })
+      console.log(initialValues.maxValue);
+      if (value < initialValues.minValue)
+        return alert('valor mínimo não atingido')
+
+      if (value > initialValues.maxValue)
+        return alert('valor maximo atingido')
+
+      const values = {
+        quantity: value, type, real, coin, person
+      }
+
+      this.props.updateForm(values)
+    }
+  }
+
+  handleChangeQuantityBR(value) {
+    const { initialValues } = this.props
+
+    const { type, real, coin, person, quantity } = this.state
+
+    if (real !== value) {
+      this.setState({
+        real: value
+      })
+
+      if (value / initialValues.vet < initialValues.minValue)
+        return alert('valor mínimo não atingido')
+
+      if (value / initialValues.vet > initialValues.maxValue)
+        return alert('valor maximo atingido')
+
+
+      const values = {
+        real: value, type, coin, person, quantity
+      }
 
       this.props.updateForm(values)
     }
@@ -100,31 +135,15 @@ class WhitelabelFormRemessa extends Component {
     window.open(url, '_blank')
   }
 
-  // componentWillReceiveProps(nextProps, nextState) {
-  //   const {
-  //     receiveCoin,
-  //     listCoins,
-  //     initialValues
-  //   } = nextProps
-
-  //   listCoins.map((e) => {
-  //     if (e.productCode === initialValues.coin.productCode) {
-  //       receiveCoin(e)
-  //     }
-  //     return null
-  //   })
-  // }
-
   render() {
     const {
       remessaCoins,
       loading,
       typeRemessa,
-      person,
-      initialValues
+      person
     } = this.props
 
-    const { type } = this.state
+    const { type, coin } = this.state
 
     // console.log(initialValues);
 
@@ -136,7 +155,6 @@ class WhitelabelFormRemessa extends Component {
     //     prefix={'R$ '}
     //     decimalScale={3}
     //   />
-
     return (
       <form className="form-whitelabel">
         <div>
@@ -172,8 +190,8 @@ class WhitelabelFormRemessa extends Component {
                   handleBlur={this.handleChangeQuantity}
                   name="quantity"
                   mask="money"
-                  code='USD'
-                // disabled={type === 'enviar'}
+                  code={coin}
+                  disabled={type === 'enviar'}
                 />
               </div>
               <div className="two-items br">
@@ -187,7 +205,7 @@ class WhitelabelFormRemessa extends Component {
                   name="real"
                   mask="money"
                   disabled={type !== 'enviar'}
-                  handleBlur={this.handleChangeQuantity}
+                  handleBlur={this.handleChangeQuantityBR}
                 />
               </div>
             </div>
@@ -227,7 +245,6 @@ WhitelabelFormRemessa = reduxForm({
 
 const mapStateToProps = state => {
   const whitelabel = state.WhitelabelReducer
-
   return {
     remessaCoins: whitelabel.shipping.remessaCoins,
     real: whitelabel.shipping.real,

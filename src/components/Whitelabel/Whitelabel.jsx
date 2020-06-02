@@ -59,14 +59,13 @@ class Whitelabel extends Component {
 
     let { quantity, type, real, coin, person } = current
 
-    const types = type === 'enviar' ? 'outbound' : 'inbound'
+    const reverse = type === 'enviar' && true
 
     const value = type === 'enviar' ? real : quantity
 
     const query = `purposeCode=${person.value ? person.value : person}&currency=${coin}&correspondentId=94&value=${value * 100}`
 
-    if (quantity >= 100)
-      updateShipping && updateShipping(types, query)
+    updateShipping && updateShipping(reverse, query)
   }
 
   componentDidMount() {
