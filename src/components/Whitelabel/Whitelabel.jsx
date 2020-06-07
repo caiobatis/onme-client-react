@@ -79,13 +79,16 @@ class Whitelabel extends Component {
       listCoins,
       button
     } = this.props
+
     const { tab } = this.state
 
+    const selected = tab === 1 ? 'papel' : 'remessa'
+
     return (
-      <div className="tabs">
+      <div className={`tabs ${selected}`}>
         <div className="nav">
-          <div className="title" style={{ borderColor: tab ? '#000' : '#ccc' }} onClick={() => this.setState({ tab: 1 })}>Papel Moeda</div>
-          <div className="title" style={{ borderColor: tab ? '#ccc' : '#000' }} onClick={() => this.setState({ tab: 0 })}>Remessa</div>
+          <div className="title" onClick={() => this.setState({ tab: 1 })}>Papel Moeda</div>
+          <div className="title" onClick={() => this.setState({ tab: 0 })}>Remessa</div>
         </div>
         {tab ? (
           <div className="tab" style={{ display: tab ? 'block' : 'none' }}>

@@ -53,7 +53,7 @@ export default (state = INITAL_STATE, action) => {
           quantity: action.payload.currency.offer.value / action.payload.currency.offer.divisor,
           real: action.payload.total.withTax.value / action.payload.total.withTax.divisor,
           cotacao: action.payload.currency.levelingRate.value / action.payload.currency.levelingRate.divisor,
-          tarifa: action.payload.tax.bankFee.value / action.payload.tax.bankFee.divisor,
+          tarifa: action.payload.tax.bankFee.total.value / action.payload.tax.bankFee.total.divisor,
           iof: action.payload.tax.iof.total.value / action.payload.tax.iof.total.divisor,
           iofPercentage: action.payload.tax.iof.percentage,
           vet: action.payload.currency.price.withTax.value / action.payload.currency.price.withTax.divisor,

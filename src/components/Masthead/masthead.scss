@@ -74,6 +74,8 @@
   box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.22);
   z-index: 4;
   position: relative;
+  width: 448px;
+  margin-top: 20px;
   
   .title {
     display: flex;
@@ -173,6 +175,7 @@
 @media(max-width: 768px) {
   .whitelabel {
     min-width: 100%;
+    width: 100%;
     margin-top: 25px;
   }
   .mastheader {

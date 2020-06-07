@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { reduxForm } from 'redux-form'
+import { reduxForm, formValueSelector } from 'redux-form'
 import NumberFormat from 'react-number-format'
 import { receiveCoin, receiveCoinReal, updateShipping } from '../../actions/WhitelabelActions'
 import FieldSelectRedux from '../Fields/FieldSelectRedux'
@@ -130,7 +130,19 @@ class WhitelabelFormRemessa extends Component {
   handleClick() {
     const { initialValues } = this.props
 
-    const url = `https://frentetech.com.br/onme/checkout?agentId=${initialValues.city.value}&productId=${initialValues.item.value}&productAmount=${initialValues.quantity}`
+    const {
+      real,
+      quantity
+    } = initialValues
+
+    const {
+      person,
+      coin,
+      type
+    } = this.state
+
+    const send = type === 'enviar' ? 'outbound' : 'inbound'
+    const url = `https://iamsimple.com.br/onme/app/checkout/remittance?remittance=true&remittanceAmountBRL=${real}&remittanceAmount=${quantity}&purposeCode=${person}&currencyCode=${coin}&remittanceType=${send}`
 
     window.open(url, '_blank')
   }
@@ -140,12 +152,21 @@ class WhitelabelFormRemessa extends Component {
       remessaCoins,
       loading,
       typeRemessa,
-      person
+      person,
+      initialValues
     } = this.props
 
     const { type, coin } = this.state
 
-    // console.log(initialValues);
+    console.log(this.props);
+
+    const {
+      cotacao,
+      vet,
+      iofPercentage,
+      iof,
+      tarifa
+    } = initialValues
 
     // const coinFormat =
     //   <NumberFormat
@@ -156,7 +177,7 @@ class WhitelabelFormRemessa extends Component {
     //     decimalScale={3}
     //   />
     return (
-      <form className="form-whitelabel">
+      <form className="form-whitelabel remessa">
         <div>
           {/* <div className="title">
             <h4 className="h4">Remessa</h4>
@@ -176,7 +197,8 @@ class WhitelabelFormRemessa extends Component {
                 onChange={this.handleChangePerson}
               />
             </div>
-            <div className={`flex ${type === 'enviar' ? 'send' : 'receive'}`}>
+            <div className={`flex ${type === 'enviar' ? 'send' : 'receive'
+              }`}>
               <div className="two-items">
                 <FieldSelectRedux
                   label="Moeda"
@@ -213,7 +235,7 @@ class WhitelabelFormRemessa extends Component {
           <div className="actions">
             <Button
               onClick={this.handleClick}
-              value="Gostei! Comprar agora"
+              value="Enviar agora"
               theme={this.props.button || 'success'}
               size="large"
               full={true}
@@ -221,10 +243,12 @@ class WhitelabelFormRemessa extends Component {
           </div>
           <div className="footer">
             <div className="security">
-              {/* <span className="span">
-                R$1,00 = {coin} {coinFormat} (valores com IOF) <br />
-                Nossas cotações são atualizadas <br /> a cada 4 minutos e 30 segundos
-              </span> */}
+              <span className="span">
+                Cotação = R$ {cotacao} <br />
+                Tarifa bancária = R$ {tarifa} <br />
+                IOF({iofPercentage}%) = R$ {iof} <br />
+                VET = R$ {vet}
+              </span>
               <div className="tagSecurity">
                 <div className="icon"></div>
                 <p className="p">site <br />seguro</p>
@@ -243,6 +267,8 @@ WhitelabelFormRemessa = reduxForm({
   enableReinitialize: true
 })(WhitelabelFormRemessa)
 
+const selector = formValueSelector('WhitelabelFormRemessa')
+
 const mapStateToProps = state => {
   const whitelabel = state.WhitelabelReducer
   return {
@@ -253,7 +279,8 @@ const mapStateToProps = state => {
     loading: whitelabel.loading,
     initialValues: {
       ...whitelabel.shipping
-    }
+    },
+    values: selector(whitelabel.shipping, 'shipping')
   }
 }
 
