@@ -187,6 +187,10 @@
       margin-bottom: 0px !important;
       margin-top: 0px !important;
   }
+
+  [class*="MuiInputLabel-outlined"] {
+    background: #fff !important;
+  }
 }
 
 @media(max-width: 768px) {
@@ -198,8 +202,4 @@
     }
   }
 
-}
-
-[class*="MuiInputLabel-outlined"] {
-  background: #fff !important;
 }

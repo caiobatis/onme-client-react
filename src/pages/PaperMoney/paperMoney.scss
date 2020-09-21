@@ -21,12 +21,13 @@
       .whitelabel {
         margin-top: 50px;
         box-shadow: none;
+        overflow: visible !important;
         .span {
           font-size: 12px;
         }
       }
     }
-    .content {
+    > .content {
       padding: 100px 0;
       background: #222d5e;
       position: relative;

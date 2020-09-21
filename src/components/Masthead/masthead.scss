@@ -191,42 +191,44 @@
   }
 }
 
-.coins {
-  background: #202c5f;
-  overflow: hidden;
-  position: relative;
-  height: 40px;
+.topheader {
+  .coins {
+    background: #202c5f;
+    overflow: hidden;
+    position: relative;
+    height: 40px;
+  }
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    display: block;
+    align-items: center;
+    width: 200%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    animation: marquee 15s linear infinite;
+  }
+  
+  
+  .item {
+    float: left;
+    width: 180px;
+    color: #fff;
+    padding: 5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
 }
 
-.list {
-  display: flex;
-  flex-wrap: wrap;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
-  display: block;
-  align-items: center;
-  width: 200%;
-  height: 100%;
-  position: absolute;
-  overflow: hidden;
-  animation: marquee 15s linear infinite;
-}
-
-
-.item {
-float: left;
-width: 180px;
-color: #fff;
-padding: 5px;
-height: 100%;
-display: flex;
-align-items: center;
-}
 
 @keyframes marquee {
   0% {
