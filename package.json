@@ -4,7 +4,7 @@
   "private": false,
   "dependencies": {
     "@material-ui/core": "^3.9.4",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.2",
     "classnames": "^2.2.6",
     "express": "^4.17.1",
